@@ -1,0 +1,48 @@
+{
+    "manifest_version": 2,
+    "name": "KL TAG TEAM",
+    "version": "2.8",
+    "description": "KL TAG TEAM",
+	"icons": {
+         "16": "icon16x16.png",
+         "48": "icon48x48.png",
+         "128": "icon128x128.png"
+         },
+	"permissions": ["activeTab", "declarativeContent", "storage", "contextMenus", "notifications", "tabs", "https://*/","http://*/","clipboardWrite","http://www.tagteam-tdcx.com/*"],
+	
+	"options_page": "options.html",
+	
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiA86ZYNOqojIKBP4aMcqzfIMt15YN+BxMSI5DOfDR3F01Bi2kToegbC2THK2TmtqlXYPUnSXkZc/UQ8lfieuQ8Au2rV+z2Zxd0OSDoNBSjFSGesupF6lpM9zTy5sGoPDAcyTUlUUfkyaayRlX1Ck4XuX0DagcOTz8nsV3dwRU7BK//jM5Fy6A9ksFePZKhbtRvYrsQ61ebrXclONld8koDcgrWUFLWGN2NKJFyLSydKdjygxvLQKh5/d9mfiY9cBxmmCVzc9Ie2JE3pODABXC1BijV8s/GX2H2oGYjKYoJ/JTR21zZeEOOH65NrdgwnhLGoILoCIBzkANshTLIIxOwIDAQAB",
+		
+	"background": {
+		"scripts": ["jquery.js","background.js"],
+		"persistent": false
+	  },
+
+	"browser_action": {
+        "default_icon": "icon48x48.png",
+        "default_popup": "options.html",
+        "default_title": "options"
+    },  
+	
+	"content_scripts": [
+		{ "run_at" :"document_end",
+		"matches": ["https://smbsalesimplementation.my.salesforce.com/*", "https://smbsalesimplementation--cksw-srvc.na81.visual.force.com/*", "https://smbsalesimplementation--cksw-srvc.visualforce.com/*" ,"https://tdmtt.net/*", "http://www.tagteam-tdcx.com/*","https://mail.google.com/chat/u/*","https://cases.connect.corp.google.com/*","https://partnerdash.google.com/*","https://support-dossiers.corp.google.com/"],
+		"js": ["script.js", "jquery.js", "push.min.js", "push_oncall_notification.js"],
+		"all_frames": true
+		},
+		{
+		"matches": ["https://*/*","http://*/*"],
+		"js": ["jquery.js","jquery.min.js" , "popper.min.js" , "bootstrap.min.js" , "474611b40f.js","gtminjector.js"],
+		"all_frames": true
+		}	
+			
+		],
+	
+	"content_security_policy": "script-src 'self' https://www.tagteam-tdcx.com; object-src 'self'"
+	
+			
+		 
+       
+    
+}
