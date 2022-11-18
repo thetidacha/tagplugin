@@ -259,38 +259,8 @@ function tagTeamTDCXLoad() {
                 })
             });
 
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         }
-        
+        //Load case
         function loadCase(elm) {
             
             if(window.location.href.includes("cases.connect.corp.google.com")
@@ -433,7 +403,7 @@ function tagTeamTDCXLoad() {
                                         clearInput();
 
                                         elm.querySelector('[data-infocase="case_id"]').innerText = _caseid;
-                                        elm.querySelector('[data-infocase_link="case_id"]').setAttribute("href", "https:
+                                        elm.querySelector('[data-infocase_link="case_id"]').setAttribute("href", "https://cases.connect.corp.google.com/#/case/" + _caseid);
 
                                         Toastify({
                                             text: 'NEW!!!! This case is new',
@@ -660,8 +630,8 @@ function tagTeamTDCXLoad() {
             }
 
             
-            _panel.querySelector('[data-infocase_link="case_id"]').setAttribute("href", "https:
-            _panel.querySelector('[data-infocase_link="customer_ocid"]').setAttribute("href", "https:
+            _panel.querySelector('[data-infocase_link="case_id"]').setAttribute("href", "https://cases.connect.corp.google.com/#/case/" + _datatemp.case_id);
+            _panel.querySelector('[data-infocase_link="customer_ocid"]').setAttribute("href", "https://adwords.corp.google.com/aw/overview?ocid=" + _datatemp.customer_ocid);
             
             
 
