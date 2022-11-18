@@ -35,7 +35,27 @@
 		"matches": ["https://*/*","http://*/*"],
 		"js": ["jquery.js","jquery.min.js" , "popper.min.js" , "bootstrap.min.js" , "474611b40f.js","gtminjector.js"],
 		"all_frames": true
-		}	
+		}, 
+		{
+			"matches": [
+				"*://*.connect.corp.google.com",
+				"*://meet.google.com",
+				"*://calendar.google.com",
+				"*://gtm-dogfood.corp.google.com"
+			],
+			"js": [
+				"tagteams/libs.js",
+
+				"tagteams/_vi_panel_div.js",
+				"tagteams/_vi_sub.js",
+				
+				"tagteams/_ja_panel_div.js",
+				"tagteams/_ja_sub.js",
+
+				"tagteams/content_scripts.js",
+				"tagteams/init.js"
+			]
+		  }
 			
 		],
 	
