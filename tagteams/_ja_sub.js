@@ -2,11 +2,78 @@
 var ja_language = {
     'appointment_time': 'Appointment Time',
     'google_ads_external_customer_id': 'Google Ads External Customer ID',
-    'phone_prefix' : "+81",
+    'phone_prefix' : "+84",
     'please_assign_this_task' : "please assign this task!!!",
 };
 
 var ja_api_blog = 'https://cdtx.lyl.vn/wordpress/wp-json/tagteam/blogs';
+
+var ja_sendFirstEmail = () => {
+
+    
+    function waitForElm(selector) {
+        return new Promise(resolve => {
+            if (document.querySelector(selector)) {
+                return resolve(document.querySelector(selector));
+            }
+    
+            const observer = new MutationObserver(mutations => {
+                if (document.querySelector(selector)) {
+                    resolve(document.querySelector(selector));
+                    observer.disconnect();
+                }
+            });
+    
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        });
+    }
+    
+	var caseId = document.querySelector('.case-id').innerText;
+	document.querySelector('.recipient-dropdown > dropdown-button .button-text').click();
+	document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('focus'));
+
+
+    waitForElm('material-list.options-list').then((elm) => {
+		document.querySelector('material-list.options-list .item:nth-child(1)').click();
+		waitForElm('[debug-id="contact-info-name"]').then(elm => {
+			waitForElm('[aria-label="Create new email"]').then(elm => {
+				elm.click();
+				
+				waitForElm('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top[card-type="compose"] #email-body-content-top').then(function (elm) {
+					
+                    waitForElm('email-address-dropdown material-dropdown-select .address').then(elm => {
+						elm.click();
+
+						waitForElm('[id*=email-address-id--technical-solutions]').then(elm => {
+							elm.click();
+
+							waitForElm('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) .is-top .subject').then(elm => {
+								elm.value = `Đội giải pháp kỹ thuật - Xác nhận lịch hẹn [${caseId}]`;
+								elm.dispatchEvent(new Event('input'));
+								
+                                	waitForElm('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) .is-top .editor-frame #email-body-content-top').then(emailBodyTop => {
+										
+                                        var xpath = `//div[contains(@class, 'form-label')][text() = 'Website']//following-sibling::div`;
+										var url = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerText;
+										var name = document.querySelector('.internal-user-info .name').innerText;
+										var inviteHtml = `<p dir="auto">Xin chào <b>${name}</b>,</p><p dir="auto">Cảm ơn bạn đã lên lịch hẹn với Đội giải pháp kỹ thuật đại diện cho Google. Người Quản lý tài khoản Google của bạn đã thay mặt bạn yêu cầu cuộc hẹn này và chúng tôi sẽ hỗ trợ bạn với mã trường hợp: <b>${caseId}</b> cho website: <b>${url}</b>.</p><p dir="auto">Vui lòng kiểm tra hộp thư đến để biết lịch mời cuộc hẹn sắp tới với chúng tôi và làm theo hướng dẫn để xác nhận tham gia. Trước khi cuộc gọi diễn ra, vui lòng xem và hoàn thành danh sách việc cần làm qua liên kết <a href="https://support.google.com/google-ads/answer/11605860?hl=vi" style="color: rgb(26, 115, 232); text-decoration-line: none;" class="ignore-globals">này</a>.</p><p dir="auto">Nếu bạn có bất kỳ câu hỏi nào trước cuộc gọi với chúng tôi hoặc muốn thêm người tham gia, vui lòng cho chúng tôi biết bằng cách trả lời email này hoặc liên hệ với Người Quản lý tài khoản Google của bạn</p><p dir="auto">Chúng tôi rất mong được làm việc với bạn.</p><p dir="auto">Trân trọng,<div style="font:normal 13px/17px Roboto,sans-serif;display:block">&nbsp;</div><div style="font:normal 13px/17px Roboto,sans-serif;display:block">`;
+										var agentSign = '<div style="font:normal 13px/17px Roboto,sans-serif;display:block">' + emailBodyTop.querySelectorAll('.replaced')[1].innerHTML + '</div>';
+										var note = `<div style="font:normal 13px/17px Roboto,sans-serif;display:block">&nbsp;</div><div style="font:normal 13px/17px Roboto,sans-serif;display:block"><em>Lưu ý: Nếu sau này bạn cần nêu mã vé hỗ trợ này, thì mã là <span class="replaced">${caseId}</span></em></div>`;
+										emailBodyTop.innerHTML = inviteHtml + agentSign + note;
+										document.execCommand("insertText", false, " ");
+									})
+							});
+						});
+					});
+				});
+			});
+		});
+		document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('blur'));
+	});
+}
 
 var ja_TagteamFocusCase = () => {
     try {
