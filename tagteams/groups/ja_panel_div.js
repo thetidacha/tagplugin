@@ -91,7 +91,7 @@ var ja_panel_div = `
                                                 <a href="#" data-infocase_link="customer_gmeet" target="_blank"></a>
                                             </div>
                                             <div class="_panel__form--panel">
-                                                お客様: <strong><span data-infocase="customer_name">CUSTOMER_NAME</span></strong> (<select name="customer_gender" class="select_inline">
+                                                Customer: <strong><span data-infocase="customer_name">CUSTOMER_NAME</span></strong> (<select name="customer_gender" class="select_inline">
                                                     <option value="bạn">Bạn</option>
                                                     <option value="anh">Anh</option>
                                                     <option value="chị">Chị</option>

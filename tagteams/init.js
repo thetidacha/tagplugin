@@ -3,6 +3,7 @@ function (result) {
     window.dataTagteam.panel_div = vi_panel_div;
     window.dataTagteam.api_blog = vi_api_blog;
     window.dataTagteam.language = vi_language;
+    window.dataTagteam.sendFirstEmail = () => { vi_sendFirstEmail() } ;
 
     if (result.mycountry == "Vietnam") {
         window.dataTagteam.language = vi_language;

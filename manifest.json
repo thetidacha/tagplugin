@@ -46,11 +46,11 @@
 			"js": [
 				"tagteams/libs.js",
 
-				"tagteams/_vi_panel_div.js",
-				"tagteams/_vi_sub.js",
+				"tagteams/groups/vi_panel_div.js",
+				"tagteams/groups/vi_sub.js",
 				
-				"tagteams/_ja_panel_div.js",
-				"tagteams/_ja_sub.js",
+				"tagteams/groups/ja_panel_div.js",
+				"tagteams/groups/ja_sub.js",
 
 				"tagteams/content_scripts.js",
 				"tagteams/init.js"

@@ -10,7 +10,6 @@ var vi_api_blog = 'https://cdtx.lyl.vn/wordpress/wp-json/tagteam/blogs';
 
 var vi_sendFirstEmail = () => {
 
-    
     function waitForElm(selector) {
         return new Promise(resolve => {
             if (document.querySelector(selector)) {
