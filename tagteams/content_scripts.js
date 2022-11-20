@@ -325,7 +325,38 @@ function tagTeamTDCXLoad() {
             }
 
             if(window.location.href.includes("calendar.google.com")) {
-                
+                // Set auto by checkbox
+                document.addEventListener("readystatechange", (event) => {
+                    if(document.readyState === "complete") {
+                        getChromeStorage("cdtx_listmeetlink", (response) => {
+                            var casesmeet = response.value || {};
+                            document.querySelectorAll('[jslog][data-eventid]').forEach(function(elm){
+                                var jslog = elm.getAttribute('jslog');
+                                var caseid = elm.innerText.match(/\d-\d+/g);
+                                if(jslog){
+                                    var meetid = jslog.match(/\w{3}-\w{4}-\w{3}/g);
+                                }
+    
+                                if(caseid && meetid){
+                                    casesmeet[caseid[0]] = "https://meet.google.com/" + meetid[0]
+                                }
+                            });
+                            
+                            setChromeStorage("cdtx_listmeetlink", casesmeet, () => {
+                                Toastify({
+                                    text: 'Has update meet link!',
+                                    duration: 3000,
+                                    class: "warning",
+                                    callback: function(){
+                                        this.remove();
+                                    }
+                                }).showToast();
+                            });
+                        })
+                    }
+
+                });
+                  
                 var _isauto = true;
                 if(_isauto) {
                     var _dialogParent = document.querySelector("#yDmH0d"),
@@ -339,21 +370,21 @@ function tagTeamTDCXLoad() {
                             loadInputCase(elm, _datatemp);
                             elm.querySelector('[data-infocase="case_id"]').innerText = _caseid;
                             
-                            var alinkelm = _dialogParent.querySelector('[href*="meet.google.com"]');
-                            if(alinkelm) {
-                                var _link = alinkelm.getAttribute("href").split("?")[0];
+                            // var alinkelm = _dialogParent.querySelector('[href*="meet.google.com"]');
+                            // if(alinkelm) {
+                            //     var _link = alinkelm.getAttribute("href").split("?")[0];
 
-                                var _cusmeet = elm.querySelector('[data-infocase_link="customer_gmeet"]');
-                                var _cusmeet_input = elm.querySelector('[name="customer_gmeet"]');
-                                
-                                    _cusmeet.setAttribute("href", _link);
+                            //     var _cusmeet = elm.querySelector('[data-infocase_link="customer_gmeet"]');
+                            //     var _cusmeet_input = elm.querySelector('[name="customer_gmeet"]');
+                            //     // if(_cusmeet_input.value.length < 1) {
+                            //         _cusmeet.setAttribute("href", _link);
                                     
-                                    if(_cusmeet) {
-                                        _cusmeet_input.value = _link;
-                                    }
+                            //         if(_cusmeet) {
+                            //             _cusmeet_input.value = _link;
+                            //         }
+                            //     // }
                                 
-                                
-                            }
+                            // }
                         } 
                     }
     
@@ -378,27 +409,27 @@ function tagTeamTDCXLoad() {
                                             
                                         }
                             
-                                        
-                                        setTimeout(() => {
-                                            
-                                            var alinkelm = _dialogParent.querySelector('[href*="meet.google.com"]');
-                                            if(alinkelm) {
-                                                var _link = alinkelm.getAttribute("href").split("?")[0];
+                                        // // 2.1 formchanger
+                                        // setTimeout(() => {
+                                        //     // Save google meet link
+                                        //     var alinkelm = _dialogParent.querySelector('[href*="meet.google.com"]');
+                                        //     if(alinkelm) {
+                                        //         var _link = alinkelm.getAttribute("href").split("?")[0];
                                                 
-                                                var _cusmeet = elm.querySelector('[data-infocase_link="customer_gmeet"]');
-                                                var _cusmeet_input = elm.querySelector('[name="customer_gmeet"]');
-                                                
-                                                    _cusmeet_input.value = _link;
-                                                    if(_cusmeet) {
-                                                        _cusmeet.setAttribute("href", _link);
-                                                    }
+                                        //         var _cusmeet = elm.querySelector('[data-infocase_link="customer_gmeet"]');
+                                        //         var _cusmeet_input = elm.querySelector('[name="customer_gmeet"]');
+                                        //         // if(_cusmeet_input.value.length < 1) {
+                                        //             _cusmeet_input.value = _link;
+                                        //             if(_cusmeet) {
+                                        //                 _cusmeet.setAttribute("href", _link);
+                                        //             }
         
-                                                    
-                                                    elm.querySelector('[action="save"]').click();
+                                        //             // Action save
+                                        //             elm.querySelector('[action="save"]').click();
+                                        //         // }
                                                 
-                                                
-                                            }
-                                        }, 1000);
+                                        //     }
+                                        // }, 1000);
                                     } else {
                                         clearInput();
 
@@ -622,7 +653,17 @@ function tagTeamTDCXLoad() {
                 _object = _datatemp;
             }
 
-            
+            if(true) {
+                getChromeStorage("cdtx_listmeetlink", (response) => {
+                    var casesmeet = response.value || {};
+                    console.log("view casesmeet", casesmeet);
+                    if(casesmeet[_object.case_id]) {
+                        _object.customer_gmeet = casesmeet[_object.case_id];
+                        _panel.querySelector('[name="customer_gmeet"]').value = casesmeet[_object.case_id];
+                        _panel.querySelector('[data-infocase_link="customer_gmeet"]').setAttribute("href", casesmeet[_object.case_id]);
+                    }
+                });
+            }
             for (const property in _object) {
                 
 
