@@ -409,27 +409,27 @@ function tagTeamTDCXLoad() {
                                             
                                         }
                             
-                                        // // 2.1 formchanger
-                                        // setTimeout(() => {
-                                        //     // Save google meet link
-                                        //     var alinkelm = _dialogParent.querySelector('[href*="meet.google.com"]');
-                                        //     if(alinkelm) {
-                                        //         var _link = alinkelm.getAttribute("href").split("?")[0];
+                                        // 2.1 formchanger
+                                        setTimeout(() => {
+                                            // Save google meet link
+                                            var alinkelm = _dialogParent.querySelector('[href*="meet.google.com"]');
+                                            if(alinkelm) {
+                                                var _link = alinkelm.getAttribute("href").split("?")[0];
                                                 
-                                        //         var _cusmeet = elm.querySelector('[data-infocase_link="customer_gmeet"]');
-                                        //         var _cusmeet_input = elm.querySelector('[name="customer_gmeet"]');
-                                        //         // if(_cusmeet_input.value.length < 1) {
-                                        //             _cusmeet_input.value = _link;
-                                        //             if(_cusmeet) {
-                                        //                 _cusmeet.setAttribute("href", _link);
-                                        //             }
+                                                var _cusmeet = elm.querySelector('[data-infocase_link="customer_gmeet"]');
+                                                var _cusmeet_input = elm.querySelector('[name="customer_gmeet"]');
+                                                // if(_cusmeet_input.value.length < 1) {
+                                                    _cusmeet_input.value = _link;
+                                                    if(_cusmeet) {
+                                                        _cusmeet.setAttribute("href", _link);
+                                                    }
         
-                                        //             // Action save
-                                        //             elm.querySelector('[action="save"]').click();
-                                        //         // }
+                                                    // Action save
+                                                    elm.querySelector('[action="save"]').click();
+                                                // }
                                                 
-                                        //     }
-                                        // }, 1000);
+                                            }
+                                        }, 1000);
                                     } else {
                                         clearInput();
 
@@ -653,10 +653,9 @@ function tagTeamTDCXLoad() {
                 _object = _datatemp;
             }
 
-            if(true) {
+            if(_object.customer_gmeet == "") {
                 getChromeStorage("cdtx_listmeetlink", (response) => {
                     var casesmeet = response.value || {};
-                    console.log("view casesmeet", casesmeet);
                     if(casesmeet[_object.case_id]) {
                         _object.customer_gmeet = casesmeet[_object.case_id];
                         _panel.querySelector('[name="customer_gmeet"]').value = casesmeet[_object.case_id];
