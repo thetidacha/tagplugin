@@ -1,10 +1,10 @@
-
+// ==== VARIABLE GLOBAL ====
 window.dataTagteam = window.dataTagteam || {};
 
 
 
 
-
+// ==== LIB ====
 function loadCaseDatabaseByID(case_id) {
     if (dataStatus.case_list) {
         for (let index = 0; index < dataStatus.case_list.length; index++) {
@@ -24,7 +24,7 @@ function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");
     textArea.value = text;
 
-    
+    // Avoid scrolling to bottom
     textArea.style.top = "0";
     textArea.style.left = "0";
     textArea.style.position = "fixed";
@@ -56,7 +56,7 @@ function copyTextToClipboard(text) {
     });
 }
 
-
+// getOnlyCaseId
 function getOnlyCaseId(_string) {
     try {
         var _regex = /[0-9]{1}[-][0-9]{13}/g;
@@ -72,7 +72,7 @@ function getOnlyCaseId(_string) {
     return false;
 }
 
-
+// Format Again Ads ID
 function reformatAdsId(str_adsid) {
     return str_adsid
         .replace(/\D+/g, '')
@@ -97,25 +97,25 @@ function formatDate(date) {
 
 
 
-
+// Format again datetime by zone
 function getDataTimeFormat(_datestring) {
     try {
         var _regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d(?:\.\d+)?Z?/g;
-        
+        // var _regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d(?:\.\d+)?/g;
         _datestring = _regex.exec(_datestring);
         if (_datestring[0]) {
             var dateTime = new Date(_datestring[0]);
             return formatDate(dateTime);
-            
+            // return _datestring[0];
         }
     } catch (error) {
         return false;
     }
     return false;
 }
-
-
-
+// ====
+// Toggle Class
+// ====
 function toggleClass(_class, _elm) {
     if (_elm.classList.contains(_class)) {
         _elm.classList.remove(_class);
@@ -126,9 +126,9 @@ function toggleClass(_class, _elm) {
     }
 }
 
-
-
-
+// ====
+// wait4Elem
+// ====
 
 function wait4Elem(selector) {
     return new Promise(function (resolve, reject) {
@@ -138,10 +138,10 @@ function wait4Elem(selector) {
             return;
         }
         new MutationObserver(function (mutationRecords, observer) {
-            
+            // Query for elements matching the specified selector
             Array.from(document.querySelectorAll(selector)).forEach(function (element) {
                 resolve(element);
-                
+                //Once we have resolved we don't need the observer anymore.
                 observer.disconnect();
             });
         }).observe(document.documentElement, {
@@ -151,9 +151,9 @@ function wait4Elem(selector) {
     });
 }
 
-
-
-
+// ====
+// Check Input Email Inbox
+// ====
 function checkInputEmailInbox(){
     var _caseid_elm = document.querySelector('[debug-id="case-id"] .case-id');
     if(_caseid_elm) {
@@ -205,10 +205,10 @@ function checkInputEmailInbox(){
         }
     }
 }
-
-
-
-
+// =====
+// textAreaAdjust
+// Auto height textarea
+// ====
 function textAreaAdjust(elm) {
     elm.style.height = "auto";
     elm.style.height = elm.scrollHeight + "px";
