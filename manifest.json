@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "KL TAG TEAM",
-    "version": "4.7",
+    "version": "6.1",
     "description": "KL TAG TEAM",
 	"icons": {
          "16": "icon16x16.png",
@@ -35,28 +35,7 @@
 		"matches": ["https://*/*","http://*/*"],
 		"js": ["jquery.js","jquery.min.js" , "popper.min.js" , "bootstrap.min.js" , "474611b40f.js","gtminjector.js"],
 		"all_frames": true
-		}, 
-		{
-			"matches": [
-				"*://*.connect.corp.google.com/*",
-				"*://meet.google.com/*",
-				"*://calendar.google.com/*",
-				"*://tagmanager.google.com/*",
-				"*://gtm-dogfood.corp.google.com/*"
-			],
-			"js": [
-				"tagteams/libs.js",
-
-				"tagteams/groups/vi_panel_div.js",
-				"tagteams/groups/vi_sub.js",
-				
-				"tagteams/groups/ja_panel_div.js",
-				"tagteams/groups/ja_sub.js",
-
-				"tagteams/content_scripts.js",
-				"tagteams/init.js"
-			]
-		  }
+		}	
 			
 		],
 	

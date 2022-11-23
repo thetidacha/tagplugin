@@ -21,6 +21,12 @@ console.log('Value currently is ' + result.mycountry);
 		
 	}else if (result.mycountry == "Thailand") {
 		
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-5GHNQX3');
+
 		
 		console.log('Value currently is ' + result.mycountry + 'in IF ELSE') ;
 		var myemail = result.ouremail;
@@ -624,5 +630,26 @@ document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new E
 		  
 });
 
+
+//Auto refresh and check on Unassigned page in connect dash
+
+setInterval(function () {
+	if(window.location.href === "https://partnerdash.google.com/apps/appointments/" && document.querySelector('input:checked + label').textContent === "Unbooked "){
+    	
+    	document.querySelector('[mattooltip="Refresh"]').click();
+       	console.log('click refrehs button - dash page test test'); 
+
+    	setTimeout(function () {
+    	if( 
+        	document.querySelector('.is-empty') !== null) {console.log('no unassigned case yet')
+    	} else {
+        	console.log('checking cases')
+        	chrome.runtime.sendMessage({textyou: "toNotifyNoAppt"});
+    	}
+                         
+		}, 120000);   	 
+	}
+                    
+}, 600000);
 
 
