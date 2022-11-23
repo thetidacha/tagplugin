@@ -599,6 +599,10 @@ var vi_panel_div = `
                     </div>
                 </div>
                 <div class=" _panel__inner">
+                    <div class="_panel__linear-progress small">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                    </div>
                     <div class="_panel__form">
                         <div class="_panel__form--column">
                             <div class="_panel__topsticky_toolbar">
@@ -618,6 +622,10 @@ var vi_panel_div = `
                             <div class="_panel__form--panel" data-panel_title="Auto load GTM ID">
                                 <label title="Show ID in tagmanager.google.com"><input type="checkbox" name="auto_loadgtmid" data-infosetting="auto_loadgtmid" value="Show GTM ID"> Disable Show GTM ID</label>
                             </div>
+                        </div>
+                    </div>
+                    <div class="_panel__form">
+                        <div class="_panel__form--column">
                             <div class="_panel__form--panel" data-panel_title="Your name">
                                 <span class="_panel__form--label"><small>Your name: </small></span>
                                 <input type="text" name="your-name" value="YOUR FULL NAME" data-infosetting="your-name">
@@ -626,11 +634,17 @@ var vi_panel_div = `
                                 <span class="_panel__form--label"><small>Name: </small></span>
                                 <input type="text" name="your-shortname" value="YOUR SHORT NAME" data-infosetting="your-shortname">
                             </div>
+                        </div>
+                        <div class="_panel__form--column">
                             <div class="_panel__form--panel" data-panel_title="Sync Panel">
                                 <span class="_panel__form--label"><small>Sync Enable: </small></span>
                                 <input type="checkbox" name="sync_enable" data-infosetting="sync_enable" value="sync_enable">
                                 <span class="_panel_btn _panel_btn--small" data-btnaction="sync_panel">Sync</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="_panel__form">
+                        <div class="_panel__form--column">
                             <div class="_panel__form--panel" data-panel_title="List keystorage">
                                 <span class="_panel__form--label"><small>List keystorage: </small></span>
                                 <ul class="list_keystorage">
