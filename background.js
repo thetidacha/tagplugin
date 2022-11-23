@@ -246,7 +246,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 // 1. = 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) =>{
 	let key, value;
-	console.log("send", message.method);
 	
 	switch (message.method){
 	case 'fe2bg_realtime':
