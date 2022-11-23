@@ -242,5 +242,46 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	
 }
 
+//script for Reply function in google.
+// 1. = 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) =>{
+	let key, value;
+	console.log("send", message.method);
+	
+	switch (message.method){
+	case 'fe2bg_realtime':
+		const data = {
+			value: "fe2bg_realtime"
+		};
+		
+		sendResponse(data);
+		break;
 
+	case 'fe2bg_chromestorage_set':
+		key = message.key;
+		value = message.value;
+		let key_value = {};
+		key_value[key] = value;
+		chrome.storage.local.set(key_value, function() {
+			sendResponse(value);
+		  // console.log('SW storage Set:key=' + key + ' value=' + value);
+		});
+		break;
+		
+	case 'fe2bg_chromestorage_get':
+		key = message.key;
+		chrome.storage.local.get(key, function(result) {
+			sendResponse({value: result[key]});
+		});
+		break;
+		
+	case 'fe2bg_chromestorage_remove':
+		key = message.key;
+		chrome.storage.local.remove(key, function(result) {
+			sendResponse({rs: true});
+		});
+		break;
+	}
+	return true;
+});
 
