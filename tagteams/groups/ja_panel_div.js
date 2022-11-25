@@ -46,7 +46,7 @@ var ja_panel_div = `
                             <span class="_panel_btn _panel_btn--small" data-btnaction="list-case" title="List Case">List case</span>
                         </div>
                         <div class="_panel__topsticky_toolbar-gr">
-                            <span class="_panel_btn _panel_btn--small _panel_btn--icon" data-btnaction="crawl_case" title="Load Current">
+                            <span class="_panel_btn _panel_btn--small _panel_btn--icon" data-btnaction="crawl_case" title="Scan again value">
                                 <img src="https://www.svgrepo.com/show/105981/reload.svg" alt="" srcset="">
                             </span>
                             <button type="submit" action="save" class="_panel_btn _panel_btn--small">SAVE</button>

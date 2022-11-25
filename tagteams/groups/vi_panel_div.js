@@ -46,7 +46,7 @@ var vi_panel_div = `
                             <span class="_panel_btn _panel_btn--small" data-btnaction="list-case" title="List Case">List case</span>
                         </div>
                         <div class="_panel__topsticky_toolbar-gr">
-                            <span class="_panel_btn _panel_btn--small _panel_btn--icon" data-btnaction="crawl_case" title="Load Current">
+                            <span class="_panel_btn _panel_btn--small _panel_btn--icon" data-btnaction="crawl_case" title="Scan again value">
                                 <img src="https://www.svgrepo.com/show/105981/reload.svg" alt="" srcset="">
                             </span>
                             <button type="submit" action="save" class="_panel_btn _panel_btn--small">SAVE</button>
@@ -343,7 +343,7 @@ var vi_panel_div = `
                                             </li>
                                             <li>Xem hướng dẫn chèn mã tại: <a href="https://developers.google.com/tag-platform/tag-manager/web" target="_blank" style="color: rgb(26, 115, 232); text-decoration-line: none;" class="ignore-globals">https://developers.google.com/tag-platform/tag-manager/web</a><br></li>
                                         </ol>
-                                        <p dir="auto">Cuộc hẹn tiếp theo để hướng dẫn <span data-infocase="customer_gender">anh</span> sẽ <b>vào lúc 4 giờ chiều ngày 1/11/2022 theo giờ Việt Nam. </b>Rất mong sự có mặt của anh để hoàn thành quá trình cài đặt cho trường hợp này.</p>
+                                        <p dir="auto">Cuộc hẹn tiếp theo để hướng dẫn <span data-infocase="customer_gender">anh</span> sẽ <b>vào lúc 4 giờ chiều ngày 1/11/2022 theo giờ Việt Nam. </b>Rất mong sự có mặt của <span data-infocase="customer_gender">anh</span> để hoàn thành quá trình cài đặt cho trường hợp này.</p>
                                         <p dir="auto">Xin cảm ơn!</p>
                                         <p dir="auto">Trân trọng!</p>
                                         <p dir="auto"><span data-infosetting="your-name">Dong Mai</span> <br><i>Đội giải pháp kỹ thuật</i> <br><i>TDCX đại diện của Google</i></p>
@@ -358,7 +358,7 @@ var vi_panel_div = `
                             <div class="_emailtemp-item__content">
                                 <div id="email-body-content-top" style="width: 100%;">
                                     <div id="email-body-content-top-content" style=" font-style: normal; font-variant: normal; font-stretch: normal; font-size: 13px; line-height: 17px; font-family: Roboto, sans-serif; display: block; " dir="auto">
-                                        <p dir="auto"> <span style="font-weight: normal;"><span data-infocase="customer_gender" style="text-transform: capitalize;">Anh</span> <span data-infocase="customer_name">CUSTOMER NAME</span></span> thân mến!<br /> <br /> Chúng tôi đã nhận được yêu cầu của anh về việc dời lịch cho cuộc gọi hỗ trợ triển khai <b><span data-infocase="request">ZZZ</span> </b> cho <span><b><span data-infocase="customer_website">nhuahuongchi.com</span></b></span>. </p>
+                                        <p dir="auto"> <span style="font-weight: normal;"><span data-infocase="customer_gender" style="text-transform: capitalize;">Anh</span> <span data-infocase="customer_name">CUSTOMER NAME</span></span> thân mến!<br /> <br /> Chúng tôi đã nhận được yêu cầu của <span data-infocase="customer_gender">anh</span> về việc dời lịch cho cuộc gọi hỗ trợ triển khai <b><span data-infocase="request">ZZZ</span> </b> cho <span><b><span data-infocase="customer_website">nhuahuongchi.com</span></b></span>. </p>
                                         <p dir="auto" style="font-weight: normal;"></p>
                                         <p style="font-weight: normal;" dir="auto"> Chúng tôi rất mong được trợ giúp <span data-infocase="customer_gender">anh</span>! Xin lưu ý rằng do nhu cầu sử dụng dịch vụ của chúng tôi đang ở mức cao, nên chúng tôi không có nhiều thời gian rảnh. Chúng tôi hiểu rằng việc triển khai này rất quan trọng đối với <span data-infocase="customer_gender">anh</span>, vì vậy,<strong> điều quan trọng là <span data-infocase="customer_gender">anh</span> có thể tham gia cuộc gọi vào thời điểm đã lên lịch để tránh bỏ lỡ cơ hội này. Đây là lần dời lịch cuối cùng và chúng tôi sẽ không thể tiếp tục dời lịch hẹn nữa.</strong> </p>
                                         <p style="font-weight: normal;" dir="auto"> <br /> <strong>Lịch hẹn đã được dời sang <font color="#9c166b"><span>11 giờ ngày 19/10/2022 theo giờ Việt Nam</span></font> và chúng tôi sẽ gọi cho <span data-infocase="customer_gender">anh</span> theo số điện thoại mà <span data-infocase="customer_gender">anh</span> đã cung cấp: </strong> <strong><span data-infocase="customer_contact">+84 96 693 19 48</span></strong><br /> <br /> Nếu <span data-infocase="customer_gender">anh</span> không rảnh vào thời gian này vì bất cứ lý do gì, vui lòng cho chúng tôi biết bằng cách trả lời email này.<br /> <br /> Chúng tôi rất mong được trò chuyện với <span data-infocase="customer_gender">anh</span>! </p>
