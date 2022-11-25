@@ -154,18 +154,6 @@ function tagTeamTDCXLoad() {
                 }
             }
             
-            // Is Precall?
-            if(location.href.includes("cases.connect.corp.google.com/#/case")) {
-                var is_precall = false;
-                document.querySelectorAll(".case-log-container.active-case-log-container case-message-view").forEach(function(elm){
-                   if(elm.innerText.includes("Emails or feedback from Advertiser")) {
-                        is_precall = true;
-                   }
-                });
-                if(is_precall === false) {
-                    alert("Not Precall");
-                }
-            }
             
             
             const staticHtmlPolicyv2 = trustedTypes.createPolicy(
@@ -248,24 +236,39 @@ function tagTeamTDCXLoad() {
                 console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- [debug-id="case-id"] .case-id');
             });
         
-            // n_time_dkneed++;
-            wait4Elem("#read-card-tab-panel-case-log .activities > div").then((elm1) => {    
+            n_time_dkneed++;
+            wait4Elem("#read-card-tab-panel-case-log .case-log-container.active-case-log-container .activities > div").then((elm1) => {    
                 document.querySelector('[debug-id="dock-item-case-log"]').click();
                 document.querySelector('[debug-id="dock-item-home"]').click();
 
-                document.querySelectorAll('#read-card-tab-panel-case-log .activities > div').forEach(function(elm){
+                document.querySelectorAll('#read-card-tab-panel-case-log .case-log-container.active-case-log-container .activities > div').forEach(function(elm){
                     if(elm.innerText.includes('Review case in Connect Sales')) {            
                         // console.log(elm.querySelector("table"))
     
                         elm.querySelector('case-message-view .message-content-container-full').click();
                     
-                        wait4Elem("#read-card-tab-panel-case-log  .activities > div table tr").then( (elm2) => {
-                            // is_ready(n_time_dkneed_compare++);
-                            console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- read-card-tab-panel-case-log');
+                        wait4Elem("#read-card-tab-panel-case-log .case-log-container.active-case-log-container .activities > div table tr").then( (elm2) => {
+                            is_ready(n_time_dkneed_compare++);
+                            console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- message-content-container-full');
+
                             
                         })
                     }
-                })
+                });
+
+                // Recheck pre call?
+                // Is Precall?
+                if(location.href.includes("cases.connect.corp.google.com/#/case")) {
+                    var is_precall = false;
+                    document.querySelectorAll(".case-log-container.active-case-log-container case-message-view").forEach(function(elm){
+                        if(elm.innerText.includes("Emails or feedback from Advertiser")) {
+                                is_precall = true;
+                        }
+                    });
+                    if(is_precall === false) {
+                        alert("Not Precall");
+                    }
+                }
             });
 
             
@@ -893,8 +896,8 @@ function tagTeamTDCXLoad() {
                                 _card_istop.querySelector('[debug-id="add_highlight"]').click();
                             
                             // Click offer
-                                if(_this.closest("._emailtemp-item").getAttribute("data-type") === "SO - Verified" ||
-                                    _this.closest("._emailtemp-item").getAttribute("data-type") === "SO - Verification Not Needed"
+                                if(
+                                    _this.closest("._emailtemp-item").getAttribute("data-type").includes("SO - ")
                                 ) {
                                 
                                     if(_card_istop.querySelector('[debug-id="solution_offered_checkbox"].disabled')) {
@@ -910,8 +913,6 @@ function tagTeamTDCXLoad() {
                                 document.querySelector('compose-card-content-wrapper').click();
                                 document.querySelector('compose-card-content-wrapper').focus();
                                 
-                            // Open document doc list
-                                document.querySelector('[debug-id="dock-item-issue"]').click();
                         });
                         
                     }
@@ -1370,7 +1371,7 @@ function tagTeamTDCXLoad() {
             
             
 
-            document.querySelectorAll('#read-card-tab-panel-case-log .activities > div').forEach(function(elm){
+            document.querySelectorAll('#read-card-tab-panel-case-log .case-log-container.active-case-log-container .activities > div').forEach(function(elm){
                 if(elm.innerText.includes('Review case in Connect Sales')) {            
                     // console.log(elm.querySelector("table"))
 
