@@ -6,7 +6,10 @@ function save_options() {
   console.log(country);
   chrome.runtime.sendMessage({message: country});
   
-  	if(country == "Vietnam") {
+  var optionkl__disable_dialog = document.getElementById('optionkl__disable-dialog').checked || false;
+  var optionkl__disable_focuscase = document.getElementById('optionkl__disable-focuscase').checked || false;
+
+  if(country == "Vietnam") {
 		
 		chrome.browserAction.setBadgeText({text: "VN"}); 
 				
@@ -42,7 +45,10 @@ function save_options() {
 
 
   chrome.storage.sync.set({
-    mycountry: country, ouremail: youremail
+    mycountry: country, 
+    ouremail: youremail,
+    optionkl__disable_dialog: optionkl__disable_dialog,
+    optionkl__disable_focuscase: optionkl__disable_focuscase
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -98,14 +104,26 @@ function stop_injector() {
 
 
 function restore_options() {
-	
 	var y = "";
-
-  chrome.storage.sync.get({mycountry: 'Thailand',ouremail: 'xxx@google.com', myInjector: 'gtm-xxx',gtmToDo: 'notStart'}, function(items) {
+  chrome.storage.sync.get({
+    mycountry: 'Thailand',
+    ouremail: 'xxx@google.com', 
+    myInjector: 'gtm-xxx',
+    gtmToDo: 'notStart',
+    optionkl__disable_dialog: false,
+    optionkl__disable_focuscase: false
+  }, function(items) {
+    console.log(items);
 	console.log('why not here ' + items.myInjector + ' ' +items.gtmToDo);
     document.getElementById('country').value = items.mycountry;
 	document.getElementById('youremail').value = items.ouremail;
 	document.getElementById('yourGTM').value = items.myInjector;
+
+	document.getElementById('optionkl').setAttribute("data-optionkl", items.mycountry);
+	document.getElementById('optionkl__disable-dialog').checked = items.optionkl__disable_dialog;
+	document.getElementById('optionkl__disable-focuscase').checked = items.optionkl__disable_focuscase;
+
+
 	console.log(items.ouremail);
 	y = items.mycountry;
 	window.superx = y;

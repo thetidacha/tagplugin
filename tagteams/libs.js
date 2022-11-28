@@ -155,15 +155,26 @@ function wait4Elem(selector) {
 // Check Input Email Inbox
 // ====
 function checkInputEmailInbox(){
+    var _global_status = {
+        "test": false
+    };
+
+    if(location.href.includes("cdtx-assistant/cases_connect")) {
+        _global_status.test = true;
+    }
+
     var _caseid_elm = document.querySelector('[debug-id="case-id"] .case-id');
     if(_caseid_elm) {
         var caseload = loadCaseDatabaseByID(_caseid_elm.innerText);
         if(caseload) {
-            console.log(caseload);
             var unmaskbutton = document.querySelectorAll('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top .unmask-button');
             if(unmaskbutton.length) {
                 unmaskbutton.forEach(function (elm) {
                     elm.click();
+                    
+                    if(_global_status.test) {
+                        elm.classList.remove("unmask-button");
+                    }
                 });
             }
 
@@ -171,8 +182,8 @@ function checkInputEmailInbox(){
                 setTimeout(function(){
                     var unmaskbutton = document.querySelectorAll('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top .unmask-button');
                     if(unmaskbutton.length) {
-                        console.log('recheckand_alert');
                         recheckand_alert();
+                        return false;
                     }
                     
                     var _email_input_to = document.querySelector('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top email-address-input.input.to');
@@ -201,6 +212,8 @@ function checkInputEmailInbox(){
 
                 }, 1000)
             }
+
+            recheckand_alert();
             
         }
     }
@@ -215,13 +228,21 @@ function textAreaAdjust(elm) {
 }
 
 function tagteam_showGTMID() {
-    wait4Elem("gtm-container-public-id").then(() => {
-        var gtmpublish = document.querySelector("gtm-container-public-id");
-        var gtmclone = document.querySelector(".gtm-clone");
-        if(gtmpublish && !gtmclone) {
-            var gtm_id = gtmpublish.innerText.trim();
-            gtmpublish.insertAdjacentHTML("afterEnd", `<span class="gtm-clone" style="font-size: 14px;border: 1px solid #ccc;margin: 10px;padding: 10px;background: #fff;box-shadow: 0 0 17px #ccc;display: inline-block;line-height: 1;text-align: left;"><small style="user-select: none; display: block; color: #888; font-size: 70%; ">Copy below</small><span style=" user-select: all; margin: 7px 0; display: block; ">${gtm_id}</span></span>`)
+    // If has => make recheck interval
+    wait4Elem("gtm-container-public-id").then((elm) => {
+        var is_copy = () => {
+            var gtmpublish = document.querySelector(".gtm-container-public-id");
+            var gtmclone = document.querySelector(".gtm-clone");
+            if(gtmpublish && !gtmclone) {
+                var gtm_id = gtmpublish.innerText.trim();
+                gtmpublish.insertAdjacentHTML("afterEnd", `<span class="gtm-clone" style="font-size: 14px;border: 1px solid #ccc;margin: 10px;padding: 10px;background: #fff;box-shadow: 0 0 17px #ccc;display: inline-block;line-height: 1;text-align: left;"><small style="user-select: none; display: block; color: #888; font-size: 70%; ">Copy below</small><span style=" user-select: all; margin: 7px 0; display: block; ">${gtm_id}</span></span>`)
+            }
         }
+
+        is_copy();
+        setInterval(() => {
+            is_copy();
+        }, 3000);
     });
     
 }

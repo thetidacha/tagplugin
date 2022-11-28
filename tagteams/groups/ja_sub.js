@@ -3,7 +3,6 @@ var ja_language = {
     'appointment_time': 'Appointment Time',
     'google_ads_external_customer_id': 'Google Ads External Customer ID',
     'phone_prefix' : "+84",
-    'please_assign_this_task' : "please assign this task!!!",
 };
 
 var ja_api_blog = 'https://cdtx.lyl.vn/wordpress/wp-json/tagteam/blogs';
