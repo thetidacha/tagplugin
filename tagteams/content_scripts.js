@@ -236,7 +236,7 @@ function tagTeamTDCXLoad() {
                 console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- [debug-id="case-id"] .case-id');
             });
         
-            n_time_dkneed++;
+            // n_time_dkneed++;
             wait4Elem("#read-card-tab-panel-case-log .case-log-container.active-case-log-container .activities > div").then((elm1) => {    
                 document.querySelector('[debug-id="dock-item-case-log"]').click();
                 document.querySelector('[debug-id="dock-item-home"]').click();
@@ -248,7 +248,7 @@ function tagTeamTDCXLoad() {
                         elm.querySelector('case-message-view .message-content-container-full').click();
                     
                         wait4Elem("#read-card-tab-panel-case-log .case-log-container.active-case-log-container .activities > div table tr").then( (elm2) => {
-                            is_ready(n_time_dkneed_compare++);
+                            // is_ready(n_time_dkneed_compare++);
                             console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- message-content-container-full');
 
                             
@@ -265,8 +265,16 @@ function tagTeamTDCXLoad() {
                                 is_precall = true;
                         }
                     });
+                    
                     if(is_precall === false) {
-                        alert("Not Precall");
+                        Toastify({
+                            text: 'Not Precall',
+                            duration: 6000,
+                            class: "error",
+                            callback: function(){
+                                this.remove();
+                            }
+                        }).showToast();
                     }
                 }
             });
@@ -321,7 +329,7 @@ function tagTeamTDCXLoad() {
                         Toastify({
                             text: 'NEW!!!! This case is new',
                             duration: 3000,
-                            class: "warning",
+                            class: "success",
                             callback: function(){
                                 this.remove();
                             }
@@ -370,31 +378,33 @@ function tagTeamTDCXLoad() {
                 // Set auto by checkbox
                 document.addEventListener("readystatechange", (event) => {
                     if(document.readyState === "complete") {
-                        getChromeStorage("cdtx_listmeetlink", (response) => {
-                            var casesmeet = response.value || {};
-                            document.querySelectorAll('[jslog][data-eventid]').forEach(function(elm){
-                                var jslog = elm.getAttribute('jslog');
-                                var caseid = elm.innerText.match(/\d-\d+/g);
-                                if(jslog){
-                                    var meetid = jslog.match(/\w{3}-\w{4}-\w{3}/g);
-                                }
-    
-                                if(caseid && meetid){
-                                    casesmeet[caseid[0]] = "https://meet.google.com/" + meetid[0]
-                                }
-                            });
-                            
-                            setChromeStorage("cdtx_listmeetlink", casesmeet, () => {
-                                Toastify({
-                                    text: 'Has update meet link!',
-                                    duration: 3000,
-                                    class: "warning",
-                                    callback: function(){
-                                        this.remove();
+                        var is_updatelist_link = () => {
+                            getChromeStorage("cdtx_listmeetlink", (response) => {
+                                var casesmeet = response.value || {};
+                                document.querySelectorAll('[jslog][data-eventid]').forEach(function(elm){
+                                    var jslog = elm.getAttribute('jslog');
+                                    var caseid = elm.innerText.match(/\d-\d+/g);
+                                    if(jslog){
+                                        var meetid = jslog.match(/\w{3}-\w{4}-\w{3}/g);
                                     }
-                                }).showToast();
+        
+                                    if(caseid && meetid){
+                                        casesmeet[caseid[0]] = "https://meet.google.com/" + meetid[0]
+                                    }
+                                });
+                                
+                                setChromeStorage("cdtx_listmeetlink", casesmeet, () => {
+                                    console.log("Has update meet link!");
+                                });
                             });
-                        })
+                        }
+
+                        is_updatelist_link();
+
+                        // reUpdate 20mins
+                        setInterval(() => {
+                            is_updatelist_link();
+                        }, 1000 * 60 * 20)
                     }
 
                 });
@@ -723,8 +733,15 @@ function tagTeamTDCXLoad() {
             _panel.querySelector('[data-infocase_link="case_id"]').setAttribute("href", "https://cases.connect.corp.google.com/#/case/" + _datatemp.case_id);
             _panel.querySelector('[data-infocase_link="customer_ocid"]').setAttribute("href", "https://adwords.corp.google.com/aw/overview?ocid=" + _datatemp.customer_ocid);
             
+            //Format date
+            _panel.querySelector('[data-infocase="local_format_meeting_time"]').innerText = new Date(_datatemp.meeting_time).toLocaleDateString('en-GB')
             
+            // section google meet
+            if(_object.customer_gmeet) {
+                _panel.querySelector('[data-infocase="linkgooglemeet_section"]').innerHTML = `Truy cập link google cuộc họp <a href="${_object.customer_gmeet}" >tại đây</a> Hoặc qua: <a href="${_object.customer_gmeet}" >${_object.customer_gmeet}</a>`;
+            }
 
+            // Link
             _panel.querySelector('[data-infocase="customer_website"]').setAttribute("href", _datatemp.customer_website);
 
 
@@ -900,8 +917,16 @@ function tagTeamTDCXLoad() {
                                     _this.closest("._emailtemp-item").getAttribute("data-type").includes("SO - ")
                                 ) {
                                 
-                                    if(_card_istop.querySelector('[debug-id="solution_offered_checkbox"].disabled')) {
-                                        alert("Please update Tracking Issue Time");
+                                    if(_card_istop.querySelector('[debug-id="solution_offered_checkbox"].disabled')) {                                        
+                                        Toastify({
+                                            text: 'Please update Tracking Issue Time',
+                                            duration: 3000,
+                                            class: "warning",
+                                            callback: function(){
+                                                this.remove();
+                                            }
+                                        }).showToast();
+
                                         document.querySelector('[debug-id="dock-item-issue"]').click();
                                     }
                                     
@@ -1137,7 +1162,8 @@ function tagTeamTDCXLoad() {
                     // opensetting
                     if(_action === 'firstemail') {
                         // 2. Save
-                        window.dataTagteam.sendFirstEmail();
+                        // window.dataTagteam.sendFirstEmail();
+                        panel_div.querySelector(`[data-btnaction="emailtemp__insert1stemail"]`).click();
                     }
                     
                     // open tip and tutorial
@@ -1366,7 +1392,15 @@ function tagTeamTDCXLoad() {
             if(document.querySelector(`[debug-id="assignee"]`)) {
                 _datatemp.assignee = document.querySelector(`[debug-id="assignee"]`).innerText;
             } else {
-                alert(window.dataTagteam.language.please_assign_this_task || "please_assign_this_task");
+                Toastify({
+                    text: 'This task has not been assigned yet!!',
+                    duration: 3000,
+                    class: "warning",
+                    callback: function(){
+                        this.remove();
+                    }
+                }).showToast();
+
             }
             
             
@@ -1557,10 +1591,6 @@ function tagTeamTDCXLoad() {
 
                             formData.append('action', "case_save");
                             
-                            Toastify({
-                                text: 'PROCCESS ...',
-                                duration: 3000
-                            }).showToast();
 
                             formData.forEach((value, key) => (formDataObj[key] = value));
 
@@ -1751,7 +1781,14 @@ function tagTeamTDCXLoad() {
                             }
                             
                         } catch (error) {
-                            console.log("===== New Version Tag VN Extension -> Please refresh page ....");
+                            Toastify({
+                                text: 'New Version Tag VN Extension<br> PLEASE REFRESH PAGE',
+                                duration: 1000 * 5,
+                                class: "error",
+                                callback: function(){
+                                    this.remove();
+                                }
+                            }).showToast();
                             clearInterval(myRecheckRealtime);
                         }
                     }, 2000);
@@ -1775,6 +1812,7 @@ function tagTeamTDCXLoad() {
         }
 
         var loadpanel = (is_reload = false) => {
+
             if(window.dataTagTeamSettings.sync_enable) {
                 getChromeStorage('cdtx_paneldivhtml', (response) => {
 
@@ -1831,12 +1869,29 @@ function tagTeamTDCXLoad() {
             getChromeStorage("cdtx_datastatus", (response) => {
                 dataStatus = response.value || dataStatus;
                 loadDataStatusCaseList(() => {
-                    loadpanel();
+
+                    // Load Dialog 
+                    chrome.storage.sync.get({ 
+                        optionkl__disable_dialog: false,
+                    }, function (result) {
+                        if (result.optionkl__disable_dialog === false) {
+                            loadpanel();
+                        }
+                    });
+
+
                 });
     
                 // Load code van bo
                 is_ready4codevanbo(() => {
-                    autoLoadCode('auto_loadcode_vanbo')
+                    // Load Focus 
+                    chrome.storage.sync.get({ 
+                        optionkl__disable_focuscase: false
+                    }, function (result) {
+                        if (result.optionkl__disable_focuscase === false) {
+                            autoLoadCode('auto_loadcode_vanbo');
+                        }
+                    });
                 });
                 var hashchange_oncevanbo = hashchange_oncevanbo || false;
                 if(hashchange_oncevanbo === false) {
@@ -1844,7 +1899,14 @@ function tagTeamTDCXLoad() {
                     window.addEventListener('hashchange', () => { 
                         if(location.href.includes("cases.connect.corp.google.com/#/case")) {
                             is_ready4codevanbo(() => {
-                                autoLoadCode('auto_loadcode_vanbo')
+                                // Load Focus 
+                                chrome.storage.sync.get({ 
+                                    optionkl__disable_focuscase: false
+                                }, function (result) {
+                                    if (result.optionkl__disable_focuscase === false) {
+                                        autoLoadCode('auto_loadcode_vanbo');
+                                    }
+                                });
                             });
                         }
                     }, false);
