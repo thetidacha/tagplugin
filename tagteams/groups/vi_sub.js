@@ -245,10 +245,27 @@ var vi_TagteamFocusCase = () => {
             'IN - Other::ts in oth'
             ];
             var subjects = {
-            'ts so verif': 'Đội giải pháp kỹ thuật – Đã xác minh lượt hiển thị/lượt chuyển đổi',
-            'ts as resched1':'Đội giải pháp kỹ thuật - Đặt lại lịch hẹn',
-            'ts ni ai':'Đội giải pháp kỹ thuật – Chờ thông tin phản hồi từ nhà quảng cáo',
-            'ts ni av':'Đội giải pháp kỹ thuật – Đợi xác minh luợt chuyển đổi - dữ liệu',
+                'ts as wip offtfr':'Đội giải pháp kỹ thuật - Thông báo',
+                'ts as wip offs':'Đội giải pháp kỹ thuật - Thông báo',
+                'ts as resched1':'Đội giải pháp kỹ thuật - Đặt lại lịch hẹn lần 2',
+                'ts as reschedok':'',
+                'ts so verif':'Đội giải pháp kỹ thuật – Đã xác minh lượt hiển thị/lượt chuyển đổi',
+                'ts so verif nrc':'Đội giải pháp kỹ thuật - Xác nhận triển khai thành công',
+                'ts so unv':'Đội giải pháp kỹ thuật - Triển khai Tag đã hoàn tất',
+                'ts so vnn':'Đội giải pháp kỹ thuật - Triển khai thành công',
+                'ts ni ai':'Đội giải pháp kỹ thuật – Chờ thông tin phản hồi từ nhà quảng cáo',
+                'ts ni ic':'Đội giải pháp kỹ thuật - Thông báo',
+                'ts ni av':'Đội giải pháp kỹ thuật – Đợi xác minh lượt chuyển đổi - dữ liệu',
+                'ts ni ac':'Đội giải pháp kỹ thuật – Không liên hệ được nhà quảng cáo',
+                'ts ni oth':'Đội giải pháp kỹ thuật - Thông báo',
+                'ts in inf':'Đội giải pháp kỹ thuật – Không thể cài đặt',
+                'ts in nrch':'Đội giải pháp kỹ thuật – Không nhận được phản hồi từ nhà quảng cáo',
+                'ts in ni':'Đội giải pháp kỹ thuật – Nhà quảng cáo không cần hỗ trợ',
+                'ts in nrdy':'Đội giải pháp kỹ thuật – Nhà quảng cáo chưa sẵn sàng',
+                'ts in oost':'Đội giải pháp kỹ thuật – Chuyển yêu cầu cho đội ngũ thích hợp',
+                'ts in oosu':'Đội giải pháp kỹ thuật - Thông báo',
+                'ts in oos seller':'Đội giải pháp kỹ thuật - Thông báo',
+                'ts in oth':'Đội giải pháp kỹ thuật – Trường hợp khác',
             };
         
             var crList = document.createElement('ul');
@@ -534,4 +551,5 @@ var vi_TagteamFocusCase = () => {
     } catch (error) {
         console.error("tagteamFocusCase => ", error);
     }
+    
 }
