@@ -85,13 +85,53 @@ button, input, optgroup, select, textarea{
     margin-bottom: 0px;
 }
 
-[data-optionkl]:not([data-optionkl="Vietnam"]) .optionkl__option{
+
+/*  [data-optionkl="Vietnam"]  */
+[data-optionkl="Vietnam"] .optionkl__option {
+  font-size: 14px;
+  border: 1px solid #ddd;
+  padding: 6px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+[data-optionkl="Vietnam"] .optionkl__option label {
+  user-select: none;
+}
+
+[data-optionkl="Vietnam"] .optionkl__option-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[data-optionkl="Vietnam"] .optionkl__option-col {
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}
+
+[data-optionkl="Vietnam"] .optionkl__option-col:not(:last-child) {
+  margin-right: 10px;
+}
+
+[data-optionkl="Vietnam"] .optionkl__option-col input[type="text"] {
+  width: 100%;
+  color: #444;
+}
+
+[data-optionkl]:not([data-optionkl="Vietnam"]) .optionkl__option {
     display: none;
 }
 
-[data-optionkl="Vietnam"] input[type="checkbox"]{
+[data-optionkl="Vietnam"] input[type="checkbox"] {
     width: auto;
 }
+[data-optionkl="Vietnam"] ._yourGTM,
+[data-optionkl="Vietnam"] .tabs-wrap {
+    display: none;
+}
+
+/* END Vietnam */
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active , .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover ,.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:focus {
     color: black;
@@ -227,12 +267,27 @@ table thead, table tbody tr {
 	
             <p>Your current country : <b><span id="c_country">xxxxxx</span></b></p>
             <div class="optionkl__option">
-              <label><input type="checkbox" id="optionkl__disable-dialog"> Disable dialog</label> -- <label><input type="checkbox" id="optionkl__disable-focuscase"> Disable focus case</label>
+              <div class="optionkl__option-row">
+                <label class="optionkl__option-col"><input type="text" id="optionkl__inputyourname" placeholder="Signal name, ex: Tim Cook"></label>
+                <label class="optionkl__option-col"><input type="text" id="optionkl__inputyourshortname" placeholder="Name, ex: Tim"></label>
+              </div>
+              <div class="optionkl__option-row">
+                <div class="optionkl__option-col">
+                  <label>
+                    <input type="checkbox" id="optionkl__disable-dialog"> Disable dialog
+                  </label> 
+                  --- 
+                  <label>
+                    <input type="checkbox" id="optionkl__disable-focuscase"> Disable focus case
+                  </label>
+                </div>
+              </div>
             </div>
 
 	        <p>Your email : <input class="col-6" id="youremail" type="text" name="youremail" value="xxx@mail.com"></p>
-			<p>GTM Injector : <input class="col-4 mr-2" id="yourGTM" type="text" name="yourGTM" value="gtm-xxx"><button id="startGTM" type="button" class="btn btn-outline-success mx-2 col-2"><i class="far fa-save" style="font-size:12px;margin-right:0.5rem"></i><span style="font-size:12px;">Start</span></button><button id="stopGTM" type="button" class="btn btn-outline-danger mx-2 col-2"><i class="far fa-save" style="font-size:12px;margin-right:0.5rem"></i><span style="font-size:12px;">Stop</span></button></p>
-
+          <div class="_yourGTM">
+            <p>GTM Injector : <input class="col-4 mr-2" id="yourGTM" type="text" name="yourGTM" value="gtm-xxx"><button id="startGTM" type="button" class="btn btn-outline-success mx-2 col-2"><i class="far fa-save" style="font-size:12px;margin-right:0.5rem"></i><span style="font-size:12px;">Start</span></button><button id="stopGTM" type="button" class="btn btn-outline-danger mx-2 col-2"><i class="far fa-save" style="font-size:12px;margin-right:0.5rem"></i><span style="font-size:12px;">Stop</span></button></p>
+          </div>
 	       <div id="status"></div>
             <div class="row">
                 

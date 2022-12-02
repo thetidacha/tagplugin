@@ -3,7 +3,9 @@ function tagTeamTDCXLoad() {
         "test": false
     };
 
-    if(location.href.includes("cdtx-assistant/cases_connect")) {
+    window.tagteamoption = {};
+
+    if(window.location.hostname.includes("cdtx.lyl.vn")) {
         _global_status.test = true;
     }
 
@@ -37,17 +39,11 @@ function tagTeamTDCXLoad() {
     }
 
     // Libs
-    // Draggabilly
-        !function(t,i){"function"==typeof define&&define.amd?define(["jquery"],(function(e){return i(t,e)})):"object"==typeof module&&module.exports?module.exports=i(t,require("jquery")):t.jQueryBridget=i(t,t.jQuery)}(window,(function(t,i){"use strict";var e=Array.prototype.slice,n=t.console,o=void 0===n?function(){}:function(t){n.error(t)};function s(n,s,h){function a(t,i,e){var s,r="$()."+n+'("'+i+'")';return t.each((function(t,a){var d=h.data(a,n);if(d){var u=d[i];if(u&&"_"!=i.charAt(0)){var l=u.apply(d,e);s=void 0===s?l:s}else o(r+" is not a valid method")}else o(n+" not initialized. Cannot call methods, i.e. "+r)})),void 0!==s?s:t}function d(t,i){t.each((function(t,e){var o=h.data(e,n);o?(o.option(i),o._init()):(o=new s(e,i),h.data(e,n,o))}))}(h=h||i||t.jQuery)&&(s.prototype.option||(s.prototype.option=function(t){h.isPlainObject(t)&&(this.options=h.extend(!0,this.options,t))}),h.fn[n]=function(t){if("string"==typeof t){var i=e.call(arguments,1);return a(this,t,i)}return d(this,t),this},r(h))}function r(t){!t||t&&t.bridget||(t.bridget=s)}return r(i||t.jQuery),s})),
-        function(t,i){"object"==typeof module&&module.exports?module.exports=i():t.getSize=i()}(window,(function(){function t(t){let i=parseFloat(t);return-1==t.indexOf("%")&&!isNaN(i)&&i}let i=["paddingLeft","paddingRight","paddingTop","paddingBottom","marginLeft","marginRight","marginTop","marginBottom","borderLeftWidth","borderRightWidth","borderTopWidth","borderBottomWidth"];i.length;return function(e){if("string"==typeof e&&(e=document.querySelector(e)),!(e&&"object"==typeof e&&e.nodeType))return;let n=getComputedStyle(e);if("none"==n.display)return function(){let t={width:0,height:0,innerWidth:0,innerHeight:0,outerWidth:0,outerHeight:0};return i.forEach((i=>{t[i]=0})),t}();let o={};o.width=e.offsetWidth,o.height=e.offsetHeight;let s=o.isBorderBox="border-box"==n.boxSizing;i.forEach((t=>{let i=n[t],e=parseFloat(i);o[t]=isNaN(e)?0:e}));let r=o.paddingLeft+o.paddingRight,h=o.paddingTop+o.paddingBottom,a=o.marginLeft+o.marginRight,d=o.marginTop+o.marginBottom,u=o.borderLeftWidth+o.borderRightWidth,l=o.borderTopWidth+o.borderBottomWidth,c=t(n.width);!1!==c&&(o.width=c+(s?0:r+u));let p=t(n.height);return!1!==p&&(o.height=p+(s?0:h+l)),o.innerWidth=o.width-(r+u),o.innerHeight=o.height-(h+l),o.outerWidth=o.width+a,o.outerHeight=o.height+d,o}})),function(t,i){"object"==typeof module&&module.exports?module.exports=i():t.EvEmitter=i()}("undefined"!=typeof window?window:this,(function(){function t(){}let i=t.prototype;return i.on=function(t,i){if(!t||!i)return this;let e=this._events=this._events||{},n=e[t]=e[t]||[];return n.includes(i)||n.push(i),this},i.once=function(t,i){if(!t||!i)return this;this.on(t,i);let e=this._onceEvents=this._onceEvents||{};return(e[t]=e[t]||{})[i]=!0,this},i.off=function(t,i){let e=this._events&&this._events[t];if(!e||!e.length)return this;let n=e.indexOf(i);return-1!=n&&e.splice(n,1),this},i.emitEvent=function(t,i){let e=this._events&&this._events[t];if(!e||!e.length)return this;e=e.slice(0),i=i||[];let n=this._onceEvents&&this._onceEvents[t];for(let o of e){n&&n[o]&&(this.off(t,o),delete n[o]),o.apply(this,i)}return this},i.allOff=function(){return delete this._events,delete this._onceEvents,this},t})),
-        function(t,i){"object"==typeof module&&module.exports?module.exports=i(t,require("ev-emitter")):t.Unidragger=i(t,t.EvEmitter)}("undefined"!=typeof window?window:this,(function(t,i){function e(){}let n,o,s=e.prototype=Object.create(i.prototype);s.handleEvent=function(t){let i="on"+t.type;this[i]&&this[i](t)},"ontouchstart"in t?(n="touchstart",o=["touchmove","touchend","touchcancel"]):t.PointerEvent?(n="pointerdown",o=["pointermove","pointerup","pointercancel"]):(n="mousedown",o=["mousemove","mouseup"]),s.touchActionValue="none",s.bindHandles=function(){this._bindHandles("addEventListener",this.touchActionValue)},s.unbindHandles=function(){this._bindHandles("removeEventListener","")},s._bindHandles=function(i,e){this.handles.forEach((o=>{o[i](n,this),o[i]("click",this),t.PointerEvent&&(o.style.touchAction=e)}))},s.bindActivePointerEvents=function(){o.forEach((i=>{t.addEventListener(i,this)}))},s.unbindActivePointerEvents=function(){o.forEach((i=>{t.removeEventListener(i,this)}))},s.withPointer=function(t,i){i.pointerId==this.pointerIdentifier&&this[t](i,i)},s.withTouch=function(t,i){let e;for(let t of i.changedTouches)t.identifier==this.pointerIdentifier&&(e=t);e&&this[t](i,e)},s.onmousedown=function(t){this.pointerDown(t,t)},s.ontouchstart=function(t){this.pointerDown(t,t.changedTouches[0])},s.onpointerdown=function(t){this.pointerDown(t,t)};const r=["TEXTAREA","INPUT","SELECT","OPTION"],h=["radio","checkbox","button","submit","image","file"];return s.pointerDown=function(t,i){let e=r.includes(t.target.nodeName),n=h.includes(t.target.type),o=!e||n;!this.isPointerDown&&!t.button&&o&&(this.isPointerDown=!0,this.pointerIdentifier=void 0!==i.pointerId?i.pointerId:i.identifier,this.pointerDown(t,i),this.bindActivePointerEvents(),this.emitEvent("pointerDown",[t,i]))},s.onmousemove=function(t){this.pointerMove(t,t)},s.onpointermove=function(t){this.withPointer("pointerMove",t)},s.ontouchmove=function(t){this.withTouch("pointerMove",t)},s.pointerMove=function(t,i){let e={x:i.pageX-this.pointerDownPointer.pageX,y:i.pageY-this.pointerDownPointer.pageY};this.emitEvent("pointerMove",[t,i,e]),!this.isDragging&&this.hasDragStarted(e)&&this.dragStart(t,i),this.isDragging&&this.dragMove(t,i,e)},s.hasDragStarted=function(t){return Math.abs(t.x)>3||Math.abs(t.y)>3},s.dragStart=function(t,i){this.isDragging=!0,this.isPreventingClicks=!0,this.emitEvent("dragStart",[t,i])},s.dragMove=function(t,i,e){this.emitEvent("dragMove",[t,i,e])},s.onmouseup=function(t){this.pointerUp(t,t)},s.onpointerup=function(t){this.withPointer("pointerUp",t)},s.ontouchend=function(t){this.withTouch("pointerUp",t)},s.pointerUp=function(t,i){this.pointerDone(),this.emitEvent("pointerUp",[t,i]),this.isDragging?this.dragEnd(t,i):this.staticClick(t,i)},s.dragEnd=function(t,i){this.isDragging=!1,setTimeout((()=>delete this.isPreventingClicks)),this.emitEvent("dragEnd",[t,i])},s.pointerDone=function(){this.isPointerDown=!1,delete this.pointerIdentifier,this.unbindActivePointerEvents(),this.emitEvent("pointerDone")},s.onpointercancel=function(t){this.withPointer("pointerCancel",t)},s.ontouchcancel=function(t){this.withTouch("pointerCancel",t)},s.pointerCancel=function(t,i){this.pointerDone(),this.emitEvent("pointerCancel",[t,i])},s.onclick=function(t){this.isPreventingClicks&&t.preventDefault()},s.staticClick=function(t,i){let e="mouseup"==t.type;e&&this.isIgnoringMouseUp||(this.emitEvent("staticClick",[t,i]),e&&(this.isIgnoringMouseUp=!0,setTimeout((()=>{delete this.isIgnoringMouseUp}),400)))},e})),
-        function(t,i){"object"==typeof module&&module.exports?module.exports=i(t,require("get-size"),require("unidragger")):t.Draggabilly=i(t,t.getSize,t.Unidragger)}("undefined"!=typeof window?window:this,(function(t,i,e){let n=t.jQuery;function o(t,i){this.element="string"==typeof t?document.querySelector(t):t,n&&(this.$element=n(this.element)),this.options={},this.option(i),this._create()}let s=o.prototype=Object.create(e.prototype);s.option=function(t){this.options={...this.options,...t}};const r=["fixed","relative","absolute"];s._create=function(){this.position={},this._getPosition(),this.startPoint={x:0,y:0},this.dragPoint={x:0,y:0},this.startPosition={...this.position};let t=getComputedStyle(this.element);r.includes(t.position)||(this.element.style.position="fixed"),this.on("pointerDown",this.handlePointerDown),this.on("pointerUp",this.handlePointerUp),this.on("dragStart",this.handleDragStart),this.on("dragMove",this.handleDragMove),this.on("dragEnd",this.handleDragEnd),this.setHandles(),this.enable()},s.setHandles=function(){let{handle:t}=this.options;"string"==typeof t?this.handles=this.element.querySelectorAll(t):"object"==typeof t&&t.length?this.handles=t:t instanceof HTMLElement?this.handles=[t]:this.handles=[this.element]};const h=["dragStart","dragMove","dragEnd"];let a=s.emitEvent;function d(t,i,e){return i?(e=e||"round",Math[e](t/i)*i):t}s.emitEvent=function(i,e){if(!this.isEnabled&&h.includes(i))return;a.call(this,i,e);let n,o=t.jQuery;if(!o||!this.$element)return;let s=e;e&&e[0]instanceof Event&&([n,...s]=e);let r=o.Event(n);r.type=i,this.$element.trigger(r,s)},s._getPosition=function(){let t=getComputedStyle(this.element),i=this._getPositionCoord(t.left,"width"),e=this._getPositionCoord(t.top,"height");this.position.x=isNaN(i)?0:i,this.position.y=isNaN(e)?0:e,this._addTransformPosition(t)},s._getPositionCoord=function(t,e){if(t.includes("%")){let n=i(this.element.parentNode);return n?parseFloat(t)/100*n[e]:0}return parseInt(t,10)},s._addTransformPosition=function(t){let i=t.transform;if(!i.startsWith("matrix"))return;let e=i.split(","),n=i.startsWith("matrix3d")?12:4,o=parseInt(e[n],10),s=parseInt(e[n+1],10);this.position.x+=o,this.position.y+=s},s.handlePointerDown=function(t,i){this.isEnabled&&(this.pointerDownPointer={pageX:i.pageX,pageY:i.pageY},t.preventDefault(),document.activeElement.blur(),this.bindActivePointerEvents(t),this.element.classList.add("is-pointer-down"))},s.handleDragStart=function(){this.isEnabled&&(this._getPosition(),this.measureContainment(),this.startPosition.x=this.position.x,this.startPosition.y=this.position.y,this.setLeftTop(),this.dragPoint.x=0,this.dragPoint.y=0,this.element.classList.add("is-dragging"),this.animate())},s.measureContainment=function(){let t=this.getContainer();if(!t)return;let e=i(this.element),n=i(t),{borderLeftWidth:o,borderRightWidth:s,borderTopWidth:r,borderBottomWidth:h}=n,a=this.element.getBoundingClientRect(),d=t.getBoundingClientRect(),u=o+s,l=r+h,c=this.relativeStartPosition={x:a.left-(d.left+o),y:a.top-(d.top+r)};this.containSize={width:n.width-u-c.x-e.width,height:n.height-l-c.y-e.height}},s.getContainer=function(){let t=this.options.containment;if(t)return t instanceof HTMLElement?t:"string"==typeof t?document.querySelector(t):this.element.parentNode},s.handleDragMove=function(t,i,e){if(!this.isEnabled)return;let n=e.x,o=e.y,s=this.options.grid,r=s&&s[0],h=s&&s[1];n=d(n,r),o=d(o,h),n=this.containDrag("x",n,r),o=this.containDrag("y",o,h),n="y"==this.options.axis?0:n,o="x"==this.options.axis?0:o,this.position.x=this.startPosition.x+n,this.position.y=this.startPosition.y+o,this.dragPoint.x=n,this.dragPoint.y=o},s.containDrag=function(t,i,e){if(!this.options.containment)return i;let n="x"==t?"width":"height",o=d(-this.relativeStartPosition[t],e,"ceil"),s=this.containSize[n];return s=d(s,e,"floor"),Math.max(o,Math.min(s,i))},s.handlePointerUp=function(){this.element.classList.remove("is-pointer-down")},s.handleDragEnd=function(){this.isEnabled&&(this.element.style.transform="",this.setLeftTop(),this.element.classList.remove("is-dragging"))},s.animate=function(){this.isDragging&&(this.positionDrag(),requestAnimationFrame((()=>this.animate())))},s.setLeftTop=function(){let{x:t,y:i}=this.position;this.element.style.left=`${t}px`,this.element.style.top=`${i}px`},s.positionDrag=function(){let{x:t,y:i}=this.dragPoint;this.element.style.transform=`translate3d(${t}px, ${i}px, 0)`},s.setPosition=function(t,i){this.position.x=t,this.position.y=i,this.setLeftTop()},s.enable=function(){this.isEnabled||(this.isEnabled=!0,this.bindHandles())},s.disable=function(){this.isEnabled&&(this.isEnabled=!1,this.isDragging&&this.dragEnd(),this.unbindHandles())};const u=["transform","left","top","position"];return s.destroy=function(){this.disable(),u.forEach((t=>{this.element.style[t]=""})),this.unbindHandles(),this.$element&&this.$element.removeData("draggabilly")},s._init=function(){},n&&n.bridget&&n.bridget("draggabilly",o),o}));
-   
+
     // Toastify
         !function(t){var i=function(t){return new i.lib.init(t)};i.lib=i.prototype={toastify:"0.0.1",constructor:i,init:function(t){return t||(t={}),this.options={},this.options.text=t.text||"Hi there!",this.options.duration=t.duration||3e3,this.options.selector=t.selector,this.options.class=t.class || "",this.options.callback=t.callback||function(){},this},buildToast:function(){if(!this.options)throw"Toastify is not initialized";var t=document.createElement("div");return t.className="_panel_toastify on " + this.options.class,t.innerHTML=this.options.text,t.addEventListener("click",this.options.callback),t},showToast:function(){var t,o=this.buildToast();if(!(t=void 0===this.options.selector?document.body:document.getElementById(this.options.selector)))throw"Root element is not defined";return t.insertBefore(o,t.firstChild),i.reposition(),window.setTimeout((function(){o.classList.remove("on"),window.setTimeout((function(){o.remove(),i.reposition()}).bind(this),400)}).bind(this),this.options.duration),this}},i.reposition=function(){for(var t=15,i=document.getElementsByClassName("_panel_toastify"),o=0;o<i.length;o++){var n=i[o].offsetHeight;i[o].style.top=t+"px",t+=n+15}return this},i.lib.init.prototype=i.lib,t.Toastify=i}(window);
 
-    // Variable
-    
+    // Variable    
         var hashchange_once = hashchange_once || false;
         // Gửi đi từ FE
         let location_href = window.location.href;
@@ -258,7 +254,7 @@ function tagTeamTDCXLoad() {
 
                 // Recheck pre call?
                 // Is Precall?
-                if(location.href.includes("cases.connect.corp.google.com/#/case")) {
+                if(window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) {
                     var is_precall = false;
                     document.querySelectorAll(".case-log-container.active-case-log-container case-message-view").forEach(function(elm){
                         if(elm.innerText.includes("Emails or feedback from Advertiser")) {
@@ -316,6 +312,7 @@ function tagTeamTDCXLoad() {
             if(window.location.href.includes("cases.connect.corp.google.com")
                 || _global_status.test
             ) {
+                
 
                 // Case ID
                 var sLoadCase = function() {
@@ -361,7 +358,7 @@ function tagTeamTDCXLoad() {
                     if(hashchange_once === false) {
                         hashchange_once = true;
                         window.addEventListener('hashchange', () => {
-                            if(location.href.includes("cases.connect.corp.google.com/#/case")) {
+                            if((window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) || _global_status.test) {
                                 wait4Elem(".case-id").then(function () {
                                     sLoadCase();
                                 });
@@ -423,6 +420,9 @@ function tagTeamTDCXLoad() {
                             var _datatemp = loadCaseDatabaseByID(_caseid);
                             loadInputCase(elm, _datatemp);
                             elm.querySelector('[data-infocase="case_id"]').innerText = _caseid;
+
+                            // Open
+                            document.querySelector('[data-btnaction="openmain"]').click();
                             
                             // var alinkelm = _dialogParent.querySelector('[href*="meet.google.com"]');
                             // if(alinkelm) {
@@ -451,6 +451,9 @@ function tagTeamTDCXLoad() {
                             var _string = _elmHeading.innerText;
                             var _caseid = getOnlyCaseId(_string);
                             if(_caseid) {
+                                // Open
+                                document.querySelector('[data-btnaction="openmain"]').click();
+
                                 if(_onceChange !== _caseid) {
                                     _onceChange = _caseid;
                                     var _datatemp = loadCaseDatabaseByID(_caseid);
@@ -460,8 +463,8 @@ function tagTeamTDCXLoad() {
 
                                         if(itemelm) {
                                             itemelm.click();
-                                            
                                         }
+
                             
                                         // 2.1 formchanger
                                         setTimeout(() => {
@@ -498,6 +501,9 @@ function tagTeamTDCXLoad() {
                                                 this.remove();
                                             }
                                         }).showToast();
+
+                                        // Open
+                                        document.querySelector('[data-btnaction="openmain"]').click();
                                     }
                                 }
                             }
@@ -535,6 +541,7 @@ function tagTeamTDCXLoad() {
                     elm.innerText = _value;
                 });
                 
+                
                 _panel.querySelectorAll('[data-infosetting_link="' + name + '"]').forEach(function(elm){
                     elm.setAttribute("href", _value);
                 });
@@ -551,6 +558,7 @@ function tagTeamTDCXLoad() {
                 _panel.querySelectorAll(`select[data-infosetting][name="${name}"] > option[value="${_value_option}"]`).forEach(function(elm){
                     elm.selected = true;
                 });
+
             } catch (error) {
                 console.log(error)
             }
@@ -686,6 +694,16 @@ function tagTeamTDCXLoad() {
                     loadInfoSettingsInnerTextElm(_panel, `${property}`, `${_object[property]}`);
                 }
 
+                
+                // Overwrite
+                // your name, your shortname
+                    console.log("HERE", window.tagteamoption)
+                    _panel.querySelectorAll('[data-infosetting="your-shortname"]').forEach(function(elm){
+                        elm.innerText = window.tagteamoption.optionkl__inputyourshortname;
+                    });
+                    _panel.querySelectorAll('[data-infosetting="your-name"]').forEach(function(elm){
+                        elm.innerText = window.tagteamoption.optionkl__inputyourname;
+                    });
                 // Other forcheckbox
 
                 // loadInfoSettingsInnerTextElm(_panel, `${property}`, `${_object[property]}`);
@@ -1038,11 +1056,20 @@ function tagTeamTDCXLoad() {
                     if(_action === 'openmain') {
                         // 1. Remove class
                             panel_div.classList.remove("hide_main");
+                            document.documentElement.classList.remove("_hide_main");
 
                         // 2. Save
                             setChromeStorage('cdtx_hidepanel-' + location.hostname, true , () => {
                                 // Empty
                             });
+                    }
+
+                    // open main
+                    if(_action === 'toggleopenmain_withoutsave') {
+                        // 1. Remove class
+                            toggleClass("hide_main", panel_div)
+                            toggleClass("_hide_main", document.documentElement)
+
                     }
                     
                     // opentoolbar
@@ -1208,6 +1235,7 @@ function tagTeamTDCXLoad() {
                     if(_action === 'hide_panel') {
                         // 1. Add class
                             panel_div.classList.add("hide_main");
+                            document.documentElement.classList.add("_hide_main");
                         
                         // 2. Save
                             setChromeStorage('cdtx_hidepanel-' + location.hostname, false , () => {
@@ -1239,13 +1267,6 @@ function tagTeamTDCXLoad() {
                         });
                     }
 
-                    // toggle_minisize_panel
-                    if(_action === 'toggle_panel_horizon') {
-                        
-                        setChromeStorage('cdtx_setting-horizon', toggleClass("_panel__horizon", panel_div) , () => {
-                            // Empty
-                        });
-                    }
 
 
                     if(_action === 'close_panel') {
@@ -1542,20 +1563,22 @@ function tagTeamTDCXLoad() {
             if(panel_div) {
 
                 // Draggie
-                    draggie = new Draggabilly( '#_panel_div', {
-                        handle: [ panel_div.querySelector('[data-btnaction="move"]'), panel_div.querySelector('._panel__heading') ]
-                    });
-        
-                    draggie.on( 'dragEnd', function( event, pointer, moveVector ) {
-                        var position_x = draggie.position.x;
-                        var position_y = draggie.position.y;
+                    // if(window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) {
+                    //     var draggie = new Draggabilly( '#_panel_div', {
+                    //         handle: [ panel_div.querySelector('[data-btnaction="move"]'), panel_div.querySelector('._panel__heading') ]
+                    //     });
+            
+                    //     draggie.on( 'dragEnd', function( event, pointer, moveVector ) {
+                    //         var position_x = draggie.position.x;
+                    //         var position_y = draggie.position.y;
 
-                        // Panel
-                        setChromeStorage('cdtx_pos-' + location.hostname, {
-                            "position_x": position_x,
-                            "position_y": position_y,
-                        });
-                    });
+                    //         // Panel
+                    //         setChromeStorage('cdtx_pos-' + location.hostname, {
+                    //             "position_x": position_x,
+                    //             "position_y": position_y,
+                    //         });
+                    //     });
+                    // }
 
 
                     // 1. Set position
@@ -1714,13 +1737,15 @@ function tagTeamTDCXLoad() {
                     getChromeStorage('cdtx_hidepanel-' + location.hostname, (response) => {
                         if(response.value) {
                             panel_div.classList.remove("hide_main");
+                            document.documentElement.classList.remove("_hide_main");
                         } else {
                             panel_div.classList.add("hide_main");
+                            document.documentElement.classList.add("_hide_main");
                         }
                     });
 
                 // 8. Load current for other case connect
-                    if(location.href.includes("cases.connect.corp.google.com/#/case") === false) {
+                    if(window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) {
                         getChromeStorage('cdtx_casecurrent', (response) => {
                             // Empty
                             var itemelm = panel_div.querySelector(`._panel__caselist [data-caseid="${response.value}"]`);
@@ -1813,6 +1838,140 @@ function tagTeamTDCXLoad() {
 
         var loadpanel = (is_reload = false) => {
 
+            // _Calendar
+            var _pos_append_html = function (cdtx_paneldivhtml) {
+                if(
+                    window.location.hostname === "meet.google.com" ||
+                    window.location.hostname === "calendar.google.com" ||
+                    window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1 || 
+                    _global_status.test
+                ) {
+                    // 1 document.body.classList.add("_panel_sidebar");
+                    document.documentElement.className = '_panel_sidebar';
+                    document.documentElement.setAttribute("data-hostname", window.location.hostname);
+                    document.body.insertAdjacentHTML("afterEnd", cdtx_paneldivhtml);
+
+
+                    // 2 add shortcut button to connect cases
+
+                        if(window.location.hostname === "meet.google.com") {
+                            var _addshortcutbtn_meet = () => {
+                                var _panel_addshortcutbtn = document.querySelector(".dock-container._panel_btnshortcut");
+                                if(!_panel_addshortcutbtn) {
+                                    var dock_container = document.body;
+                                    if(dock_container) {
+                                        var strhtml = `<div class="dock-container _panel_btnshortcut">
+                                            <div class="material-button _panel_shortcut_toggleopenmain_withoutsave"  >
+                                                <div class="content">
+                                                    <img src="https://www.svgrepo.com/show/355037/google.svg">
+                                                </div>
+                                            </div>
+                                        </div>`;
+                                        var dock_container_add = _TrustScript(strhtml);
+                                        // // Open
+                                        // document.querySelector('[data-btnaction="openmain"]').click();
+                                        dock_container.insertAdjacentHTML("afterEnd", dock_container_add);
+                                        document.querySelector('._panel_shortcut_toggleopenmain_withoutsave').addEventListener("click", (e) => {
+                                            toggleClass("hide_main", panel_div)
+                                            toggleClass("_hide_main", document.documentElement)
+                                        });
+                                    }
+                                    
+                                }
+                            };
+                            
+                            _addshortcutbtn_meet();
+                        }
+
+                        if(window.location.hostname === "cases.connect.corp.google.com" || _global_status.test) {
+                            var _addshortcutbtn = () => {
+                                var _panel_addshortcutbtn = document.querySelector(".dock-container._panel_btnshortcut");
+                                if(!_panel_addshortcutbtn) {
+                                    var dock_container = document.querySelector(".dock-container");
+                                    if(dock_container) {
+                                        var strhtml = `<div class="dock-container _panel_btnshortcut">
+                                            <div class="material-button _panel_shortcut_toggleopenmain_withoutsave"  >
+                                                <div class="content">
+                                                    <img src="https://www.svgrepo.com/show/355037/google.svg">
+                                                </div>
+                                            </div>
+                                            <div class="material-button _panel_shortcut_openemailtemplate"  >
+                                                <div class="content">
+                                                    <img src="https://www.svgrepo.com/show/194000/mail.svg">
+                                                </div>
+                                            </div>
+                                            <div class="material-button _panel_shortcut_fisrtemail"  >
+                                                <div class="content">
+                                                    <img src="https://www.svgrepo.com/show/67628/email.svg">
+                                                </div>
+                                            </div>
+                                        </div>`;
+                                        var dock_container_add = _TrustScript(strhtml);
+                                        // // Open
+                                        // document.querySelector('[data-btnaction="openmain"]').click();
+                                        dock_container.insertAdjacentHTML("afterEnd", dock_container_add);
+                                        document.querySelector('._panel_shortcut_toggleopenmain_withoutsave').addEventListener("click", (e) => {
+                                            toggleClass("hide_main", panel_div)
+                                            toggleClass("_hide_main", document.documentElement)
+                                        });
+    
+                                        document.querySelector('._panel_shortcut_openemailtemplate').addEventListener("click", (e) => {
+                                            document.querySelector('[data-btnaction="openemailtemplate"]').click();
+                                        });
+    
+                                        document.querySelector('._panel_shortcut_fisrtemail').addEventListener("click", (e) => {
+                                            document.querySelector('[data-btnaction="firstemail"]').click();
+                                        });
+                                    }
+                                    
+                                }
+                            };
+
+                            // Start
+                            wait4Elem('[debug-id="case-id"] .case-id').then(function () {
+                                _addshortcutbtn();
+                            });
+    
+                            // recheck
+                            setInterval(() => {
+                                _addshortcutbtn();
+                            }, 5000);
+
+
+                            // 3. Show  by dock
+                            onClickElm(`.dock-container [debug-id]:not([debug-id="dock-item-home"])`, `click`, () => {
+                                panel_div.classList.remove("hide_main");
+                                document.documentElement.classList.remove("_hide_main");
+                            });
+
+                            onClickElm(`.dock-container [debug-id="dock-item-home"]`, `click`, () => {
+                                panel_div.classList.add("hide_main");
+                                document.documentElement.classList.add("_hide_main");
+                            });
+
+                        }
+
+                    
+                    // Return
+                    return true;
+                }
+
+
+                // add shortcut button to connect cases
+                // if(
+                //     window.location.hostname === ""|| 
+                //     _global_status.test
+                // ) {
+                    
+                //     return true;
+                
+                // }
+                document.body.insertAdjacentHTML("beforeEnd", cdtx_paneldivhtml);
+
+                return true;
+
+            };
+
             if(window.dataTagTeamSettings.sync_enable) {
                 getChromeStorage('cdtx_paneldivhtml', (response) => {
 
@@ -1822,8 +1981,8 @@ function tagTeamTDCXLoad() {
                     const staticHtmlPolicyV1 = trustedTypes.createPolicy(
                         'foo-static', {createHTML: () => cdtx_paneldivhtml}
                     );
-                    var cdtx_paneldivhtml = staticHtmlPolicyV1.createHTML('');
-                    document.body.insertAdjacentHTML("beforeEnd", cdtx_paneldivhtml);
+                    var cdtx_paneldivhtml = _TrustScript(cdtx_paneldivhtml);
+                    _pos_append_html(cdtx_paneldivhtml);
 
                     set_init_load();
                 });
@@ -1832,8 +1991,8 @@ function tagTeamTDCXLoad() {
                 const staticHtmlPolicyV1 = trustedTypes.createPolicy(
                     'foo-static', {createHTML: () => window.dataTagteam.panel_div}
                 );
-                var cdtx_paneldivhtml = staticHtmlPolicyV1.createHTML('');
-                document.body.insertAdjacentHTML("beforeEnd", cdtx_paneldivhtml);
+                var cdtx_paneldivhtml = _TrustScript(window.dataTagteam.panel_div);
+                _pos_append_html(cdtx_paneldivhtml);
     
                 // Load drag panel
                 set_init_load();
@@ -1862,6 +2021,21 @@ function tagTeamTDCXLoad() {
         // ============
         // LOAD CASE
         // ============
+        chrome.storage.sync.get({ 
+            mycountry: 'Thailand',
+            ouremail: 'xxx@google.com', 
+            myInjector: 'gtm-xxx',
+            gtmToDo: 'notStart',
+            optionkl__inputyourshortname: "Your shortname",
+            optionkl__inputyourname: "Your name",
+            optionkl__disable_dialog: false,
+            optionkl__disable_focuscase: false
+        }, function (result) {
+            window.tagteamoption.optionkl__inputyourshortname = result.optionkl__inputyourshortname;
+            window.tagteamoption.optionkl__inputyourname = result.optionkl__inputyourname;
+            window.tagteamoption.optionkl__disable_dialog = result.optionkl__disable_dialog;
+            window.tagteamoption.optionkl__disable_focuscase = result.optionkl__disable_focuscase;
+        });
         
         getChromeStorage('cdtx_settings', (response) => {
             window.dataTagTeamSettings = response.value || false;
@@ -1897,7 +2071,7 @@ function tagTeamTDCXLoad() {
                 if(hashchange_oncevanbo === false) {
                     hashchange_oncevanbo = true;
                     window.addEventListener('hashchange', () => { 
-                        if(location.href.includes("cases.connect.corp.google.com/#/case")) {
+                        if(window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) {
                             is_ready4codevanbo(() => {
                                 // Load Focus 
                                 chrome.storage.sync.get({ 

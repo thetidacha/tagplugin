@@ -6,6 +6,8 @@ function save_options() {
   console.log(country);
   chrome.runtime.sendMessage({message: country});
   
+  var optionkl__inputyourname = document.getElementById('optionkl__inputyourname').value || "";
+  var optionkl__inputyourshortname = document.getElementById('optionkl__inputyourshortname').value || "";
   var optionkl__disable_dialog = document.getElementById('optionkl__disable-dialog').checked || false;
   var optionkl__disable_focuscase = document.getElementById('optionkl__disable-focuscase').checked || false;
 
@@ -47,6 +49,9 @@ function save_options() {
   chrome.storage.sync.set({
     mycountry: country, 
     ouremail: youremail,
+
+    optionkl__inputyourname: optionkl__inputyourname,
+    optionkl__inputyourshortname: optionkl__inputyourshortname,
     optionkl__disable_dialog: optionkl__disable_dialog,
     optionkl__disable_focuscase: optionkl__disable_focuscase
   }, function() {
@@ -110,6 +115,8 @@ function restore_options() {
     ouremail: 'xxx@google.com', 
     myInjector: 'gtm-xxx',
     gtmToDo: 'notStart',
+    optionkl__inputyourshortname: "",
+    optionkl__inputyourname: "",
     optionkl__disable_dialog: false,
     optionkl__disable_focuscase: false
   }, function(items) {
@@ -120,6 +127,8 @@ function restore_options() {
 	document.getElementById('yourGTM').value = items.myInjector;
 
 	document.getElementById('optionkl').setAttribute("data-optionkl", items.mycountry);
+	document.getElementById('optionkl__inputyourshortname').value = items.optionkl__inputyourshortname;
+	document.getElementById('optionkl__inputyourname').value = items.optionkl__inputyourname;
 	document.getElementById('optionkl__disable-dialog').checked = items.optionkl__disable_dialog;
 	document.getElementById('optionkl__disable-focuscase').checked = items.optionkl__disable_focuscase;
 
