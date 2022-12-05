@@ -41,6 +41,7 @@
 				"*://*.connect.corp.google.com/*",
 				"*://meet.google.com/*",
 				"*://calendar.google.com/*",
+				"*://tagmanager.google.com/*",
 				"*://analytics-ics.corp.google.com/*",
 				"*://gtm-dogfood.corp.google.com/*"
 			],
