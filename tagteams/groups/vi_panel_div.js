@@ -156,7 +156,7 @@ var vi_panel_div = `
                                             <div class="_panel__form--panel">
                                                 Note: <span class="_panel_btn _panel_btn--small" data-btnaction="pushto_casesummary" title="Push to case summary">Push to case summary</span>
                                                 <textarea name="note" class="autoresize" cols="30" rows="5" placeholder="NOTE"></textarea>
-                                                Tasks: <span data-infocase="tasks">TASKS</span><br>
+                                                Tasks: <span data-infocase="tasks_nowrap">TASKS</span><br>
                                                 Attribution Model: <strong><span data-infocase="customer_attributionmodel">customer_attributionmodel</span></strong><br>
                                                 <br>
                                                 Request:
@@ -270,9 +270,9 @@ var vi_panel_div = `
                             <br>có phải em <span data-infosetting="your-shortname">Your shortname</span> đang nghe máy với <span data-infocase="customer_gender">C2</span> <span data-infocase="customer_name">B2</span> đó không?
                             <br>// KH: đúng rồi em!
                             <br> <br>
-                            <p data-am_donvi="GCC">Em nhận được yêu cầu từ đội hỗ trợ Google Ads, là hôm nay hỗ trợ cài đặt <span data-infocase="tasks">E2</span> cho website <span data-infocase="customer_website">F2</span>, phải không <span data-infocase="customer_gender">C2</span> ạ?
+                            <p data-am_donvi="GCC">Em nhận được yêu cầu từ đội hỗ trợ Google Ads, là hôm nay hỗ trợ cài đặt <span data-infocase="tasks_nowrap">Tasks</span> cho website <span data-infocase="customer_website">F2</span>, phải không <span data-infocase="customer_gender">C2</span> ạ?
                                 <br>// KH: đúng rồi em!</p> <br>
-                            <p data-am_donvi="OTHER">Em có nhận được yêu cầu từ bạn <strong><span data-infocase="am_name">C2</span></strong> (người quản lý của Google)hôm nay sẽ hỗ trợ <span data-infocase="customer_gender">C2</span> cài đặt <span data-infocase="tasks">E2</span> cho trang web <span data-infocase="customer_website">F2</span>. phải không ạ?
+                            <p data-am_donvi="OTHER">Em có nhận được yêu cầu từ bạn <strong><span data-infocase="am_name">C2</span></strong> (người quản lý của Google)hôm nay sẽ hỗ trợ <span data-infocase="customer_gender">C2</span> cài đặt <span data-infocase="tasks_nowrap">Tasks</span> cho trang web <span data-infocase="customer_website">F2</span>. phải không ạ?
                                 <br>// KH: đúng rồi em!</p> <br>dạ, Ước tính thời gian cài đặt này là <span data-infocase="est_setup">G2</span> phút, vậy mình có đang ngồi máy tính để tiện cài đặt không <span data-infocase="customer_gender">C2</span>?
                             <br>// KH: Có em
                             <br>
@@ -391,7 +391,7 @@ var vi_panel_div = `
                             <div class="_emailtemp-item__content">
                                 <div id="email-body-content-top" style="width: 100%;">
                                     <div id="email-body-content-top-content" style=" font-style: normal; font-variant: normal; font-stretch: normal; font-size: 13px; line-height: 17px; font-family: Roboto, sans-serif; display: block; " dir="auto">
-                                        <p dir="auto"> <span style="font-weight: normal;"><span data-infocase="customer_gender" style="text-transform: capitalize;">Anh</span> <span data-infocase="customer_name">CUSTOMER NAME</span></span> thân mến!<br /> <br /> Chúng tôi đã nhận được yêu cầu của <span data-infocase="customer_gender">anh</span> về việc dời lịch cho cuộc gọi hỗ trợ triển khai <b><span data-infocase="tasks">Tasks</span> </b> cho <span><b><span data-infocase="customer_website">nhuahuongchi.com</span></b></span>. </p>
+                                        <p dir="auto"> <span style="font-weight: normal;"><span data-infocase="customer_gender" style="text-transform: capitalize;">Anh</span> <span data-infocase="customer_name">CUSTOMER NAME</span></span> thân mến!<br /> <br /> Chúng tôi đã nhận được yêu cầu của <span data-infocase="customer_gender">anh</span> về việc dời lịch cho cuộc gọi hỗ trợ triển khai <b><span data-infocase="tasks_nowrap">Tasks</span> </b> cho <span><b><span data-infocase="customer_website">nhuahuongchi.com</span></b></span>. </p>
                                         <p dir="auto" style="font-weight: normal;"></p>
                                         <p style="font-weight: normal;" dir="auto"> Chúng tôi rất mong được trợ giúp <span data-infocase="customer_gender">anh</span>! Xin lưu ý rằng do nhu cầu sử dụng dịch vụ của chúng tôi đang ở mức cao, nên chúng tôi không có nhiều thời gian rảnh. Chúng tôi hiểu rằng việc triển khai này rất quan trọng đối với <span data-infocase="customer_gender">anh</span>, vì vậy,<strong> điều quan trọng là <span data-infocase="customer_gender">anh</span> có thể tham gia cuộc gọi vào thời điểm đã lên lịch để tránh bỏ lỡ cơ hội này. Đây là lần dời lịch cuối cùng và chúng tôi sẽ không thể tiếp tục dời lịch hẹn nữa.</strong> </p>
                                         <p style="font-weight: normal;" dir="auto"> <br /> <strong>Lịch hẹn đã được dời sang <font color="#9c166b"><span>11 giờ ngày 19/10/2022 theo giờ Việt Nam</span></font> và chúng tôi sẽ gọi cho <span data-infocase="customer_gender">anh</span> theo số điện thoại mà <span data-infocase="customer_gender">anh</span> đã cung cấp: </strong> <strong><span data-infocase="customer_contact">+84 96 693 19 48</span></strong><br /> <br /> Nếu <span data-infocase="customer_gender">anh</span> không rảnh vào thời gian này vì bất cứ lý do gì, vui lòng cho chúng tôi biết bằng cách trả lời email này.<br /> <br /> Chúng tôi rất mong được trò chuyện với <span data-infocase="customer_gender">anh</span>! </p>
@@ -439,7 +439,7 @@ var vi_panel_div = `
                                             <br>
                                             Đầu thư, chúng tôi xin chúc <span data-infocase="customer_gender">anh</span> có một ngày tốt lành!&nbsp;<br>
                                             <br>
-                                            Hôm nay, nhóm giải pháp kỹ thuật của chúng tôi đã cố gắng gọi điện cho <span data-infocase="customer_gender">anh</span> để trao đổi về yêu cầu <b><span data-infocase="tasks">ZZZ</span> </b>cho
+                                            Hôm nay, nhóm giải pháp kỹ thuật của chúng tôi đã cố gắng gọi điện cho <span data-infocase="customer_gender">anh</span> để trao đổi về yêu cầu <b><span data-infocase="tasks_nowrap">Tasks</span> </b>cho
                                             <b><span data-infocase="customer_website">nhuahuongchi.com</span></b>.&nbsp;<br>
                                             Chúng tôi đã thử gọi cho bạn một lần nữa sau 10 phút, nhưng rất tiếc vẫn không thể gặp được <span data-infocase="customer_gender">anh</span>.&nbsp;<br>
                                             <br>
@@ -497,7 +497,7 @@ var vi_panel_div = `
                                             thân mến!
                                         </p>
                                         <p style="font-style: normal;"><strong>Xin chúc mừng!&nbsp;</strong></p>
-                                        <p dir="auto" style="font-style: normal;">Đối với trường hợp&nbsp; <span data-infocase="case_id">5-6594000033737</span>, chúng tôi rất vui mừng được thông báo rằng chúng tôi đã triển khai thành công <span data-infocase="tasks">ZZZ</span> trên trang web của <span data-infocase="customer_gender">anh</span> là <span data-infocase="customer_website">nhuahuongchi.com</span> và cũng nhận thấy thẻ này đang hoạt động theo thời gian thực.</p>
+                                        <p dir="auto" style="font-style: normal;">Đối với trường hợp&nbsp; <span data-infocase="case_id">5-6594000033737</span>, chúng tôi rất vui mừng được thông báo rằng chúng tôi đã triển khai thành công <strong><span data-infocase="tasks_nowrap">Tasks</span></strong> trên trang web của <span data-infocase="customer_gender">anh</span> là <span data-infocase="customer_website">nhuahuongchi.com</span> và cũng nhận thấy thẻ này đang hoạt động theo thời gian thực.</p>
                                         <p style="font-style: normal;">Chúng tôi sẽ đóng yêu cầu này. Tuy nhiên, nếu tình hình của <span data-infocase="customer_gender">anh</span> thay đổi, vui lòng liên hệ với Người quản lý tài khoản của Google hoặc tham khảo <a href="https://support.google.com/" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><u>trung tâm trợ giúp</u></a>. Họ luôn sẵn sàng trợ giúp <span data-infocase="customer_gender">anh</span>!</p>
                                         <p style="font-style: normal;">Cảm ơn <span data-infocase="customer_gender">anh</span> đã hợp tác lâu dài với Google!&nbsp;</p>
                                         <p style="" dir="auto"><span style="font-style: normal;">Nếu <span data-infocase="customer_gender">anh</span> muốn tìm hiểu thêm, thì sau đây là một số đường liên kết dẫn đến các tài nguyên có giá trị liên quan đến việc Triển khai thẻ và nguồn cấp dữ liệu mua sắm. Các tài nguyên này có thể hữu ích để <span data-infocase="customer_gender">anh</span> sử dụng trong tương lai!</span></p>
@@ -535,7 +535,7 @@ var vi_panel_div = `
                                         <p dir="auto"><span class="" style="font-weight: normal;"><span data-infocase="customer_gender" style="text-transform: capitalize;">Anh</span> <span data-infocase="customer_name">CUSTOMER NAME</span></span>
                                             thân mến!<br>
                                             <br>
-                                            Cảm ơn <span data-infocase="customer_gender">anh</span> đã liên hệ với Nhóm giải pháp kỹ thuật về việc <b><span data-infocase="tasks">ZZZ</span></b>&nbsp;cho
+                                            Cảm ơn <span data-infocase="customer_gender">anh</span> đã liên hệ với Nhóm giải pháp kỹ thuật về việc <b><span data-infocase="tasks_nowrap">ZZZ</span></b>&nbsp;cho
                                             <b><span data-infocase="customer_website">nhuahuongchi.com</span></b>
                                         </p>
                                         <ul style="font-weight: normal;"></ul>
