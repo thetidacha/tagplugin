@@ -754,6 +754,7 @@ function tagTeamTDCXLoad() {
             //Format date
             _panel.querySelector('[data-infocase="local_format_meeting_time"]').innerText = new Date(_datatemp.meeting_time).toLocaleDateString('en-GB')
             
+            
             // section google meet
             if(_object.customer_gmeet) {
                 _panel.querySelector('[data-infocase="linkgooglemeet_section"]').innerHTML = `Truy cập link google cuộc họp <a href="${_object.customer_gmeet}" >tại đây</a> Hoặc qua: <a href="${_object.customer_gmeet}" >${_object.customer_gmeet}</a>`;
@@ -784,6 +785,10 @@ function tagTeamTDCXLoad() {
                 loadInfoCaseInnerTextElm(_panel, 'customer_adsid_format', reformatAdsId(_datatemp.customer_adsid));
             }
 
+            // Remove new line tasks - nowrap
+            // console.log(_datatemp.tasks);
+                loadInfoCaseInnerTextElm(_panel, 'tasks_nowrap', _datatemp.tasks.trim().replace("\n", ", "));
+            
 
             // STEP 3: Load condition to script reading
             _panel.querySelector('._panel__script');
