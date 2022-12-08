@@ -9,6 +9,8 @@ function tagTeamTDCXLoad() {
         _global_status.test = true;
     }
 
+    document.documentElement.setAttribute("data-hostname", window.location.hostname);
+
     switch(location.hash) {
 
         case "#hide_panel":
@@ -179,32 +181,32 @@ function tagTeamTDCXLoad() {
                     _callback();
             }
 
-        // 2.1
-            n_time_dkneed++;
-            wait4Elem("cuf-form-field").then(function () {
-                is_ready(n_time_dkneed_compare++);
-                console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- cuf-form-field');
+            // 2.1
+                n_time_dkneed++;
+                wait4Elem("cuf-form-field").then(function () {
+                    is_ready(n_time_dkneed_compare++);
+                    console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- cuf-form-field - 4vanbo');
 
-            });
+                });
+                
+                n_time_dkneed++;
+                wait4Elem('[debug-id="case-id"] .case-id').then(function () {
+                    is_ready(n_time_dkneed_compare++);
+                    console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- [debug-id="case-id"] .case-id - 4vanbo');
+                });
             
-            n_time_dkneed++;
-            wait4Elem('[debug-id="case-id"] .case-id').then(function () {
-                is_ready(n_time_dkneed_compare++);
-                console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- [debug-id="case-id"] .case-id');
-            });
-        
-        
-            n_time_dkneed++;
-            wait4Elem('case-message-view').then(function () {
-                is_ready(n_time_dkneed_compare++);
-                console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- case-message-view');
-            });
             
-            n_time_dkneed++;
-            wait4Elem('home-data-item').then(function () {
-                is_ready(n_time_dkneed_compare++);
-                console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '---home-data-item');
-            });
+                n_time_dkneed++;
+                wait4Elem('case-message-view').then(function () {
+                    is_ready(n_time_dkneed_compare++);
+                    console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '--- case-message-view - 4vanbo');
+                });
+                
+                n_time_dkneed++;
+                wait4Elem('home-data-item').then(function () {
+                    is_ready(n_time_dkneed_compare++);
+                    console.info(n_time_dkneed_compare , '=' , n_time_dkneed, '---home-data-item - 4vanbo');
+                });
             
         }
         
@@ -337,6 +339,17 @@ function tagTeamTDCXLoad() {
                             unmark_all_and_crawl()
                         
                         });
+
+                        // Show Input
+                            document.querySelector('[debug-id="target-input"]').dispatchEvent(new Event("mouseover"));
+                                            
+                            wait4Elem('target-item .value').then(function () {                                            
+                                var ads_id = document.querySelector("target-item .value").innerText;
+                                if(document.querySelector('._panel_shortcut_gearloose_vanbo')) {
+                                    document.querySelector('._panel_shortcut_gearloose_vanbo').setAttribute("href", 'https://gearloose2.corp.google.com/#/search/merchants?q=awid:' + reformatAdsId(ads_id));
+                                    document.querySelector('._panel_shortcut_gearloose_vanbo').style.display = "";
+                                }
+                            });
                         
                         panel_div.querySelector('#formCase [action="save"]').innerText = "FIRST SAVE";
                         panel_div.querySelector('#formCase [action="save"]').classList.add("_panel_btn--success");
@@ -697,7 +710,6 @@ function tagTeamTDCXLoad() {
                 
                 // Overwrite
                 // your name, your shortname
-                    console.log("HERE", window.tagteamoption)
                     _panel.querySelectorAll('[data-infosetting="your-shortname"]').forEach(function(elm){
                         elm.innerText = window.tagteamoption.optionkl__inputyourshortname;
                     });
@@ -786,8 +798,9 @@ function tagTeamTDCXLoad() {
             }
 
             // Remove new line tasks - nowrap
-            // console.log(_datatemp.tasks);
+            if(_datatemp.tasks) {
                 loadInfoCaseInnerTextElm(_panel, 'tasks_nowrap', _datatemp.tasks.trim().replace("\n", ", "));
+            }
             
 
             // STEP 3: Load condition to script reading
@@ -1446,6 +1459,10 @@ function tagTeamTDCXLoad() {
                                     if(_td_1.innerText.includes("Website")) {
                                         _datatemp.customer_website = _td_2.innerText;
                                     }
+
+                                    if(_td_1.innerText.includes("Tasks")) {
+                                        _datatemp.tasks = _td_2.innerText.trim().replace("\n", "").replace(",", ", ");
+                                    }
                                     
                                     if(_td_1.innerText.includes("Contact")) {
                                         var _temp_now = _td_2.innerHTML.split("<br>");
@@ -1473,6 +1490,7 @@ function tagTeamTDCXLoad() {
 
                                     if(_td_1.innerText.includes("Account")) {
                                         _datatemp.customer_ocid = _td_2.innerText;
+                                        window.tagteamoption.customer_ocid = _td_2.innerText;
                                     }
                                 }
                                 
@@ -1586,25 +1604,6 @@ function tagTeamTDCXLoad() {
                     // }
 
 
-                    // 1. Set position
-                    // Left
-                        getChromeStorage('cdtx_pos-' + location.hostname, (response) => {                        
-                            if(response.value) {
-                                var data = response.value;
-                                var position_x = (data.position_x > 0 ? data.position_x : 50);
-                                var position_y = (data.position_y > 0 ? data.position_y : 0);
-                                
-                                if(position_x > window.innerWidth) {
-                                    position_x = window.innerWidth - 50;
-                                }
-                                if(position_y > window.innerHeight) {
-                                    position_y = window.innerHeight - 50;
-                                }
-
-                                panel_div.style.left = `${position_x}px`;
-                                panel_div.style.top = `${position_y}px`;
-                            }
-                        });
 
                     // 2. ====
                     // 2. Form
@@ -1853,7 +1852,6 @@ function tagTeamTDCXLoad() {
                 ) {
                     // 1 document.body.classList.add("_panel_sidebar");
                     document.documentElement.className = '_panel_sidebar';
-                    document.documentElement.setAttribute("data-hostname", window.location.hostname);
                     document.body.insertAdjacentHTML("afterEnd", cdtx_paneldivhtml);
 
 
@@ -1910,6 +1908,15 @@ function tagTeamTDCXLoad() {
                                                     <img src="https://www.svgrepo.com/show/67628/email.svg">
                                                 </div>
                                             </div>
+                                            <a href="#" class="material-button _panel_shortcut_gearloose_vanbo"  
+                                                style="
+                                                    background-image: url(https://lh3.googleusercontent.com/proxy/mawyrjPH2gsWpZuGnLpIXCiXkuhJ69RZaP7ypPqMX5QGTtXDUPQncooBaQUc6V0uRI5h1fZABTXr5wgJPU0ptpxjQ1NyDke2y6tEbx5HG6K0H1Q);
+                                                    background-size: contain;
+                                                    display: none;
+                                                "
+                                            >
+                                                <span class="content"></span>
+                                            </a>
                                         </div>`;
                                         var dock_container_add = _TrustScript(strhtml);
                                         // // Open
@@ -2063,6 +2070,8 @@ function tagTeamTDCXLoad() {
     
                 // Load code van bo
                 is_ready4codevanbo(() => {
+                    
+                    
                     // Load Focus 
                     chrome.storage.sync.get({ 
                         optionkl__disable_focuscase: false
