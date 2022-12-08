@@ -42,8 +42,8 @@
 				"*://meet.google.com/*",
 				"*://calendar.google.com/*",
 				"*://tagmanager.google.com/*",
-				"*://analytics-ics.corp.google.com/*",
-				"*://gtm-dogfood.corp.google.com/*"
+				"*://tagmanager-ics.corp.google.com/*",
+				"*://analytics-ics.corp.google.com/*"
 			],
 			"js": [
 				"tagteams/libs.js",

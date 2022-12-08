@@ -341,6 +341,7 @@ function tagTeamTDCXLoad() {
                         });
 
                         // Show Input
+                        if(document.querySelector('[debug-id="target-input"]')) {
                             document.querySelector('[debug-id="target-input"]').dispatchEvent(new Event("mouseover"));
                                             
                             wait4Elem('target-item .value').then(function () {                                            
@@ -350,7 +351,9 @@ function tagTeamTDCXLoad() {
                                     document.querySelector('._panel_shortcut_gearloose_vanbo').style.display = "";
                                 }
                             });
-                        
+                        }
+
+                        // Change status btn
                         panel_div.querySelector('#formCase [action="save"]').innerText = "FIRST SAVE";
                         panel_div.querySelector('#formCase [action="save"]').classList.add("_panel_btn--success");
                     }
@@ -795,6 +798,11 @@ function tagTeamTDCXLoad() {
 
             if(_datatemp.customer_adsid) {
                 loadInfoCaseInnerTextElm(_panel, 'customer_adsid_format', reformatAdsId(_datatemp.customer_adsid));
+
+                if(document.querySelector('._panel_shortcut_gearloose_vanbo')) {
+                    document.querySelector('._panel_shortcut_gearloose_vanbo').setAttribute("href", 'https://gearloose2.corp.google.com/#/search/merchants?q=awid:' + reformatAdsId(_datatemp.customer_adsid));
+                    document.querySelector('._panel_shortcut_gearloose_vanbo').style.display = "";
+                }
             }
 
             // Remove new line tasks - nowrap
@@ -1908,7 +1916,7 @@ function tagTeamTDCXLoad() {
                                                     <img src="https://www.svgrepo.com/show/67628/email.svg">
                                                 </div>
                                             </div>
-                                            <a href="#" class="material-button _panel_shortcut_gearloose_vanbo"  
+                                            <a href="#" target="_blank" class="material-button _panel_shortcut_gearloose_vanbo"  
                                                 style="
                                                     background-image: url(https://lh3.googleusercontent.com/proxy/mawyrjPH2gsWpZuGnLpIXCiXkuhJ69RZaP7ypPqMX5QGTtXDUPQncooBaQUc6V0uRI5h1fZABTXr5wgJPU0ptpxjQ1NyDke2y6tEbx5HG6K0H1Q);
                                                     background-size: contain;
