@@ -126,7 +126,7 @@ button, input, optgroup, select, textarea{
 [data-optionkl="Vietnam"] input[type="checkbox"] {
     width: auto;
 }
-[data-optionkl="Vietnam"] ._yourGTM,
+
 [data-optionkl="Vietnam"] .tabs-wrap {
     display: none;
 }
@@ -270,15 +270,26 @@ table thead, table tbody tr {
               <div class="optionkl__option-row">
                 <label class="optionkl__option-col"><input type="text" id="optionkl__inputyourname" placeholder="Signal name, ex: Tim Cook"></label>
                 <label class="optionkl__option-col"><input type="text" id="optionkl__inputyourshortname" placeholder="Name, ex: Tim"></label>
+                <div class="optionkl__option-col">
+                  <select id="optionkl__modecase">
+                    <option value="Auto">Auto</option>
+                    <option value="Development">Development</option>
+                    <option value="ExtensionDefault">ExtensionDefault</option>
+                  </select>
+                </div>
               </div>
               <div class="optionkl__option-row">
                 <div class="optionkl__option-col">
                   <label>
-                    <input type="checkbox" id="optionkl__disable-dialog"> Disable dialog
+                    <input type="checkbox" id="optionkl__disable-dialog"> Disable case overview
                   </label> 
-                  --- 
+                  --
                   <label>
                     <input type="checkbox" id="optionkl__disable-focuscase"> Disable focus case
+                  </label>
+                  --
+                  <label>
+                    <input type="checkbox" id="optionkl__disable-stylebytheme"> Disable style
                   </label>
                 </div>
               </div>
