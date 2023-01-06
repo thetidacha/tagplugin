@@ -141,57 +141,66 @@ s3.src = chrome.extension.getURL('script.js');
 
 
 if (window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) {
+	try {
+		function createDomWithText(domText, text, id) {
+			const dom = document.createElement("button");
+			dom.innerText = domText;
+			dom.id = id;
+
+			var _istopelm = document.querySelector(`.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top`);
+			if(_istopelm) {
+				var _elmcasenote = _istopelm.querySelector(`.case-note`);
+				if(_elmcasenote) {
+					_elmcasenote.insertAdjacentElement("afterBegin", dom);
+					
+					dom.addEventListener("click", () => {
+						if(typeof window.dataTagteam !== 'undefined') {
+							if(window.dataTagteam.hasOwnProperty("current_case")) {
+								if(window.dataTagteam.current_case.hasOwnProperty("tasks")) {
+									text = text.replace(`<span class="_tags_implement"></span>`, window.dataTagteam.current_case.tasks);
+								}
+							}
+						}
+
+						_elm_content = _istopelm.querySelector(`.editor [contenteditable="true"]`);
+						_elm_content.innerHTML += text;
+						_elm_content.dispatchEvent(new Event('input'));
+						_elm_content.dispatchEvent(new Event('focus'));
+						_elm_content.dispatchEvent(new Event('click'));
+					})
+				}
+			}
+		}
 
 
-function createDomWithText(domText, text, id) {
-    const dom = document.createElement("button");
-    dom.innerText = domText
-    dom.id = id
-    document.querySelector(".case-note").prepend(dom);
+		// Select the node that will be observed for mutations
+		var targetNode = document.body;
 
-    dom.addEventListener("click", () => {
-        document.querySelector(".editor > div > div").innerHTML += text;
-    })
-}
+		// Options for the observer (which mutations to observe)
+		var config = { attributes: true, childList: true, subtree: true };
 
+		// Callback function to execute when mutations are observed
+		var callback = function(mutationList, observer) {
+			var _istopelm = document.querySelector(`.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top`);
+			if(_istopelm) {
+				if (_istopelm.querySelector("#pre-call") === null && _istopelm.querySelector("#on-call") === null) {
+					createDomWithText("Precall", `<ul dir="auto"><li>Emails or feedback from Advertiser/Seller (including seller request to join the call)[C]&nbsp;</li><li>Call being made in business hours[C]</li><li>Program ,task type (including special instructions),advertiser need and readiness [C]</li><li>Related cases [C]</li><li>CMS being used  [C]</li><li>Gtag/GTM/GA already exists  [C] (NA applicable only for Shopping or OCT cases)</li></ul>`, "pre-call");
+					createDomWithText("OnCall", `<b>Sub-status:</b>&nbsp; <p dir="auto"><b>Sub-status Reason:</b>&nbsp;</p><p dir="auto"><b>Speakeasy ID:&nbsp;</b></p><p dir="auto"><b>On Call Comments:</b>&nbsp;</p><p dir="auto"><b>Tags Implemented:</b>&nbsp;<span class="_tags_implement"></span></p><p dir="auto"><b>Screenshots:&nbsp;</b></p><p dir="auto"><b>Multiple CIDs:&nbsp;</b></p><p dir="auto"><b>On Call Screenshot:</b>&nbsp;</p>`, "on-call");
+				}
+			}
+		};
 
-// Select the node that will be observed for mutations
-var targetNode = document.body;
+		// Create an observer instance linked to the callback function
+		var observer = new MutationObserver(callback);
 
-// Options for the observer (which mutations to observe)
-var config = { attributes: true, childList: true, subtree: true };
+		// Start observing the target node for configured mutations
+		observer.observe(targetNode, config);
 
-// Callback function to execute when mutations are observed
-var callback = function(mutationList, observer) {
-    for (var i = 0; i < mutationList.length; i++) {
-        if (mutationList[i].addedNodes.length > 0) {
-            for (var j = 0; j < mutationList[i].addedNodes.length; j++) {
-                if (mutationList[i].addedNodes[j]) {
-                 if (mutationList[i].addedNodes[j].classList.length > 0) {
-                     var classes = Array(mutationList[i].addedNodes[j].classList);
-                     if (classes.indexOf("case-note")) {
-                         if (document.querySelector("#pre-call") === null && document.querySelector("#on-call") === null) {
-                           createDomWithText("Precall", `<ul dir="auto"><li>Emails or feedback from Advertiser/Seller (including seller request to join the call)[C]&nbsp;</li><li>Call being made in business hours[C]</li><li>Program ,task type (including special instructions),advertiser need and readiness [C]</li><li>Related cases [C]</li><li>CMS being used  [C]</li><li>Gtag/GTM/GA already exists  [C] (NA applicable only for Shopping or OCT cases)</li></ul>`, "pre-call");
-createDomWithText("OnCall", `<b>Sub-status:</b>&nbsp;<p dir="auto"><b>Sub-status Reason:</b>&nbsp;</p><p dir="auto"><b>Speakeasy ID:&nbsp;</b></p><p dir="auto"><b>On Call Comments:</b>&nbsp;</p><p dir="auto"><b>Tags Implemented:</b>&nbsp;</p><p dir="auto"><b>Screenshots:&nbsp;</b></p><p dir="auto"><b>Multiple CIDs:&nbsp;</b></p><p dir="auto"><b>On Call Screenshot:</b>&nbsp;</p>`, "on-call");
-                         }
-                     }
-                         
-                 }
-                }
-            }
-        }
-            
-        
-    }
-};
-
-// Create an observer instance linked to the callback function
-var observer = new MutationObserver(callback);
-
-// Start observing the target node for configured mutations
-observer.observe(targetNode, config);
-
-// Later, you can stop observe
+		// Later, you can stop observe
+		
+	} catch (error) {
+		
+	}
 }
 
 

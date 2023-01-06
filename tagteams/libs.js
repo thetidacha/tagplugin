@@ -1,16 +1,20 @@
 // ==== VARIABLE GLOBAL ====
 window.dataTagteam = window.dataTagteam || {};
+window.dataTagteam.extension_id = chrome.runtime.id;
 
 
 
 
 // ==== LIB ====
 function loadCaseDatabaseByID(case_id) {
+    // console.log(window.dataTagteam.current_case)
     if (dataStatus.case_list) {
+        // console.log("dataStatus.case_list ||| ", case_id, dataStatus.case_list[0].case_id)
         for (let index = 0; index < dataStatus.case_list.length; index++) {
-            var item = dataStatus.case_list[index];
-            if (item.case_id === case_id) {
-                return item;
+            var _item = dataStatus.case_list[index];
+            if (_item.case_id === case_id) {
+                cLog(()=>{console.log('loadCaseDatabaseByID | ', case_id, _item.case_id)});
+                return _item;
                 break;
             }
         }
@@ -54,6 +58,13 @@ function copyTextToClipboard(text) {
     }, function (err) {
         console.error('Async: Could not copy text: ', err);
     });
+}
+
+// UpperCase
+function capitalizeFirstLetter(string) {
+    if(string[0]) {
+        return string[0].toUpperCase() + string.slice(1);
+    }
 }
 
 // getOnlyCaseId
@@ -101,14 +112,27 @@ function formatDate(date) {
 function getDataTimeFormat(_datestring) {
     try {
         var _regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d(?:\.\d+)?Z?/g;
+        
         // var _regex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d(?:\.\d+)?/g;
-        _datestring = _regex.exec(_datestring);
-        if (_datestring[0]) {
-            var dateTime = new Date(_datestring[0]);
-            return formatDate(dateTime);
+        _datestring_regex = _regex.exec(_datestring);
+        if (_datestring_regex[0]) {
+            var date = new Date(_datestring_regex[0]);
+            var dateNow = new Date();
+
+            // Convert to timezone current by browser location
+            // Ex: KL malaysia
+            var offset = dateNow.getTimezoneOffset();
+            date.setHours(date.getHours() - Math.abs(offset/60));
+
+            console.log(_datestring_regex[0], date.toLocaleString());
+
+            // return dateTimeZone.toISOString();
+            return formatDate(date);
             // return _datestring[0];
         }
+
     } catch (error) {
+        cLog(() => {console.log(error)});
         return false;
     }
     return false;
@@ -156,17 +180,18 @@ function wait4Elem(selector) {
 // ====
 function checkInputEmailInbox(){
     var _global_status = {
-        "test": false
+        "test": true
     };
 
-    if(location.href.includes("cdtx-assistant/cases_connect")) {
-        _global_status.test = true;
-    }
 
     var _caseid_elm = document.querySelector('[debug-id="case-id"] .case-id');
     if(_caseid_elm) {
-        var caseload = loadCaseDatabaseByID(_caseid_elm.innerText);
+        cLog(() => {console.log("checkInputEmailInbox", window.dataTagteam.current_case.case_id); });
+        // var caseload = loadCaseDatabaseByID(_caseid_elm.innerText);
+        var caseload = window.dataTagteam.current_case;
         if(caseload) {
+
+            // Explore unmark
             var unmaskbutton = document.querySelectorAll('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top .unmask-button');
             if(unmaskbutton.length) {
                 unmaskbutton.forEach(function (elm) {
@@ -178,11 +203,14 @@ function checkInputEmailInbox(){
                 });
             }
 
+            
             var recheckand_alert = () => {
+                
                 setTimeout(function(){
                     var unmaskbutton = document.querySelectorAll('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top .unmask-button');
                     if(unmaskbutton.length) {
                         recheckand_alert();
+
                         return false;
                     }
                     
@@ -190,23 +218,30 @@ function checkInputEmailInbox(){
                     var _email_input_cc = document.querySelector('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top email-address-input.input.cc');
                     var _email_input_bcc = document.querySelector('.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top email-address-input.input.bcc');
 
-                    if(_email_input_to.innerText.includes(caseload.customer_email) === false) {
-                        _email_input_to.style.backgroundColor = "red";
-                        alert("To => sai / thiếu");
+                    if(_email_input_to && _email_input_cc && _email_input_bcc) {
+                        _email_input_to.style.backgroundColor = "";
+                        _email_input_cc.style.backgroundColor = "";
+                        _email_input_bcc.style.backgroundColor = "";
 
-                    }
-
-                    if(_email_input_cc.innerText.includes(caseload.am_email) === false) {
-                        _email_input_cc.style.backgroundColor = "red";
-                        alert("CC => sai / thiếu rồi");
-
-                    }
-
-                    if(caseload.am_isgcc) {
-                        if(_email_input_bcc.innerText.includes(caseload.am_email) === false) {
-                            _email_input_bcc.style.backgroundColor = "red";
-                            alert("BCC => sai / thiếu rồi");
-
+                        if(_email_input_to.innerText.includes(caseload.customer_email) === false) {
+                            cLog(() => {console.log("---> check CC", window.dataTagteam.current_case.case_id); });
+                            _email_input_to.style.backgroundColor = "#ff8f8f";
+                            noteBarAlert('Mail TO => wrong / missing', caseload.case_id);
+    
+                        }
+    
+                        if(_email_input_cc.innerText.includes(caseload.am_email) === false) {
+                            _email_input_cc.style.backgroundColor = "#ff8f8f";
+                            noteBarAlert('Mail CC => wrong / missing', caseload.case_id);
+    
+                        }
+    
+                        if(caseload.am_isgcc) {
+                            if(_email_input_bcc.innerText.includes(caseload.am_email) === false) {
+                                _email_input_bcc.style.backgroundColor = "#ff8f8f";
+                                noteBarAlert('Is BCC => BCC => wrong / missing', caseload.case_id);
+    
+                            }
                         }
                     }
 
@@ -218,6 +253,24 @@ function checkInputEmailInbox(){
         }
     }
 }
+
+
+// =====
+// addCursor2contenteditable
+// Add position cursor point 
+// ====
+function addCursor2Contenteditable(el, npos = 1) {
+    var range = document.createRange()
+    var sel = window.getSelection()
+
+    range.setStart(el, npos);
+    range.collapse(true)
+
+    sel.removeAllRanges()
+    sel.addRange(range);
+}
+
+
 // =====
 // textAreaAdjust
 // Auto height textarea
@@ -235,7 +288,7 @@ function tagteam_showGTMID() {
             var gtmclone = document.querySelector(".gtm-clone");
             if(gtmpublish && !gtmclone) {
                 var gtm_id = gtmpublish.innerText.trim();
-                gtmpublish.insertAdjacentHTML("afterEnd", `<span class="gtm-clone" style="font-size: 14px;border: 1px solid #ccc;margin: 10px;padding: 10px;background: #fff;box-shadow: 0 0 17px #ccc;display: inline-block;line-height: 1;text-align: left;"><small style="user-select: none; display: block; color: #888; font-size: 70%; ">Copy below</small><span style=" user-select: all; margin: 7px 0; display: block; ">${gtm_id}</span></span>`)
+                gtmpublish.insertAdjacentHTML("afterEnd", `<span class="gtm-clone" style="font-size: 14px;border: 1px solid #ccc;margin: 10px;padding: 10px;background: #fff;box-shadow: 0 0 17px #ccc;display: inline-block;line-height: 1;text-align: left;"><small style="user-select: none; display: block; color: #888; font-size: 70%; ">Copy below</small><span style=" user-select: all; margin: 7px 0; display: block; color: #888; ">${gtm_id}</span></span>`)
             }
         }
 
@@ -255,13 +308,222 @@ function onClickElm(str_selector, eventstr, callback){
         var str_elm = document.querySelectorAll(str_selector);
         str_elm.forEach(function(elm){
             if(elm === e.target) {
-                callback();
+                callback(elm, e);
             } else {
                 if(e.target.closest(str_selector) === elm ) {
-                    callback();
+                    callback(elm, e);
                 }
             }
         });
         
     });
 }
+
+
+
+// Search key and return value
+// Value like  abc : 123
+// Return value => 123
+function searchAndReturnValue(_str_data, _keysearch, _posvalue = 1){
+    _str_data = _str_data.trim();
+    var _newline = _str_data.split("\n");
+
+    _newline = _newline.map(s => s.trim());
+    var _item = "";
+    for (let index = 0; index < _newline.length; index++) {
+        _item = _newline[index];
+        _item = _item.split(":");
+        _item = _item.map(s => s.trim());
+        
+        // Only loop key, if ok => get value
+        for (let index2 = 0; index2 < _item.length - 1; index2++) {
+            var _keyindex = _item[index2];
+            _key = _keysearch.replace("\n", " ");
+
+            // console.log(_key, ",", _keyindex, _key === _keyindex);
+            // console.log(_item[_posvalue]);
+            if(_key === _keyindex){
+                return _item[_posvalue].trim().length > 0 ? _item[_posvalue] : false;
+                break;
+            }
+
+            _key = _keysearch.replace("\n", "");
+            if(_key === _keyindex){
+                return _item[_posvalue].trim().length > 0 ? _item[_posvalue] : false;
+                break;
+            }
+        }
+    }
+    return false;
+}
+
+function cLog(callback) {
+    // ?test
+    if(window.location.search.includes("test")) {
+        callback();
+    }
+}
+
+
+function d_load_script(url, callback) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    if (script.readyState) {
+        script.onreadystatechange = function () {
+            if (script.readyState == "loaded" || script.readyState == "complete") {
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {
+        script.onload = function () {
+            callback();
+        };
+    }
+    const staticUrlPolicy = trustedTypes.createPolicy("foo-js-static", {
+        createScriptURL: () => url
+    });
+    script.src = staticUrlPolicy.createScriptURL("");;
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+
+function loadFetchObject(url, _callback) {
+    fetch(url, {
+        method: 'GET'
+    })
+        .then(function(response) {
+            return response.json();
+        }).then(function(_content) {
+            _callback(_content);
+        });
+}
+
+function loadFetchContent(url, _callback) {
+    fetch(url, {
+        method: 'GET'
+    })
+        .then(function(response) {
+            return response.text();
+        }).then(function(_html_panel) {
+            // chrome.scripting.executeScript(_html_panel);
+            _callback(_html_panel);
+        })
+}
+
+
+
+// ======
+// For Storage
+function setChromeStorage(key, value, _callback = false) {
+    chrome.runtime.sendMessage({method: 'fe2bg_chromestorage_set', key: key, value: value}, (response) => {
+        if(_callback !== false) {
+            _callback(response);
+        }
+    });
+}
+
+
+function getChromeStorage(key, _callback = false) {
+    chrome.runtime.sendMessage({method: 'fe2bg_chromestorage_get', key: key}, (response) => {
+        if(_callback !== false) {
+            response = response || {};
+            _callback(response);
+        }
+    });
+}
+
+function removeChromeStorage(key, _callback = false) {
+    chrome.runtime.sendMessage({method: 'fe2bg_chromestorage_remove', key: key}, (response) => {
+        if(_callback !== false) {
+            _callback(response);
+        }
+    });
+}
+
+
+// ============
+// Noted bar 
+function noteBarAlert(note, caseid) {
+    
+    // Add card noted
+    if(note) {
+        if(window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) {
+            var elm_casedetails = document.querySelector('case-details');
+
+            if(note === 'CLEAR') {
+                // Remove all if isset
+                elm_casedetails.querySelectorAll(`noted[data-id] ._str`).forEach((elm)=>{
+                    elm.remove();
+                });
+
+                return false;
+            }
+            
+            if(document.querySelector('[debug-id="case-id"] .case-id').innerText.trim() == caseid) {
+                if(elm_casedetails.querySelector(`noted[data-id="${caseid}"]`)) {
+                    var _noted = elm_casedetails.querySelector(`noted[data-id="${caseid}"]`);
+                    var _is_add = true;
+                    
+                    _noted.querySelectorAll("span").forEach((elm) => {
+                        if(elm.innerText == note) {
+                            _is_add = false;
+                        }
+                    })
+        
+                    if(_is_add) {
+                        var _str = _TrustScript(note);
+                        _noted.innerHTML += `<span class="_str">${_str}</span>`;
+                    }
+                } else {
+        
+                    // Remove all if isset
+                    elm_casedetails.querySelectorAll(`noted[data-id]`).forEach((elm)=>{
+                        elm.remove();
+                    });
+        
+                    // data id
+                    var _str = `<noted data-id="${caseid}" ><span class="_str">${note}</span></noted>`;
+                    _str = _TrustScript(_str);
+                    elm_casedetails.querySelector('card-deck').insertAdjacentHTML("beforeBegin", _str);
+                }
+            }
+        }
+    }
+
+}
+
+
+// set TrustScript chrome
+function _TrustScript (_string) {
+    const staticHtmlPolicyv2 = trustedTypes.createPolicy('foo-static', {createHTML: () => _string}); 
+    return staticHtmlPolicyv2.createHTML('');
+}
+
+
+// Load content
+function load_fetch_post_content(url, _body, _callback) {
+    // _body = {
+    //     "action": "getpanel",
+    //     "language": "vi"
+    // };
+    if(!_body.action ) return false;
+    
+    const formData = new FormData();
+    Object.keys(_body).forEach(key => {
+        formData.append(key, _body[key]);
+    });
+    
+    fetch(url, {
+        method: 'POST',
+        body: formData
+    })
+        .then(function(response) {
+            return response.json();
+        }).then(function(_content) {
+            _callback(_content);
+        }).catch((error) => {
+            _callback(false);
+        });;
+}
+

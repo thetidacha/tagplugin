@@ -21,14 +21,18 @@ console.log('injector id currently is ' + result.myInjector + ' and it will '+ r
 
 var s = document.createElement('script');
 s.src = chrome.extension.getURL('script.js');
-(document.head||document.documentElement).appendChild(s);
-s.onload = function() {
-var s2 = document.createElement('script');
-s2.src = chrome.extension.getURL('script.js');
-(document.head||document.documentElement).appendChild(s2);
-s2.onload = function() {
-var s3 = document.createElement('script');
-s3.src = chrome.extension.getURL('script.js');
-(document.head||document.documentElement).appendChild(s3);
-};
-};
+try {
+	(document.head||document.documentElement).appendChild(s);
+	s.onload = function() {
+		var s2 = document.createElement('script');
+		s2.src = chrome.extension.getURL('script.js');
+		(document.head||document.documentElement).appendChild(s2);
+		s2.onload = function() {
+		var s3 = document.createElement('script');
+		s3.src = chrome.extension.getURL('script.js');
+		(document.head||document.documentElement).appendChild(s3);
+		};
+	};
+} catch (error) {
+	console.error("gtminjector.js - has error", error);
+}

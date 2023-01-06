@@ -6,10 +6,12 @@ function save_options() {
   console.log(country);
   chrome.runtime.sendMessage({message: country});
   
+  var optionkl__modecase = document.getElementById('optionkl__modecase').value || "";
   var optionkl__inputyourname = document.getElementById('optionkl__inputyourname').value || "";
   var optionkl__inputyourshortname = document.getElementById('optionkl__inputyourshortname').value || "";
   var optionkl__disable_dialog = document.getElementById('optionkl__disable-dialog').checked || false;
   var optionkl__disable_focuscase = document.getElementById('optionkl__disable-focuscase').checked || false;
+  var optionkl__disable_stylebytheme = document.getElementById('optionkl__disable-stylebytheme').checked || false;
 
   if(country == "Vietnam") {
 		
@@ -50,10 +52,12 @@ function save_options() {
     mycountry: country, 
     ouremail: youremail,
 
+    optionkl__modecase: optionkl__modecase,
     optionkl__inputyourname: optionkl__inputyourname,
     optionkl__inputyourshortname: optionkl__inputyourshortname,
     optionkl__disable_dialog: optionkl__disable_dialog,
-    optionkl__disable_focuscase: optionkl__disable_focuscase
+    optionkl__disable_focuscase: optionkl__disable_focuscase,
+    optionkl__disable_stylebytheme: optionkl__disable_stylebytheme
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -115,10 +119,12 @@ function restore_options() {
     ouremail: 'xxx@google.com', 
     myInjector: 'gtm-xxx',
     gtmToDo: 'notStart',
+    optionkl__modecase: "",
     optionkl__inputyourshortname: "",
     optionkl__inputyourname: "",
     optionkl__disable_dialog: false,
-    optionkl__disable_focuscase: false
+    optionkl__disable_focuscase: false,
+    optionkl__disable_stylebytheme: false
   }, function(items) {
     console.log(items);
 	console.log('why not here ' + items.myInjector + ' ' +items.gtmToDo);
@@ -127,9 +133,11 @@ function restore_options() {
 	document.getElementById('yourGTM').value = items.myInjector;
 
 	document.getElementById('optionkl').setAttribute("data-optionkl", items.mycountry);
+	document.getElementById('optionkl__modecase').value = items.optionkl__modecase;
 	document.getElementById('optionkl__inputyourshortname').value = items.optionkl__inputyourshortname;
 	document.getElementById('optionkl__inputyourname').value = items.optionkl__inputyourname;
 	document.getElementById('optionkl__disable-dialog').checked = items.optionkl__disable_dialog;
+	document.getElementById('optionkl__disable-stylebytheme').checked = items.optionkl__disable_stylebytheme;
 	document.getElementById('optionkl__disable-focuscase').checked = items.optionkl__disable_focuscase;
 
 
@@ -143,8 +151,21 @@ function restore_options() {
 	}
 
 document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click',
-    save_options);
+document.getElementById('save').addEventListener('click', save_options);
+
+document.getElementById('country').addEventListener('change', function(e) {
+  var elem_parent = this.closest('[id="optionkl"]');
+	document.getElementById('optionkl').setAttribute("data-optionkl", this.value);
+  
+  
+  // Vietnamses
+  if(this.value === 'Vietnam') {
+    // elem_parent.querySelector('[name="youremail"]').value='';
+
+  }
+
+  
+});
 $('#startGTM').click(inject_options);	
 $('#stopGTM').click(stop_injector);	
 	
