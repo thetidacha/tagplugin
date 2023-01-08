@@ -1185,17 +1185,13 @@
                                                         </li>
                                                         <li>
                                                             <p>Chọn thẻ theo dõi lượt chuyển đổi Google Ads mà bạn muốn triển khai tính năng lượt chuyển đổi nâng cao và chỉnh sửa thẻ đó</p>
+                                                            <p>Nếu bạn chưa thiết lập thẻ theo dõi chuyển đổi Google Ads trong tài khoản Trình quản lý thẻ của Google, hãy tìm hiểu thêm về <a href="https://support.google.com/tagmanager/answer/6105160">chuyển đổi Google Ads</a>.</p>
+                                                            <p>Đảm bảo hành động chuyển đổi này có cùng ID theo dõi lượt chuyển đổi và nhãn chuyển đổi giống như hành động chuyển đổi mà bạn đã bật tính năng lượt chuyển đổi nâng cao trong tài khoản Google Ads của mình.<br><br></p>
                                                         </li>
-                                                    </ol>
-                                                    <p>Nếu bạn chưa thiết lập thẻ theo dõi chuyển đổi Google Ads trong tài khoản Trình quản lý thẻ của Google, hãy tìm hiểu thêm về <a href="https://support.google.com/tagmanager/answer/6105160">chuyển đổi Google Ads</a>.</p>
-                                                    <p>Đảm bảo hành động chuyển đổi này có cùng ID theo dõi lượt chuyển đổi và nhãn chuyển đổi giống như hành động chuyển đổi mà bạn đã bật tính năng lượt chuyển đổi nâng cao trong tài khoản Google Ads của mình.<br><br></p>
-                                                    <ol start="4">
                                                         <li>
                                                             <p>Nhấp vào Bao gồm dữ liệu do người dùng cung cấp từ trang web của bạn.</p>
+                                                            <p>Nếu bạn không thấy điều này, hãy đảm bảo rằng bạn đã ký vào điều khoản dịch vụ trong tài khoản Google Ads đang quản lý hành động chuyển đổi mà bạn đang thiết lập tính năng lượt chuyển đổi nâng cao. Nếu bạn cho rằng mình đã làm việc này, đợi 5 ngày mà vẫn không thấy trường dữ liệu "Cung cấp lượt chuyển đổi nâng cao" trong Trình quản lý thẻ của Google, hãy liên hệ với Đại diện quản lý Google hoặc bộ phận hỗ trợ của Google nếu bạn không có người đại diện quản lý.<br><br></p>
                                                         </li>
-                                                    </ol>
-                                                    <p>Nếu bạn không thấy điều này, hãy đảm bảo rằng bạn đã ký vào điều khoản dịch vụ trong tài khoản Google Ads đang quản lý hành động chuyển đổi mà bạn đang thiết lập tính năng lượt chuyển đổi nâng cao. Nếu bạn cho rằng mình đã làm việc này, đợi 5 ngày mà vẫn không thấy trường dữ liệu "Cung cấp lượt chuyển đổi nâng cao" trong Trình quản lý thẻ của Google, hãy liên hệ với Đại diện quản lý Google hoặc bộ phận hỗ trợ của Google nếu bạn không có người đại diện quản lý.<br><br></p>
-                                                    <ol start="5">
                                                         <li>
                                                             <p>Trong Dữ liệu người dùng, chọn Biến mới, rồi chọn Dữ liệu do người dùng cung cấp.</p>
                                                         </li>
@@ -1204,9 +1200,10 @@
                                                         </li>
                                                         <li>
                                                             <p>Nhấp vào Lưu cho biến rồi lưu thẻ theo dõi chuyển đổi.<br><br></p>
+                                                            <p>Vui lòng lưu ý rằng bạn sẽ thấy thông báo rằng “Google cần một chút thời gian để đánh giá xem chuyển đổi của bạn có hoạt động bình thường với “Thiết lập tự động” hay không. Bạn có thể kiểm tra lại sau 1 tuần để xem lại trạng thái của hành động chuyển đổi và liên hệ với Đội ngũ Kỹ thuật đại diện Google nếu cần thực hiện bất kỳ hành động khắc phục hay bổ sung, và chúng tôi sẵn lòng hỗ trợ bạn.</p>
                                                         </li>
                                                     </ol>
-                                                    <p>Vui lòng lưu ý rằng bạn sẽ thấy thông báo rằng “Google cần một chút thời gian để đánh giá xem chuyển đổi của bạn có hoạt động bình thường với “Thiết lập tự động” hay không. Bạn có thể kiểm tra lại sau 1 tuần để xem lại trạng thái của hành động chuyển đổi và liên hệ với Đội ngũ Kỹ thuật đại diện Google nếu cần thực hiện bất kỳ hành động khắc phục hay bổ sung, và chúng tôi sẵn lòng hỗ trợ bạn.</p>
+                                                    
                                                 </div>
 
                                                 <p><br>Bạn cũng có thể tham khảo <a href="https://support.google.com/google-ads/answer/10763826?hl=vi&amp;ref_topic=11337914">Trung tâm trợ giúp</a> để được hướng dẫn thêm về vấn đề này. </p>
