@@ -951,7 +951,7 @@
                                                         <p><strong>Chấp thuận 'điều khoản dữ liệu khách hàng' </strong>trong Cài đặt chuyển đổi trước cuộc gọi. Vui lòng thực hiện theo các bước bên dưới để hoàn tất quá trình này: trong tài khoản Google Ads của bạn , hãy nhấp vào “Đo lường &gt; Chuyển đổi &gt; Cài đặt &gt; chấp nhận mục “ Điều khoản dữ liệu khách hàng”.</p>
                                                     </li>
                                                     <li>
-                                                        <p>Đảm bảo rằng <strong>trang chuyển đổi của bạn có chứa</strong> <strong>“Thông tin nhận dạng cá nhân của người dùng” </strong>(địa chỉ Email, Số điện thoại). &nbsp;Đây là đoạn mẫu của biến lớp dữ liệu {Add data layer code for GTM/Gtag code here}.</p>
+                                                        <p>Đảm bảo rằng <strong>trang chuyển đổi của bạn có chứa</strong> <strong>“Thông tin nhận dạng cá nhân của người dùng” </strong>(địa chỉ Email, Số điện thoại). &nbsp;Đây là đoạn mẫu của biến lớp dữ liệu <span data-notecontent>{Add data layer code for GTM/Gtag code here}</span>.</p>
                                                     </li>
                                                     <li>
                                                         <p>Đảm bảo trang web của bạn được <strong>mã hóa thông qua HTTPS</strong>.</p>
