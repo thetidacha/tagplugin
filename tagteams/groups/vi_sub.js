@@ -830,8 +830,10 @@ var vi_TagteamFocusCase = () => {
         });
         
         var cidPath = `//div[contains(@class, 'data-pair-label')][contains(text(),'Google Ads External Customer ID')]//following-sibling::div`;
-        var cidRaw = document.evaluate(cidPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerText;
-        var cid = cidRaw.slice(0,3)+'-'+cidRaw.slice(3,6)+'-'+cidRaw.slice(6);
+        if(document.evaluate(cidPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue) {
+            var cidRaw = document.evaluate(cidPath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.innerText;
+            var cid = cidRaw.slice(0,3)+'-'+cidRaw.slice(3,6)+'-'+cidRaw.slice(6);
+        }
         // var gearlooseHtml = `<icon id="gearloose" class="content _ngcontent-vwc-7">
         //         <a class="tool" target="_blank" href="https://gearloose2.corp.google.com/#/search/merchants?q=awid:${cid}" data-tooltip="Gearloose 2.0"><img src="https://lh3.googleusercontent.com/proxy/mawyrjPH2gsWpZuGnLpIXCiXkuhJ69RZaP7ypPqMX5QGTtXDUPQncooBaQUc6V0uRI5h1fZABTXr5wgJPU0ptpxjQ1NyDke2y6tEbx5HG6K0H1Q" style="width:100%;border-radius: 0 0 16px 19px;"> </a>
         //         </icon>`;

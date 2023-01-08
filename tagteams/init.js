@@ -22,7 +22,7 @@ function (result) {
             window.dataTagteam.tagteamFocusCase = () => { vi_TagteamFocusCase() } ;
             window.dataTagteam.sendFirstEmail = () => { vi_sendFirstEmail() } ;
     
-            tagTeamTDCXLoad(window);
+            vi_tagTeamTDCXLoad(window);
         }
 
 		vi_load_remote(result, _default_action);
@@ -39,7 +39,7 @@ function (result) {
 		// window.dataTagteam.tagteamFocusCase = () => { ja_TagteamFocusCase() } ;
 		// window.dataTagteam.sendFirstEmail = () => { ja_sendFirstEmail() } ;
 		
-		// tagTeamTDCXLoad();
+		// ja_tagTeamTDCXLoad();
 	// }
 
 
@@ -53,7 +53,7 @@ function (result) {
 		// window.dataTagteam.tagteamFocusCase = () => { thailan_TagteamFocusCase() } ;
 		// window.dataTagteam.sendFirstEmail = () => { thailan_sendFirstEmail() } ;
 		
-		// tagTeamTDCXLoad();
+		// thailan_tagTeamTDCXLoad();
 	// }
 	
 }
