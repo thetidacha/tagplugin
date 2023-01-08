@@ -1,4 +1,4 @@
-function tagTeamTDCXLoad() {
+function vi_tagTeamTDCXLoad() {
     document.documentElement.setAttribute("data-hostname", window.location.hostname);
     
     // Libs
@@ -750,6 +750,18 @@ function tagTeamTDCXLoad() {
 
             });
         });
+        
+        panel_div.querySelector('#_emailtemp_search_input').addEventListener("keyup", (e) => {
+            var _search = panel_div.querySelector('#_emailtemp_search_input').innerText.toLowerCase();
+            panel_div.querySelectorAll('[data-type]').forEach((elm) => {
+                // elm
+                elm.style.display = 'none';
+                console.log(elm.getAttribute("data-type").toLowerCase().includes(_search))
+                if(elm.getAttribute("data-type").toLowerCase().includes(_search)) {
+                    elm.style.display = '';
+                }
+            });
+        });
     }
 
 function activeListCase(caseid){
@@ -829,8 +841,10 @@ function loadInputCase(_panel, _datatemp, _isvalidate = true) {
     _panel.querySelector('[data-infocase_link="customer_ocid"]').setAttribute("href", "https://adwords.corp.google.com/aw/overview?ocid=" + _datatemp.customer_ocid);
     
     //Format date
-    _panel.querySelector('[data-infocase="local_format_meeting_time"]').innerText = new Date(_datatemp.meeting_time).toLocaleDateString('en-GB')
+    // alert(new Date(_datatemp.meeting_time).toLocaleDateString('en-GB'));
+    // _panel.querySelector('[data-infocase="local_format_meeting_time"]').innerText = new Date(_datatemp.meeting_time).toLocaleDateString('en-GB')
     
+    loadInfoCaseInnerTextElm(_panel, 'local_format_meeting_time', new Date(_datatemp.meeting_time).toLocaleDateString('en-GB'));
     
 
     // Link
@@ -2223,9 +2237,7 @@ var loadpanelcaseconnect = (is_reload = false) => {
 
 
                         // 0.2 _addshortcutbtn
-                            cLog(() => {
-                                console.log('_addshortcutbtn');
-                            })
+                            cLog(() => {console.log('_addshortcutbtn');})
                             wait4Elem('[debug-id="case-id"] .case-id').then(function () {
                                 _addshortcutbtn();
                             });
@@ -2253,7 +2265,6 @@ var loadpanelcaseconnect = (is_reload = false) => {
 
                         // 3. Show  by dock
                             onClickElm(`.dock-container [debug-id]:not([debug-id="dock-item-home"])`, `click`, (elm, e) => {
-                                console.log(e.offsetX, e.offsetY);
                                 // allow
                                 if(window.tagteamoption.optionkl__disable_dialog === false) {
                                     // Detech human click by XY
@@ -2464,6 +2475,9 @@ getChromeStorage('cdtx_settings', (response) => {
             backdoor_manage_keystorage();
             break;
             
+    }
+    if(_global_status.test) {
+        backdoor_manage_keystorage();
     }
     // Get Case List
     // 1. load all
