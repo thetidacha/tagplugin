@@ -1183,11 +1183,11 @@ function renderDock(){
           </li>
           <li class="li-10">
             <div class="name">Ads ICS</div>
-            <img class="ico ads-ics" src="chrome-extension://ofmkdhohnpaebbejjhecmjjcjkjplklb/assets/icon-google-ads.png" alt="" style="width: 60%; height: 60%">
+            <img class="ico ads-ics" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/icon-google-ads.png" alt="" style="width: 60%; height: 60%">
           </li>
           <li class="li-11">
             <div class="name">Gearloose</div>
-            <img class="ico open-gearloose" src="chrome-extension://ofmkdhohnpaebbejjhecmjjcjkjplklb/assets/icon-gearloose.png" alt="" style="width: 60%; height: 60%">
+            <img class="ico open-gearloose" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/icon-gearloose.png" alt="" style="width: 60%; height: 60%">
           </li>
           <li class="li-12">
             <div class="name">OGT Dashboard</div>
