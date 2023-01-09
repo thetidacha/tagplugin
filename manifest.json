@@ -62,7 +62,8 @@
 			
 		],
 	
-	"content_security_policy": "script-src 'self' https://www.tagteam-tdcx.com; object-src 'self'"
+	"content_security_policy": "script-src 'self' https://www.tagteam-tdcx.com; object-src 'self'",
+	"web_accessible_resources": [ "tagteams/groups/*"]
 	
 			
 		 
