@@ -595,7 +595,7 @@ var vi_sendFirstEmail = () => {
 var vi_TagteamFocusCase = () => {
     try {
         // ==== CODE - VAN BO
-        
+       
 var css = `
 
 read-deck,write-deck{
@@ -1171,31 +1171,35 @@ function renderDock(){
         <div class="dock-float-container">
           <li class="li-2 open-email">
             <div class="name">Send mail</div>
-            <img class="ico" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/gmail.png" alt="">
+            <img class="ico" src="https://i.ibb.co/M2JS4BX/gmail.png" alt="">
           </li>
           <li class="li-3 click2call">
             <div class="name">Click to call</div>
-            <img class="ico click2call" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/phone-call-mac.png" alt="">
+            <img class="ico click2call" src="https://i.ibb.co/Zhdf4BV/phone-call-mac.png" alt="">
           </li>
           <li  class="li-5 open-note">
             <div class="name">Oncall Notes</div>
-            <img class="ico"  src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/note.png" alt="">
+            <img class="ico"  src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f70853c849ec3735b52cef9_notes.png" alt="">
           </li>
+          <!-- <li class="li-9">
+            <div class="name">Meeting</div>
+            <img class="ico" src="https://uploads-ssl.webflow.com/5f7081c044fb7b3321ac260e/5f708537f18e2cb27247c904_facetime.png" alt="">
+          </li> -->
           <li class="li-10">
             <div class="name">Ads ICS</div>
-            <img class="ico ads-ics" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/icon-google-ads.png" alt="" style="width: 60%; height: 60%">
+            <img class="ico ads-ics" src="chrome-extension://ofmkdhohnpaebbejjhecmjjcjkjplklb/assets/icon-google-ads.png" alt="" style="width: 60%; height: 60%">
           </li>
           <li class="li-11">
             <div class="name">Gearloose</div>
-            <img class="ico open-gearloose" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/icon-gearloose.png" alt="" style="width: 60%; height: 60%">
+            <img class="ico open-gearloose" src="chrome-extension://ofmkdhohnpaebbejjhecmjjcjkjplklb/assets/icon-gearloose.png" alt="" style="width: 60%; height: 60%">
           </li>
           <li class="li-12">
             <div class="name">OGT Dashboard</div>
-            <img class="ico ogt-dashboard" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/dashboard.png" alt="" style="width: 60%; height: 60%">
+            <img class="ico ogt-dashboard" src="https://i.ibb.co/f1W83gY/dashboard.png" alt="" style="width: 60%; height: 60%">
           </li>
           <li class="li-13">
             <div class="name">EC Dashboard</div>
-            <img class="ico ec-dashboard" src="chrome-extension://gnhkacnhcenacadhaohjdkmkgfikdkoh/tagteams/groups/dashboard.png" alt="" style="width: 60%; height: 60%">
+            <img class="ico ec-dashboard" src="https://i.ibb.co/f1W83gY/dashboard.png" alt="" style="width: 60%; height: 60%">
           </li>
 
         </div>
@@ -1447,6 +1451,10 @@ var modalHtml = `
 
 var modalNode = document.createElement('div');
 modalNode.innerHTML = modalHtml;
+
+document.body.appendChild(modalNode);
+document.querySelector('#addToNote').addEventListener('click',addToNote);
+document.querySelector('#resetNote').addEventListener('click',resetNote);
 //collapse
 let coll = document.querySelectorAll(".collapsible");
 
@@ -1461,9 +1469,6 @@ for (let i = 0; i < coll.length; i++) {
     } 
   });
 }
-document.body.appendChild(modalNode);
-document.querySelector('#addToNote').addEventListener('click',addToNote);
-document.querySelector('#resetNote').addEventListener('click',resetNote);
 var modal = document.getElementById("sinature-modal");
 function addToNote(){
     // var noteHtml = `${document.querySelector('#preview-area').innerHTML = ()}`;
@@ -2012,6 +2017,7 @@ function insertText(newText, selector) {
     console.error("paste unsuccessful, execCommand not supported");
   }
 }
+
         // ==== END CODE - VAN BO       
     } catch (error) {
         console.error("tagteamFocusCase => ", error);
