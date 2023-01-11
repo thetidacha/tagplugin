@@ -1,7 +1,7 @@
 // ==== VARIABLE GLOBAL ====
 window.dataTagteam = window.dataTagteam || {};
 window.dataTagteam.extension_id = chrome.runtime.id;
-
+window.dataTagteam.assets_url_img = 'chrome-extension://' + window.dataTagteam.extension_id + '/assets/img';
 
 
 

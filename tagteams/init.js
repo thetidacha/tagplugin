@@ -21,7 +21,7 @@ function (result) {
             // Focus case code vanbo
             window.dataTagteam.tagteamFocusCase = () => { vi_TagteamFocusCase() } ;
             window.dataTagteam.sendFirstEmail = () => { vi_sendFirstEmail() } ;
-    
+			
             vi_tagTeamTDCXLoad(window);
         }
 

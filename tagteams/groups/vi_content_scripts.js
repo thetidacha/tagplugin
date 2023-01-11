@@ -870,11 +870,13 @@ function loadInputCase(_panel, _datatemp, _isvalidate = true) {
 
     if(_datatemp.customer_adsid) {
         loadInfoCaseInnerTextElm(_panel, 'customer_adsid_format', reformatAdsId(_datatemp.customer_adsid));
-
-        if(document.querySelector('._panel_shortcut_gearloose_vanbo')) {
-            document.querySelector('._panel_shortcut_gearloose_vanbo').setAttribute("href", 'https://gearloose2.corp.google.com/#/search/merchants?q=awid:' + reformatAdsId(_datatemp.customer_adsid));
-            document.querySelector('._panel_shortcut_gearloose_vanbo').style.display = "";
-        }
+        console.log('111111111111', document.querySelector('._panel_shortcut_gearloose_vanbo'));
+        wait4Elem('._panel_shortcut_gearloose_vanbo').then(function (elm) {
+            if(elm) {
+                elm.setAttribute("href", 'https://gearloose2.corp.google.com/#/search/merchants?q=awid:' + reformatAdsId(_datatemp.customer_adsid));
+                elm.style.display = "";
+            }
+        });
     }
 
     // Remove new line tasks - nowrap
@@ -2187,17 +2189,17 @@ var loadpanelcaseconnect = (is_reload = false) => {
                                     var strhtml = `<div class="dock-container _panel_btnshortcut">
                                         <div class="material-button _panel_shortcut_toggleopenmain_withoutsave"  >
                                             <div class="content">
-                                                <img src="https://www.svgrepo.com/show/355037/google.svg">
+                                                <img src="${window.dataTagteam.assets_url_img}/355037/google.svg">
                                             </div>
                                         </div>
                                         <div class="material-button _panel_shortcut_openemailtemplate"  >
                                             <div class="content">
-                                                <img src="https://www.svgrepo.com/show/194000/mail.svg">
+                                                <img src="${window.dataTagteam.assets_url_img}/194000/mail.svg">
                                             </div>
                                         </div>
                                         <div class="material-button _panel_shortcut_fisrtemail"  >
                                             <div class="content">
-                                                <img src="https://www.svgrepo.com/show/67628/email.svg">
+                                                <img src="${window.dataTagteam.assets_url_img}/67628/email.svg">
                                             </div>
                                         </div>
                                         <a href="#" target="_blank" class="material-button _panel_shortcut_gearloose_vanbo"  
@@ -2207,6 +2209,10 @@ var loadpanelcaseconnect = (is_reload = false) => {
                                                 display: none;
                                             "
                                         >
+                                            <span class="content"></span>
+                                        </a>
+                                        <a href="http://go/teamVN" target="_blank" class="material-button _panel_shortcut_go_teamvietnam"  >
+                                            <img src="${window.dataTagteam.assets_url_img}/pepe-4chan.gif">
                                             <span class="content"></span>
                                         </a>
                                     </div>`;
@@ -2227,6 +2233,20 @@ var loadpanelcaseconnect = (is_reload = false) => {
                                     document.querySelector('._panel_shortcut_fisrtemail').addEventListener("click", (e) => {
                                         document.querySelector('[data-btnaction="firstemail"]').click();
                                     });
+
+
+                                    // go/TeamVn
+                                    var _timekey_current = new Date().getDate();
+                                    if(sessionStorage.getItem("goTeamVNToDay") != _timekey_current) {
+                                        document.querySelector('._panel_shortcut_go_teamvietnam').classList.add('notview_today');
+                                    }
+
+                                    document.querySelector('._panel_shortcut_go_teamvietnam').addEventListener("click", (e) => {
+                                        sessionStorage.setItem("goTeamVNToDay", _timekey_current);
+                                        e.target.remove();
+                                    });
+
+                                    
                                 }
                                 
                             }
@@ -2249,14 +2269,14 @@ var loadpanelcaseconnect = (is_reload = false) => {
 
 
                         // 2. CR Button Email Template
-                            onClickElm('[debug-id="canned_response_button"]', 'click', function(elm){
-                                var _isGCC = window.dataTagteam.current_case.am_isgcc ? true : false;
-                                vi_prepareForEmail(_isGCC);
+                            onClickElm('[debug-id="canned_response_button"]', 'click', function(elm, e){
+                                // var _isGCC = window.dataTagteam.current_case.am_isgcc ? true : false;
+                                // vi_prepareForEmail(_isGCC);
 
     
-                                wait4Elem('material-dialog footer').then(dialog => {
-                                    if(!document.querySelector('#cr-list')) {vi_prepareCR()};
-                                });
+                                // wait4Elem('material-dialog footer').then(dialog => {
+                                //     if(!document.querySelector('#cr-list')) {vi_prepareCR()};
+                                // });
                             
                                 // Check
                                 cLog(() => {console.log("checkInputEmailInbox 3"); });
@@ -2292,9 +2312,20 @@ var loadpanelcaseconnect = (is_reload = false) => {
 
 
                         // Action noted card
-                            onClickElm(`noted span`, `click`, (elm) => {
+                            onClickElm(`noted span`, `click`, (elm, e) => {
                                 // allow
                                 elm.remove();
+                            });
+
+                        // Remove Note
+                            onClickElm(`[card-type="compose"] [data-notetitle]`, `click`, (elm, e) => {
+                                // allow
+                                elm.removeAttribute("data-notetitle");
+                                elm.setAttribute("data-notetitlestatus", "ischange");
+                            });
+                            onClickElm(`[card-type="compose"] [data-highlight]`, `click`, (elm, e) => {
+                                // allow
+                                elm.removeAttribute("data-highlight");
                             });
 
 
