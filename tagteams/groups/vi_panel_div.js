@@ -43,7 +43,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
@@ -107,12 +107,12 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
-                                                <p dir="auto">Gửi <span data-infocase="customer_gender">anh</span> link cuộc họp trên Google Meet!</p>
-                                                <p dir="auto">Truy cập link google cuộc họp <a href="#" data-infocase_link="customer_gmeet">tại đây</a>
+                                                <p dir="auto">Gửi <span data-infocase="customer_gender">bạn</span> link cuộc họp trên Google Meet!</p>
+                                                <p dir="auto" data-highlight="need_recheck">Truy cập link google cuộc họp <a href="#" data-infocase_link="customer_gmeet">tại đây</a>
                                                     Hoặc qua: <a href="#" data-infocase_link="customer_gmeet" data-infocase="customer_gmeet">LINK</a></p>
                                                 <p dir="auto">Xin cảm ơn!</p>
                                                 <p dir="auto">Trân trọng!</p>
@@ -176,11 +176,11 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
-                                                <p dir="auto">Đầu tiên là xin chúc <span data-infocase="customer_gender">anh</span> một ngày tràn đầy niềm vui.</p>
+                                                <p dir="auto">Đầu tiên là xin chúc <span data-infocase="customer_gender">bạn</span> một ngày tràn đầy niềm vui.</p>
                                                 <p dir="auto">Như qua trao đổi thì cần phía đội ngũ phát triển website giúp đỡ về việc chèn mã theo dõi vào website:</p>
                                                 <ol dir="auto">
                                                     <li>Mã theo dõi của mình là <b>GTM-MZL8JS7</b></li>
@@ -189,7 +189,7 @@
                                                     </li>
                                                     <li>Xem hướng dẫn chèn mã tại: <a href="https://developers.google.com/tag-platform/tag-manager/web" target="_blank" style="color: rgb(26, 115, 232); text-decoration-line: none;" class="ignore-globals">https://developers.google.com/tag-platform/tag-manager/web</a><br></li>
                                                 </ol>
-                                                <p dir="auto">Cuộc hẹn tiếp theo để hướng dẫn <span data-infocase="customer_gender">anh</span> sẽ <b>vào lúc 4 giờ chiều ngày 1/11/2023 theo giờ Việt Nam. </b>Rất mong sự có mặt của <span data-infocase="customer_gender">anh</span> để hoàn thành quá trình cài đặt cho trường hợp này.</p>
+                                                <p dir="auto">Cuộc hẹn tiếp theo để hướng dẫn <span data-infocase="customer_gender">bạn</span> sẽ <b>vào lúc 4 giờ chiều ngày 1/11/2023 theo giờ Việt Nam. </b>Rất mong sự có mặt của <span data-infocase="customer_gender">bạn</span> để hoàn thành quá trình cài đặt cho trường hợp này.</p>
                                                 <p dir="auto">Xin cảm ơn!</p>
                                                 <p dir="auto">Trân trọng!</p>
                                             </td>
@@ -252,14 +252,14 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
-                                                <p dir="auto">Chúng tôi đã nhận được yêu cầu của <span data-infocase="customer_gender">anh</span> về việc dời lịch cho cuộc gọi hỗ trợ triển khai <b><span data-infocase="tasks_nowrap">Tasks</span> </b> cho <span><b><span data-infocase="customer_website">nhuahuongchi.com</span></b></span>. </p>
+                                                <p dir="auto">Chúng tôi đã nhận được yêu cầu của <span data-infocase="customer_gender">bạn</span> về việc dời lịch cho cuộc gọi hỗ trợ triển khai <b><span data-infocase="tasks_nowrap">Tasks</span> </b> cho <span><b><span data-infocase="customer_website">nhuahuongchi.com</span></b></span>. </p>
                                                 <p dir="auto" style="font-weight: normal;"></p>
-                                                <p style="font-weight: normal;" dir="auto"> Chúng tôi rất mong được trợ giúp <span data-infocase="customer_gender">anh</span>! Xin lưu ý rằng do nhu cầu sử dụng dịch vụ của chúng tôi đang ở mức cao, nên chúng tôi không có nhiều thời gian rảnh. Chúng tôi hiểu rằng việc triển khai này rất quan trọng đối với <span data-infocase="customer_gender">anh</span>, vì vậy,<strong> điều quan trọng là <span data-infocase="customer_gender">anh</span> có thể tham gia cuộc gọi vào thời điểm đã lên lịch để tránh bỏ lỡ cơ hội này. Đây là lần dời lịch cuối cùng và chúng tôi sẽ không thể tiếp tục dời lịch hẹn nữa.</strong> </p>
-                                                <p style="font-weight: normal;" dir="auto"> <br /> <strong>Lịch hẹn đã được dời sang <font color="#9c166b"><span>11 giờ ngày <span data-infocase="local_format_meeting_time">19/10/2022</span> theo giờ Việt Nam</span></font> và chúng tôi sẽ gọi cho <span data-infocase="customer_gender">anh</span> theo số điện thoại mà <span data-infocase="customer_gender">anh</span> đã cung cấp: </strong> <strong><span data-infocase="customer_contact">+84 96 693 19 48</span></strong><br /> <br /> Nếu <span data-infocase="customer_gender">anh</span> không rảnh vào thời gian này vì bất cứ lý do gì, vui lòng cho chúng tôi biết bằng cách trả lời email này.<br /> <br /> Chúng tôi rất mong được trò chuyện với <span data-infocase="customer_gender">anh</span>! </p>
+                                                <p style="font-weight: normal;" dir="auto"> Chúng tôi rất mong được trợ giúp <span data-infocase="customer_gender">bạn</span>! Xin lưu ý rằng do nhu cầu sử dụng dịch vụ của chúng tôi đang ở mức cao, nên chúng tôi không có nhiều thời gian rảnh. Chúng tôi hiểu rằng việc triển khai này rất quan trọng đối với <span data-infocase="customer_gender">bạn</span>, vì vậy,<strong> điều quan trọng là <span data-infocase="customer_gender">bạn</span> có thể tham gia cuộc gọi vào thời điểm đã lên lịch để tránh bỏ lỡ cơ hội này. Đây là lần dời lịch cuối cùng và chúng tôi sẽ không thể tiếp tục dời lịch hẹn nữa.</strong> </p>
+                                                <p style="font-weight: normal;" dir="auto"> <br /> <strong>Lịch hẹn đã được dời sang <font color="#9c166b"><span>11 giờ ngày <span data-infocase="local_format_meeting_time">19/10/2022</span> theo giờ Việt Nam</span></font> và chúng tôi sẽ gọi cho <span data-infocase="customer_gender">bạn</span> theo số điện thoại mà <span data-infocase="customer_gender">bạn</span> đã cung cấp: </strong> <strong><span data-infocase="customer_contact">+84 96 693 19 48</span></strong><br /> <br /> Nếu <span data-infocase="customer_gender">bạn</span> không rảnh vào thời gian này vì bất cứ lý do gì, vui lòng cho chúng tôi biết bằng cách trả lời email này.<br /> <br /> Chúng tôi rất mong được trò chuyện với <span data-infocase="customer_gender">bạn</span>! </p>
                                                 <p dir="auto">Trân trọng!</p>
                                             </td>
                                         </tr>
@@ -322,19 +322,19 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
                                                 <p style="font-weight: normal;"><strong>Xin chúc mừng!&nbsp;</strong></p>
                                                 <p style="font-weight: normal;">Đối với trường hợp<strong> </strong>
-                                                    <span data-infocase="case_id">5-6594000033737</span>, chúng tôi rất vui mừng được thông báo rằng quá trình triển khai đã hoàn tất thành công. Chúng tôi đang ghi nhận các lượt hiển thị đã xác minh, nên có thể xác nhận rằng chiến dịch của <span data-infocase="customer_gender">anh</span> đang hoạt động đúng cách và như dự kiến!
+                                                    <span data-infocase="case_id">5-6594000033737</span>, chúng tôi rất vui mừng được thông báo rằng quá trình triển khai đã hoàn tất thành công. Chúng tôi đang ghi nhận các lượt hiển thị đã xác minh, nên có thể xác nhận rằng chiến dịch của <span data-infocase="customer_gender">bạn</span> đang hoạt động đúng cách và như dự kiến!
                                                 </p>
-                                                <p style="font-weight: normal;">Điều này có nghĩa là trường hợp <span data-infocase="case_id">5-6594000033737</span><strong> </strong>hiện đã được đóng thành công. Nếu <span data-infocase="customer_gender">anh</span> gặp vấn đề, có mối lo ngại hay câu hỏi chung, thì nhóm của chúng tôi luôn sẵn sàng và rất mong được trợ giúp <span data-infocase="customer_gender">anh</span>!</p>
-                                                <p style="font-weight: normal;"><span data-infocase_capitalize="customer_gender" >anh</span> nên liên hệ với Người quản lý tài khoản của Google nếu cần đặt lại lịch hẹn với chúng tôi trong tương lai.</p>
+                                                <p style="font-weight: normal;">Điều này có nghĩa là trường hợp <span data-infocase="case_id">5-6594000033737</span><strong> </strong>hiện đã được đóng thành công. Nếu <span data-infocase="customer_gender">bạn</span> gặp vấn đề, có mối lo ngại hay câu hỏi chung, thì nhóm của chúng tôi luôn sẵn sàng và rất mong được trợ giúp <span data-infocase="customer_gender">bạn</span>!</p>
+                                                <p style="font-weight: normal;"><span data-infocase_capitalize="customer_gender" >Bạn</span> nên liên hệ với Người quản lý tài khoản của Google nếu cần đặt lại lịch hẹn với chúng tôi trong tương lai.</p>
                                                 <p dir="auto" style="font-weight: normal;">
                                                 </p>
-                                                <p style="font-weight: normal;">Cảm ơn <span data-infocase="customer_gender">anh</span> đã hợp tác lâu dài với Google!&nbsp;</p>
+                                                <p style="font-weight: normal;">Cảm ơn <span data-infocase="customer_gender">bạn</span> đã hợp tác lâu dài với Google!&nbsp;</p>
                                                 <br>
                                                 <p dir="auto">Trân trọng!</p>
                                             </td>
@@ -386,7 +386,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                     <tbody>
                         <tr>
-                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Chúng tôi đã cố gắng liên lạc với <span data-infocase="customer_gender">anh</span> hôm nay</td>
+                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Chúng tôi đã cố gắng liên lạc với <span data-infocase="customer_gender">bạn</span> hôm nay</td>
                             <td align="right" height="150" style="padding: 0 30px 0 10px;" valign="middle" width="130"><img alt="" border="0" src="https://storage.googleapis.com/fwm-emea-client-emails/google/14406_Gtech_Solutions/NI_Attempted_Contact_ts_ni_ac_v2.png" style="display: block;min-width:100px;" width="100"></td>
                         </tr>
                     </tbody>
@@ -398,26 +398,26 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
                                                 <p dir="auto">
-                                                    Đầu thư, chúng tôi xin chúc <span data-infocase="customer_gender">anh</span> có một ngày tốt lành!&nbsp;<br>
+                                                    Đầu thư, chúng tôi xin chúc <span data-infocase="customer_gender">bạn</span> có một ngày tốt lành!&nbsp;<br>
                                                     <br>
-                                                    Hôm nay, nhóm giải pháp kỹ thuật của chúng tôi đã cố gắng gọi điện cho <span data-infocase="customer_gender">anh</span> để trao đổi về yêu cầu <b><span data-infocase="tasks_nowrap">Tasks</span> </b>cho
+                                                    Hôm nay, nhóm giải pháp kỹ thuật của chúng tôi đã cố gắng gọi điện cho <span data-infocase="customer_gender">bạn</span> để trao đổi về yêu cầu <b><span data-infocase="tasks_nowrap">Tasks</span> </b>cho
                                                     <b><span data-infocase="customer_website">nhuahuongchi.com</span></b>.&nbsp;<br>
-                                                    Chúng tôi đã thử gọi cho bạn một lần nữa sau 10 phút, nhưng rất tiếc vẫn không thể gặp được <span data-infocase="customer_gender">anh</span>.&nbsp;<br>
+                                                    Chúng tôi đã thử gọi cho bạn một lần nữa sau 10 phút, nhưng rất tiếc vẫn không thể gặp được <span data-infocase="customer_gender">bạn</span>.&nbsp;<br>
                                                     <br>
-                                                    Chúng tôi sẽ thử gọi cho <span data-infocase="customer_gender">anh</span> một lần cuối vào ngày làm việc tiếp theo. Nếu vẫn không thể liên lạc với <span data-infocase="customer_gender">anh</span>, chúng tôi sẽ đóng trường hợp này.&nbsp;<br>
+                                                    Chúng tôi sẽ thử gọi cho <span data-infocase="customer_gender">bạn</span> một lần cuối vào ngày làm việc tiếp theo. Nếu vẫn không thể liên lạc với <span data-infocase="customer_gender">bạn</span>, chúng tôi sẽ đóng trường hợp này.&nbsp;<br>
                                                     <br>
-                                                    <span data-infocase_capitalize="customer_gender">anh</span> có thể mở lại trường hợp này bất cứ lúc nào theo một trong các cách sau:
+                                                    <span data-infocase_capitalize="customer_gender">Bạn</span> có thể mở lại trường hợp này bất cứ lúc nào theo một trong các cách sau:
                                                 </p>
                                                 <ul style="font-weight: normal;">
-                                                    <li>Trả lời email này để cho biết ngày và giờ thuận tiện cho <span data-infocase="customer_gender">anh</span>.</li>
-                                                    <li>Liên hệ với Người quản lý tài khoản của Google để nhờ họ giúp <span data-infocase="customer_gender">anh</span> liên hệ lại với chúng tôi.&nbsp;</li>
+                                                    <li>Trả lời email này để cho biết ngày và giờ thuận tiện cho <span data-infocase="customer_gender">bạn</span>.</li>
+                                                    <li>Liên hệ với Người quản lý tài khoản của Google để nhờ họ giúp <span data-infocase="customer_gender">bạn</span> liên hệ lại với chúng tôi.&nbsp;</li>
                                                 </ul>
-                                                <p style="font-weight: normal;">Cảm ơn <span data-infocase="customer_gender">anh</span>!</p>
+                                                <p style="font-weight: normal;">Cảm ơn <span data-infocase="customer_gender">bạn</span>!</p>
                                                 <p dir="auto">Trân trọng!</p>
                                             </td>
                                         </tr>
@@ -480,16 +480,16 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
-                                                <p>Đối với trường hợp <span data-infocase="case_id">5-6594000033737</span> cho <strong><span data-infocase="customer_website">nhuahuongchi.com</span></strong>, chúng tôi đã chờ <span data-infocase="customer_gender">anh</span> phản hồi để tiến hành việc triển khai.&nbsp; Rất tiếc, vì <span data-infocase="customer_gender">anh</span> không phản hồi, nên chúng tôi hiện đã đóng trường hợp này.&nbsp;</p>
-                                                <p>Nếu vẫn muốn tiến hành việc triển khai này, <span data-infocase="customer_gender">anh</span> có thể tham khảo <a href="https://support.google.com/google-ads/gethelp" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><u>Trung tâm trợ giúp của Google</u></a> hoặc liên hệ với Người quản lý tài khoản của Google bất cứ lúc nào. Họ luôn sẵn sàng trợ giúp <span data-infocase="customer_gender">anh</span>!&nbsp;<br>
-                                                    Chúng tôi rất mong được tiếp tục hợp tác với <span data-infocase="customer_gender">anh</span> trong tương lai!&nbsp;
+                                                <p>Đối với trường hợp <span data-infocase="case_id">5-6594000033737</span> cho <strong><span data-infocase="customer_website">nhuahuongchi.com</span></strong>, chúng tôi đã chờ <span data-infocase="customer_gender">bạn</span> phản hồi để tiến hành việc triển khai.&nbsp; Rất tiếc, vì <span data-infocase="customer_gender">bạn</span> không phản hồi, nên chúng tôi hiện đã đóng trường hợp này.&nbsp;</p>
+                                                <p>Nếu vẫn muốn tiến hành việc triển khai này, <span data-infocase="customer_gender">bạn</span> có thể tham khảo <a href="https://support.google.com/google-ads/gethelp" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><u>Trung tâm trợ giúp của Google</u></a> hoặc liên hệ với Người quản lý tài khoản của Google bất cứ lúc nào. Họ luôn sẵn sàng trợ giúp <span data-infocase="customer_gender">bạn</span>!&nbsp;<br>
+                                                    Chúng tôi rất mong được tiếp tục hợp tác với <span data-infocase="customer_gender">bạn</span> trong tương lai!&nbsp;
                                                 </p>
                                                 <div>
-                                                    <p><em>Nếu <span data-infocase="customer_gender">anh</span> muốn tìm hiểu thêm về tính năng Theo dõi lượt chuyển đổi ngoại tuyến, thì sau đây là một số đường liên kết đến các tài nguyên có giá trị mà <span data-infocase="customer_gender">anh</span> có thể thấy hữu ích!&nbsp;</em></p>
+                                                    <p><em>Nếu <span data-infocase="customer_gender">bạn</span> muốn tìm hiểu thêm về tính năng Theo dõi lượt chuyển đổi ngoại tuyến, thì sau đây là một số đường liên kết đến các tài nguyên có giá trị mà <span data-infocase="customer_gender">bạn</span> có thể thấy hữu ích!&nbsp;</em></p>
                                                     <ul>
                                                         <li aria-level="1"><a href="https://support.google.com/google-ads/answer/2998031" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><em><u>Giới thiệu về tính năng theo dõi lượt chuyển đổi ngoại tuyến</u></em></a></li>
                                                         <li aria-level="1"><a href="https://support.google.com/google-ads/answer/7012522" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><em><u>Thiết lập tính năng theo dõi lượt chuyển đổi ngoại tuyến</u></em></a></li>
@@ -558,15 +558,15 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck">CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
                                                 <p style="font-style: normal;"><strong>Xin chúc mừng!&nbsp;</strong></p>
-                                                <p dir="auto" style="font-style: normal;">Đối với trường hợp&nbsp; <span data-infocase="case_id">5-6594000033737</span>, chúng tôi rất vui mừng được thông báo rằng chúng tôi đã triển khai thành công <span data-infocase="tasks_nowrap">Tasks</span> trên trang web của <span data-infocase="customer_gender">anh</span> là <span data-infocase="customer_website">nhuahuongchi.com</span> và cũng nhận thấy thẻ này đang hoạt động theo thời gian thực.</p>
-                                                <p style="font-style: normal;">Chúng tôi sẽ đóng yêu cầu này. Tuy nhiên, nếu tình hình của <span data-infocase="customer_gender">anh</span> thay đổi, vui lòng liên hệ với Người quản lý tài khoản của Google hoặc tham khảo <a href="https://support.google.com/" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><u>trung tâm trợ giúp</u></a>. Họ luôn sẵn sàng trợ giúp <span data-infocase="customer_gender">anh</span>!</p>
-                                                <p style="font-style: normal;">Cảm ơn <span data-infocase="customer_gender">anh</span> đã hợp tác lâu dài với Google!&nbsp;</p>
-                                                <p style="" dir="auto"><span style="font-style: normal;">Nếu <span data-infocase="customer_gender">anh</span> muốn tìm hiểu thêm, thì sau đây là một số đường liên kết dẫn đến các tài nguyên có giá trị liên quan đến việc Triển khai thẻ và nguồn cấp dữ liệu mua sắm. Các tài nguyên này có thể hữu ích để <span data-infocase="customer_gender">anh</span> sử dụng trong tương lai!</span></p>
+                                                <p dir="auto" style="font-style: normal;">Đối với trường hợp&nbsp; <span data-infocase="case_id">5-6594000033737</span>, chúng tôi rất vui mừng được thông báo rằng chúng tôi đã triển khai thành công <span data-infocase="tasks_nowrap">Tasks</span> trên trang web của <span data-infocase="customer_gender">bạn</span> là <span data-infocase="customer_website">nhuahuongchi.com</span> và cũng nhận thấy thẻ này đang hoạt động theo thời gian thực.</p>
+                                                <p style="font-style: normal;">Chúng tôi sẽ đóng yêu cầu này. Tuy nhiên, nếu tình hình của <span data-infocase="customer_gender">bạn</span> thay đổi, vui lòng liên hệ với Người quản lý tài khoản của Google hoặc tham khảo <a href="https://support.google.com/" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><u>trung tâm trợ giúp</u></a>. Họ luôn sẵn sàng trợ giúp <span data-infocase="customer_gender">bạn</span>!</p>
+                                                <p style="font-style: normal;">Cảm ơn <span data-infocase="customer_gender">bạn</span> đã hợp tác lâu dài với Google!&nbsp;</p>
+                                                <p style="" dir="auto"><span style="font-style: normal;">Nếu <span data-infocase="customer_gender">bạn</span> muốn tìm hiểu thêm, thì sau đây là một số đường liên kết dẫn đến các tài nguyên có giá trị liên quan đến việc Triển khai thẻ và nguồn cấp dữ liệu mua sắm. Các tài nguyên này có thể hữu ích để <span data-infocase="customer_gender">bạn</span> sử dụng trong tương lai!</span></p>
                                                 <p style="font-style: normal;"><em>Thẻ liên quan</em></p>
                                                 <ul style="font-style: normal;">
                                                     <li aria-level="1"><a href="https://developers.google.com/gtagjs" rel="noopener" target="_blank" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;"><em><u>Hỗ trợ triển khai thẻ</u></em></a></li>
@@ -583,7 +583,7 @@
                                                 </ul>
                                                 <p dir="auto" style="font-style: normal;">
                                                 </p>
-                                                <p style="font-style: normal;">Cảm ơn <span data-infocase="customer_gender">anh</span>!<br></p>
+                                                <p style="font-style: normal;">Cảm ơn <span data-infocase="customer_gender">bạn</span>!<br></p>
                                                 <p dir="auto">Trân trọng!</p>
                                             </td>
                                         </tr>
@@ -646,12 +646,12 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
                                                 <p dir="auto"><span class="" style="font-weight: normal;">
-                                                    Cảm ơn <span data-infocase="customer_gender">anh</span> đã liên hệ với Nhóm giải pháp kỹ thuật về việc <b><span data-infocase="tasks_nowrap">ZZZ</span></b>&nbsp;cho
+                                                    Cảm ơn <span data-infocase="customer_gender">bạn</span> đã liên hệ với Nhóm giải pháp kỹ thuật về việc <b><span data-infocase="tasks_nowrap">ZZZ</span></b>&nbsp;cho
                                                     <b><span data-infocase="customer_website">nhuahuongchi.com</span></b>
                                                 </p>
                                                 <ul style="font-weight: normal;"></ul>
@@ -660,9 +660,9 @@
                                                     <u><strong>Các bước tiếp theo</strong></u><br>
                                                     Việc cài đặt sẽ được coi là <strong>đã hoàn tất thành công</strong> sau khi chúng tôi ghi nhận lượt hiển thị/lượt chuyển đổi đúng như dự kiến.&nbsp;<br>
                                                     <br>
-                                                    Nếu việc triển khai không diễn ra như dự kiến, chúng tôi sẽ cố gắng giải quyết/điều tra vấn đề và liên hệ với <span data-infocase="customer_gender">anh</span> nếu cần.<br>
+                                                    Nếu việc triển khai không diễn ra như dự kiến, chúng tôi sẽ cố gắng giải quyết/điều tra vấn đề và liên hệ với <span data-infocase="customer_gender">bạn</span> nếu cần.<br>
                                                     <br>
-                                                    <em>Nếu <span data-infocase="customer_gender">anh</span> muốn tìm hiểu thêm, thì sau đây là một số đường liên kết dẫn đến các tài nguyên có giá trị liên quan đến việc Triển khai thẻ và nguồn cấp dữ liệu mua sắm. Các tài nguyên này có thể hữu ích để <span data-infocase="customer_gender">anh</span> sử dụng trong tương lai!<br>
+                                                    <em>Nếu <span data-infocase="customer_gender">bạn</span> muốn tìm hiểu thêm, thì sau đây là một số đường liên kết dẫn đến các tài nguyên có giá trị liên quan đến việc Triển khai thẻ và nguồn cấp dữ liệu mua sắm. Các tài nguyên này có thể hữu ích để <span data-infocase="customer_gender">bạn</span> sử dụng trong tương lai!<br>
                                                         <br>
                                                         Thẻ liên quan</em>
                                                 </p>
@@ -681,7 +681,7 @@
                                                 </ul>
                                                 <p dir="auto" style="font-weight: normal;">
                                                 </p>
-                                                <p style="font-weight: normal;">Cảm ơn <span data-infocase="customer_gender">anh</span>!</p>
+                                                <p style="font-weight: normal;">Cảm ơn <span data-infocase="customer_gender">bạn</span>!</p>
                                                 <p dir="auto">Trân trọng!</p>
                                             </td>
                                         </tr>
@@ -744,7 +744,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
@@ -825,7 +825,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
@@ -906,7 +906,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
@@ -996,7 +996,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
@@ -1075,7 +1075,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
@@ -1183,7 +1183,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
@@ -1254,7 +1254,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                                     <tbody>
                                         <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
+                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name" data-highlight="need_recheck" >CUSTOMER NAME</span> thân mến!</td>
                                         </tr>
                                         <tr>
                                             <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
