@@ -1690,7 +1690,7 @@
                             </div>
                             <div class="_emailtemp-item" data-type="AS - Reschedule 1">
                                 <span class="_panel_btn _panel_btn--small _panel_btn--addtemplate">Insert</span>
-                                <div class="_emailtemp-item__title">Đội giải pháp kỹ thuật - Đặt lại lịch hẹn lần 2 cho trường hợp [<span data-infocase="case_id">5-6594000033737</span>]</div>
+                                <div class="_emailtemp-item__title">กําหนดเวลาการนัดหมายใหม่เรียบร้อยแล้ว [<span data-infocase="case_id">5-6594000033737</span>]</div>
                                 <div class="_emailtemp-item__content">
                                     <div id="email-body-content-top" style="width: 100%;">
                                         <div id="email-body-content-top-content" style="font:normal 13px/17px Roboto,sans-serif;display:block" dir="auto">
