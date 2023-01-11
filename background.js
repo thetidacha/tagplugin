@@ -147,7 +147,6 @@ chrome.storage.sync.get(
 );
 
 chrome.runtime.onMessage.addListener(function (textme, sender, sendResponse) {
-	console.log(textme.textyou);
 	//15 mins warning
 	// if (textme.textyou == "15min") {
 	// 	console.log("15min");

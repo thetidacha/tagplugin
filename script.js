@@ -120,24 +120,23 @@ console.log('Value currently is ' + result.mycountry);
 });
 		
 
-
-
-
-
-
-var s = document.createElement('script');
-s.src = chrome.extension.getURL('script.js');
-(document.head||document.documentElement).appendChild(s);
-s.onload = function() {
-var s2 = document.createElement('script');
-s2.src = chrome.extension.getURL('script.js');
-(document.head||document.documentElement).appendChild(s2);
-s2.onload = function() {
-var s3 = document.createElement('script');
-s3.src = chrome.extension.getURL('script.js');
-(document.head||document.documentElement).appendChild(s3);
-};
-};
+try {
+	var s = document.createElement('script');
+	s.src = chrome.extension.getURL('script.js');
+	s.onload = function() {
+		(document.head||document.documentElement).appendChild(s);
+		var s2 = document.createElement('script');
+		s2.src = chrome.extension.getURL('script.js');
+		(document.head||document.documentElement).appendChild(s2);
+		s2.onload = function() {
+		var s3 = document.createElement('script');
+		s3.src = chrome.extension.getURL('script.js');
+		(document.head||document.documentElement).appendChild(s3);
+		};
+	};
+} catch (error) {
+	
+}
 
 
 if (window.location.hostname === "cases.connect.corp.google.com" && window.location.href.indexOf("#/case/") > - 1) {
@@ -157,7 +156,16 @@ if (window.location.hostname === "cases.connect.corp.google.com" && window.locat
 						if(typeof window.dataTagteam !== 'undefined') {
 							if(window.dataTagteam.hasOwnProperty("current_case")) {
 								if(window.dataTagteam.current_case.hasOwnProperty("tasks")) {
-									text = text.replace(`<span class="_tags_implement"></span>`, window.dataTagteam.current_case.tasks);
+									console.log(text, window.dataTagteam.current_case.qlus_status);
+
+									if(window.dataTagteam.current_case.qlus_status) {
+										text = text.replace(/<span class="_sub_i">[\s\S]*?<\/span>/g, `<span class="_sub_i">${window.dataTagteam.current_case.qlus_status}</span>`);
+									}
+
+									if(window.dataTagteam.current_case.tasks) {
+										text = text.replace(/<span class="_task_i">[\s\S]*?<\/span>/g, `<span class="_task_i">${window.dataTagteam.current_case.tasks}</span>`);
+									}
+
 								}
 							}
 						}
@@ -181,11 +189,26 @@ if (window.location.hostname === "cases.connect.corp.google.com" && window.locat
 
 		// Callback function to execute when mutations are observed
 		var callback = function(mutationList, observer) {
+			// on-call, precall button 
 			var _istopelm = document.querySelector(`.write-cards-wrapper:not([style*="display:none"]):not([style*="display: none"]) card.write-card.is-top`);
 			if(_istopelm) {
 				if (_istopelm.querySelector("#pre-call") === null && _istopelm.querySelector("#on-call") === null) {
 					createDomWithText("Precall", `<ul dir="auto"><li>Emails or feedback from Advertiser/Seller (including seller request to join the call)[C]&nbsp;</li><li>Call being made in business hours[C]</li><li>Program ,task type (including special instructions),advertiser need and readiness [C]</li><li>Related cases [C]</li><li>CMS being used  [C]</li><li>Gtag/GTM/GA already exists  [C] (NA applicable only for Shopping or OCT cases)</li></ul>`, "pre-call");
-					createDomWithText("OnCall", `<b>Sub-status:</b>&nbsp; <p dir="auto"><b>Sub-status Reason:</b>&nbsp;</p><p dir="auto"><b>Speakeasy ID:&nbsp;</b></p><p dir="auto"><b>On Call Comments:</b>&nbsp;</p><p dir="auto"><b>Tags Implemented:</b>&nbsp;<span class="_tags_implement"></span></p><p dir="auto"><b>Screenshots:&nbsp;</b></p><p dir="auto"><b>Multiple CIDs:&nbsp;</b></p><p dir="auto"><b>On Call Screenshot:</b>&nbsp;</p>`, "on-call");
+					createDomWithText("OnCall", `<b>Sub-status:&nbsp;<span class="_sub_i"></span></b>&nbsp; <p dir="auto"><b>Sub-status Reason:</b>&nbsp;</p><p dir="auto"><b>Speakeasy ID:&nbsp;</b></p><p dir="auto"><b>On Call Comments:</b>&nbsp;</p><p dir="auto"><b>Tags Implemented:</b>&nbsp;<span class="_task_i"></span></p><p dir="auto"><b>Screenshots:&nbsp;</b></p><p dir="auto"><b>Multiple CIDs:&nbsp;</b></p><p dir="auto"><b>On Call Screenshot:</b>&nbsp;</p>`, "on-call");
+
+
+				}
+			}
+			
+			// findCalendarBtn button go to calendar
+			var _elmHomeTitle = document.querySelector('#read-card-tab-panel-home .section.header.home:not([style*="display:none"]):not([style*="display: none"])');
+			if(_elmHomeTitle) {
+				if (_elmHomeTitle.querySelector("#findCalendarBtn") === null) {
+					var _caseId = document.querySelector('[debug-id="case-id"]').innerText;
+					var _findCalendarBtnHtmlStr = `<a href="https://calendar.google.com/calendar/u/0/r/search?q=${_caseId}" id="findCalendarBtn" target="_blank">Go to Calendar</a>`;
+					if(_elmHomeTitle) {
+						_elmHomeTitle.insertAdjacentHTML("beforeEnd", _findCalendarBtnHtmlStr);
+					}
 				}
 			}
 		};
@@ -196,6 +219,8 @@ if (window.location.hostname === "cases.connect.corp.google.com" && window.locat
 		// Start observing the target node for configured mutations
 		observer.observe(targetNode, config);
 
+
+		
 		// Later, you can stop observe
 		
 	} catch (error) {
@@ -261,18 +286,6 @@ waitForElm('[debug-id="contact-info-name"]').then(elm => {waitForElm('[aria-labe
 document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('blur'));
 });
 }
- // go to calendar button
-			waitForElm('.section.header').then(elm => {
-				var findCalendarBtn = document.createElement('button');
-  findCalendarBtn.id = "findCalendarBtn";
-  findCalendarBtn.innerText = 'Go to Calendar';
-  document.querySelector('#read-card-tab-panel-home .section.header.home').appendChild(findCalendarBtn);
-  findCalendarBtn.onclick = function() {
-	caseId = document.querySelector('[debug-id="case-id"]').innerText;
-	findInCalendar = 'https://calendar.google.com/calendar/u/0/r/search?q=' + caseId;
-	window.open(findInCalendar, '_blank');
-  };
-			}); 
 
 	} else if (result.mycountry == "Thailand") {
 
@@ -329,18 +342,7 @@ document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new E
 		document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('blur'));
 		});
 		}
- // go to calendar button
-			waitForElm('.section.header').then(elm => {
-				var findCalendarBtn = document.createElement('button');
-  findCalendarBtn.id = "findCalendarBtn";
-  findCalendarBtn.innerText = 'Go to Calendar';
-  document.querySelector('#read-card-tab-panel-home .section.header.home').appendChild(findCalendarBtn);
-  findCalendarBtn.onclick = function() {
-	caseId = document.querySelector('[debug-id="case-id"]').innerText;
-	findInCalendar = 'https://calendar.google.com/calendar/u/0/r/search?q=' + caseId;
-	window.open(findInCalendar, '_blank');
-  };
-			}); 
+		
 
 	}else if (result.mycountry == "China") {
 
@@ -398,18 +400,6 @@ document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new E
 		document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('blur'));
 		});
 		}
- // go to calendar button
-			waitForElm('.section.header').then(elm => {
-				var findCalendarBtn = document.createElement('button');
-  findCalendarBtn.id = "findCalendarBtn";
-  findCalendarBtn.innerText = 'Go to Calendar';
-  document.querySelector('#read-card-tab-panel-home .section.header.home').appendChild(findCalendarBtn);
-  findCalendarBtn.onclick = function() {
-	caseId = document.querySelector('[debug-id="case-id"]').innerText;
-	findInCalendar = 'https://calendar.google.com/calendar/u/0/r/search?q=' + caseId;
-	window.open(findInCalendar, '_blank');
-  };
-			}); 
 
 	}else if (result.mycountry == "Japan") {
 		
@@ -476,18 +466,6 @@ document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new E
 		document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('blur'));
 		});
 		}
- // go to calendar button
-			waitForElm('.section.header').then(elm => {
-				var findCalendarBtn = document.createElement('button');
-  findCalendarBtn.id = "findCalendarBtn";
-  findCalendarBtn.innerText = 'Go to Calendar';
-  document.querySelector('#read-card-tab-panel-home .section.header.home').appendChild(findCalendarBtn);
-  findCalendarBtn.onclick = function() {
-	caseId = document.querySelector('[debug-id="case-id"]').innerText;
-	findInCalendar = 'https://calendar.google.com/calendar/u/0/r/search?q=' + caseId;
-	window.open(findInCalendar, '_blank');
-  };
-			}); 
 	}else if (result.mycountry == "Korea") {
 		
 	function waitForElm(selector) {return new Promise(resolve => {if (document.querySelector(selector)) {return resolve(document.querySelector(selector));
@@ -546,18 +524,7 @@ document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new E
 		document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('blur'));
 		});
 		}
- // go to calendar button
-			waitForElm('.section.header').then(elm => {
-				var findCalendarBtn = document.createElement('button');
-  findCalendarBtn.id = "findCalendarBtn";
-  findCalendarBtn.innerText = 'Go to Calendar';
-  document.querySelector('#read-card-tab-panel-home .section.header.home').appendChild(findCalendarBtn);
-  findCalendarBtn.onclick = function() {
-	caseId = document.querySelector('[debug-id="case-id"]').innerText;
-	findInCalendar = 'https://calendar.google.com/calendar/u/0/r/search?q=' + caseId;
-	window.open(findInCalendar, '_blank');
-  };
-			}); 
+		
 	}else if (result.mycountry == "Indonesia") {
 		
 		function waitForElm(selector) {return new Promise(resolve => {if (document.querySelector(selector)) {return resolve(document.querySelector(selector));
@@ -612,18 +579,7 @@ document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new E
 		document.querySelector('[aria-label="Create a write card"]').dispatchEvent(new Event('blur'));
 		});
 		}
-		 // go to calendar button
-			waitForElm('.section.header').then(elm => {
-				var findCalendarBtn = document.createElement('button');
-  findCalendarBtn.id = "findCalendarBtn";
-  findCalendarBtn.innerText = 'Go to Calendar';
-  document.querySelector('#read-card-tab-panel-home .section.header.home').appendChild(findCalendarBtn);
-  findCalendarBtn.onclick = function() {
-	caseId = document.querySelector('[debug-id="case-id"]').innerText;
-	findInCalendar = 'https://calendar.google.com/calendar/u/0/r/search?q=' + caseId;
-	window.open(findInCalendar, '_blank');
-  };
-			}); 
+		
 	}else if (result.mycountry == "Other") {
 		
 		

@@ -729,6 +729,8 @@ function ja_tagTeamTDCXLoad() {
                     document.querySelector("material-fab-speed-dial").dispatchEvent(new Event('mouseenter'));
                     document.querySelector("material-fab.themeable.action-2.compose").addEventListener("click", () => {
                         var n_card = document.querySelectorAll("card[casesanimate].write-card").length || 0;
+
+                        var n_time = 0;
                         var myTimeCheck = setInterval(() => {
                             var n_card_2 = document.querySelectorAll("card[casesanimate].write-card").length || 0;
                             if(n_card_2 > n_card) {
@@ -738,6 +740,18 @@ function ja_tagTeamTDCXLoad() {
                                 // Close dial
                                 document.querySelector("material-fab-speed-dial").dispatchEvent(new Event('mouseenter'));
 
+                            }
+                            
+                            if(n_time > 11) {
+                                clearInterval(myTimeCheck);
+                                
+                                Toastify({
+                                    text: 'Không tìm thấy được vùng thay thế',
+                                    duration: 3000,
+                                    callback: function(){
+                                        this.remove();
+                                    }
+                                }).showToast();
                             }
                         }, 1000)
                         
@@ -2290,12 +2304,20 @@ var loadpanelcaseconnect = (is_reload = false) => {
                                 vi_clearAndPrepareCRTemplate();
                             });
 
+                            
 
                         // Action noted card
-                            onClickElm(`noted span`, `click`, (elm) => {
+                            onClickElm(`noted span`, `click`, (elm, e) => {
                                 // allow
                                 elm.remove();
                             });
+
+                        // Remove note
+                            
+                            onClickElm(`#cr-list li`, `click`, (elm, e) => {
+                                vi_clearAndPrepareCRTemplate();
+                            });
+
 
 
                             
