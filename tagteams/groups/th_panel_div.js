@@ -1657,7 +1657,7 @@
                         <div class="_emailtemp">
                             <div class="_emailtemp-item" data-type="First email">
                                 <span class="_panel_btn _panel_btn--small _panel_btn--addtemplate" data-btnaction="emailtemp__insert1stemail">Insert</span>
-                                <div class="_emailtemp-item__title">Đội giải pháp kỹ thuật - Xác nhận lịch hẹn [<span data-infocase="case_id">5-0987654321</span>]</div>
+                                <div class="_emailtemp-item__title">ทีมแก้ปัญหาด้านเทคนิค [<span data-infocase="case_id">5-0987654321</span>]</div>
                                 <div class="_emailtemp-item__content">
                                     <div id="email-body-content-top" style="width:100%" dir="auto">
                                         <div id="email-body-content-top-content" style="font:normal 13px/17px Roboto,sans-serif;display:block" dir="auto">
