@@ -1668,7 +1668,7 @@
                             </div>
                             <div class="_emailtemp-item" data-type="Send Google Meet Link">
                                 <span class="_panel_btn _panel_btn--small _panel_btn--addtemplate">Insert</span>
-                                <div class="_emailtemp-item__title">Đội giải pháp kỹ thuật - Link cuộc họp Google Meet cho trường hợp [<span data-infocase="case_id">5-6594000033737</span>]</div>
+                                <div class="_emailtemp-item__title">ขอบคุณที่ทำการนัดหมายกับเราทีมแก้ปัญหาด้านเทคนิค ตัวแทน Google ของเราได้ร้องขอการนัดหมายนี้ในนามของคุณ และเราจะทำการช่วยเหลือคุณในหมายเลขเคส[<span data-infocase="case_id">5-6594000033737</span>]</div>
                                 <div class="_emailtemp-item__content">
                                     <div id="email-body-content-top" style="width:100%" dir="auto">
                                         <div id="email-body-content-top-content" style="font:normal 13px/17px Roboto,sans-serif;display:block" dir="auto">
