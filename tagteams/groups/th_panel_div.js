@@ -133,7 +133,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -209,7 +209,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -278,7 +278,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมแก้ปัญหาด้านเทคนิค</i><br><i>TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -354,7 +354,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -436,7 +436,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -514,7 +514,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -602,7 +602,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -700,7 +700,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -781,7 +781,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -862,7 +862,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -952,7 +952,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -1031,7 +1031,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -1139,7 +1139,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -1210,7 +1210,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
@@ -1281,7 +1281,7 @@
                                         <tr>
                                             <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
                                                 <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
+                                                <span style="font-size: 16px;"><i>ทีมโซลูชันทางเทคนิค</i><br><i>จาก TDCX ในนามของ Google</i></span>
                                             </td>
                                         </tr>
                                         
