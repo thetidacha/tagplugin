@@ -205,7 +205,22 @@ if (window.location.hostname === "cases.connect.corp.google.com" && window.locat
 			if(_elmHomeTitle) {
 				if (_elmHomeTitle.querySelector("#findCalendarBtn") === null) {
 					var _caseId = document.querySelector('[debug-id="case-id"]').innerText;
-					var _findCalendarBtnHtmlStr = `<a href="https://calendar.google.com/calendar/u/0/r/search?q=${_caseId}" id="findCalendarBtn" target="_blank">Go to Calendar</a>`;
+					var _findCalendarBtnHtmlStr = `<a href="https://calendar.google.com/calendar/u/0/r/search?q=${_caseId}" id="findCalendarBtn" target="_blank"
+					style="
+					border: 1px solid #bbb7b7;
+					line-height: 0;
+					padding: 11px;
+					border-radius: 4px;
+					color: #444;
+					font-weight: 700;
+					text-shadow: 1px 1px 2px #fff;
+					background-color: #eee;
+					margin-right: 6px;
+					cursor: pointer;
+					font-size: 12px;
+					text-decoration: none;"
+					
+					>Go to Calendar</a>`;
 					if(_elmHomeTitle) {
 						_elmHomeTitle.insertAdjacentHTML("beforeEnd", _findCalendarBtnHtmlStr);
 					}
