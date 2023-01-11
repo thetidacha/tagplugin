@@ -96,8 +96,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                     <tbody>
                         <tr>
-                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Link tham gia cuộc họp trên Google Meet</td>
-                            <td align="right" height="150" style="padding: 0 30px 0 10px;" valign="middle" width="130"><img alt="" border="0" src="https://storage.googleapis.com/fwm-emea-client-emails/google/14406_Gtech_Solutions/AS_Work_in_Progress_Offline_Support_ts_as_wip_offtfr.png" style="display: block;min-width:100px;" width="100"></td>
+                            <td align="left" height="40"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -166,8 +165,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                     <tbody>
                         <tr>
-                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Hướng dẫn chèn mã GTM và xác nhận lịch hẹn</td>
-                            <td align="right" height="150" style="padding: 0 30px 0 10px;" valign="middle" width="130"><img alt="" border="0" src="https://storage.googleapis.com/fwm-emea-client-emails/google/14406_Gtech_Solutions/AS_Work_in_Progress_Offline_Support_ts_as_wip_offtfr.png" style="display: block;min-width:100px;" width="100"></td>
+                            <td align="left" height="40"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -186,7 +184,7 @@
                                                 <p dir="auto">Như qua trao đổi thì cần phía đội ngũ phát triển website giúp đỡ về việc chèn mã theo dõi vào website:</p>
                                                 <ol dir="auto">
                                                     <li>Mã theo dõi của mình là <b>GTM-MZL8JS7</b></li>
-                                                    <li>Có thể copy theo dõi GTM (Google tag manager) dành cho <b>&lt;head&gt;</b><b> </b>vui lòng truy cập: <a href="https://jsfiddle.net/dongmx/pew7Lhbk/" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;">https://jsfiddle.net/dongmx/pew7Lhbk/</a><br>
+                                                    <li>Có thể copy theo dõi GTM (Google tag manager) dành cho <b>&lt;head&gt;</b><b> </b>vui lòng truy cập: <a href="https://jsfiddle.net/n3p8kst0/" class="ignore-globals" style="color: rgb(26, 115, 232); text-decoration-line: none;">https://jsfiddle.net/n3p8kst0/</a><br>
                                                         <small>Lưu ý: Thay thế GTM-XXXXXXX bằng mã ở trên của bạn</small>
                                                     </li>
                                                     <li>Xem hướng dẫn chèn mã tại: <a href="https://developers.google.com/tag-platform/tag-manager/web" target="_blank" style="color: rgb(26, 115, 232); text-decoration-line: none;" class="ignore-globals">https://developers.google.com/tag-platform/tag-manager/web</a><br></li>
@@ -240,14 +238,13 @@
                 </table>
             </div>`,
         'as_reschedule_1': `<div id="email-body-content-top-content" dir="auto">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                    <tbody>
-                        <tr>
-                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Cuộc hẹn của bạn đã được lên lịch lại thành công</td>
-                            <td align="right" height="150" style="padding: 0 30px 0 10px;" valign="middle" width="130"><img alt="" border="0" src="https://storage.googleapis.com/fwm-emea-client-emails/google/14406_Gtech_Solutions/AS_Work_in_Progress_Offline_Support_ts_as_wip_offtfr.png" style="display: block;min-width:100px;" width="100"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                <tbody>
+                    <tr>
+                        <td align="left" height="40"></td>
+                    </tr>
+                </tbody>
+            </table>
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                     <tbody>
                         <tr>
@@ -389,7 +386,7 @@
                 <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
                     <tbody>
                         <tr>
-                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Chúng tôi đã cố gắng liên lạc với bạn hôm nay</td>
+                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Chúng tôi đã cố gắng liên lạc với <span data-infocase="customer_gender">anh</span> hôm nay</td>
                             <td align="right" height="150" style="padding: 0 30px 0 10px;" valign="middle" width="130"><img alt="" border="0" src="https://storage.googleapis.com/fwm-emea-client-emails/google/14406_Gtech_Solutions/NI_Attempted_Contact_ts_ni_ac_v2.png" style="display: block;min-width:100px;" width="100"></td>
                         </tr>
                     </tbody>
@@ -686,82 +683,6 @@
                                                 </p>
                                                 <p style="font-weight: normal;">Cảm ơn <span data-infocase="customer_gender">anh</span>!</p>
                                                 <p dir="auto">Trân trọng!</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                    <tbody>
-                        <tr>
-                            <td align="center" style="padding: 0px 40px 50px 30px;" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" style="font-size: 20px; line-height: 24px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 8px;">
-                                                <span data-infosetting="your-name">YOUR-NAME</span><br>
-                                                <span style="font-size: 16px;"><i>Đội giải pháp kỹ thuật</i><br><i>TDCX đại diện của Google</i></span>
-                                            </td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p dir="auto">
-                </p>
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                    <tbody>
-                        <tr>
-                            <td align="center" style="padding: 0px 40px 30px 30px;" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" style="font-size:16px;line-height:24px;font-family: Roboto, Arial, sans-serif;color:#3C4043;font-weight: 700;padding: 0;">Yêu cầu số <span data-infocase="case_id">0-00000000000000</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>`,
-        'ec_ni_awaiting_input': `<div id="email-body-content-top-content" dir="auto">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                    <tbody>
-                        <tr>
-                            <td align="left" height="150" style="font-size: 28px; line-height: 36px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding: 30px 0px 30px 30px;" valign="middle" width="100%">Đang chờ về nhập thông tin từ nhà quảng cáo</td>
-                            <td align="right" height="150" style="padding: 0 30px 0 10px;" valign="middle" width="130"><img alt="" border="0" src="https://storage.googleapis.com/fwm-emea-client-emails/google/14406_Gtech_Solutions/NI_Awaiting_Inputs_ts_ni_ai_v2.png" style="display: block;min-width:100px;" width="100"></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                    <tbody>
-                        <tr>
-                            <td align="center" style="padding: 0px 40px 30px 30px;" valign="top">
-                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;"><span data-infocase="customer_name">CUSTOMER NAME</span> thân mến!</td>
-                                        </tr>
-                                        <tr>
-                                            <td align="left" style="font-size: 16px; line-height: 26px; font-family: Roboto, Arial, sans-serif; color: rgb(60, 64, 67); padding-bottom: 18px;">
-                                                <p dir="auto" style="font-weight:normal">Đầu tiên là xin chúc <span data-infocase="customer_gender">anh</span> một ngày tràn đầy niềm vui.</p>
-                                                <p dir="auto">Như qua trao đổi thì cần phía đội ngũ phát triển website giúp đỡ về việc chèn dữ liệu thông qua dataLayer.<br><br>Với chuyến đổi nâng cao:<br></p>
-                                                <ol dir="auto">
-                                                    <li>Về ý nghĩa của chuyển đổi: giúp nhận biết tương tác của khách hàng, thông qua số liệu giúp Google nhận biết đâu là ghi nhận được quan tâm nhiều nhất để tối ưu hoá quảng cáo, ghi nhận càng đúng thì giá trị mang lại càng cao.&nbsp;<br><br></li>
-                                                    <li><b>Bảo mật dữ liệu:</b> <span data-infocase="customer_gender">anh</span> hoàn toàn có thể yên tâm dữ liệu sẽ được mã hoá, dữ liệu mã hoá này chỉ thực hiện đối chiếu với user đăng nhập vào các sản phẩm của Google như youtube, chrome, ... và Google sẽ không lưu bất kỳ thông tin nào của khách hàng.<br><br></li>
-                                                    <li>Tài liệu và cách thức ghi nhận chuyển đổi:&nbsp;<br>Các ghi nhận chuyển đổi thì cần nhận biết thời điểm nào là tốt nhất (và chỉ cần ghi nhận 1 lần cho mỗi chuyển đổi).<br>Ví dụ sau khi verify thành công email - ghi nhận 1 lần, hoặc mua hàng (thanh toán) thành công (ghi nhận 1 lần).<br>Thì chúng ta cần một dấu hiện nhận biết đó là <b>sự kiện (event). </b><br>về tài liệu đẩy sự kiện, <span data-infocase="customer_gender">anh</span> và bộ phận kỹ thuật có thể tham khảo qua URL bên dưới&nbsp;&nbsp;và các field mẫu như qua trao đổi:<br><a href="https://developers.google.com/tag-platform/tag-manager/web/datalayer?hl=vi" target="_blank">https://developers.google.com/tag-platform/tag-manager/web/datalayer?hl=vi</a><br><br></li>
-                                                    <li>Lên lịch hẹn tiếp theo:<br>Sau khi phía <span data-infocase="customer_gender">anh</span> giúp phần kỹ thuật chèn mã dataLayer xong, mà mọi việc nếu đều ổn, có thể phản hồi qua email này để chúng ta cùng nhau xác nhận lịch hẹn tiếp theo cho <b>thiết đặt</b>&nbsp;chuyển đổi nâng cao trên <b>Google Ads</b> và <b>Google Tag manager</b>.<br><br>Chuẩn bị: cần một tài khoản email - để kiểm thử quá trình signup và purchase trên website<br>Debug: Sử dụng&nbsp;<b>Google tag manager</b><br><br></li>
-                                                </ol>
-                                                <p dir="auto">Rất mong phản hồi từ&nbsp;<span><span data-infocase="customer_gender">anh</span></span> để hoàn thành quá trình cài đặt cho trường hợp này.<br></p>
-                                                <p></p>
-                                                <p dir="auto" style="font-weight:normal">Trân trọng!</p>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1829,17 +1750,6 @@
                                     <div id="email-body-content-top" style="width:100%">
                                         <div id="email-body-content-top-content">
                                             ${vi_list_emailtemplatecontent.ni_awaiting_validation}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="_emailtemp-item" data-type="[EC] NI - Awaiting Inputs">
-                                <span class="_panel_btn _panel_btn--small _panel_btn--addtemplate">Insert</span>
-                                <div class="_emailtemp-item__title">Đội giải pháp kỹ thuật - Chờ thông tin phản hồi từ nhà quảng cáo cho trường hợp [<span data-infocase="case_id">5-0000000000000</span>]</div>
-                                <div class="_emailtemp-item__content">
-                                    <div id="email-body-content-top" style="width:100%">
-                                        <div id="email-body-content-top-content">
-                                            ${vi_list_emailtemplatecontent.ec_ni_awaiting_input}
                                         </div>
                                     </div>
                                 </div>

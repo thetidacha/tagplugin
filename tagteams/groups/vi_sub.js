@@ -305,7 +305,7 @@ var vi_clearAndPrepareCRTemplate = () => {
                     _tdcellist.forEach((item) => {
                         var _heading = item.innerText.trim();
                         var _list = ['']
-                        var _getvalue = searchAndReturnValue(vi_key_task_searchandreplace, _heading, 2);
+                        var _getvalue = searchAndReturnValue(vi_key_task_searchandreplace, _heading, 1);
                         if(_getvalue) {
                             item.innerText = _getvalue;
                         }
@@ -468,15 +468,13 @@ var vi_sendFirstEmail = () => {
 
 
 var vi_TagteamFocusCase = () => {
+    cLog(() => {console.log("CODE VAN BO LOAD HAS LOAD")});
     try {
         // ==== CODE - VAN BO
         var ntime = 0;
         var css = `
-        case-details:after {
-            content: "";
-            display: flex;
-            height: 74px;
-            background: #f1f3f4
+        .hasdock card-deck .decks {
+            max-height: calc(100% - 64px)
         }
         
         
@@ -1153,6 +1151,7 @@ var vi_TagteamFocusCase = () => {
             var dock_float = document.createElement('div');
             dock_float.innerHTML = dock_float_html;
             document.querySelector('.decks').appendChild(dock_float);
+            document.body.classList.add('hasdock');
 
             const focus = (elem, index) => {
                 let previous = index - 1;

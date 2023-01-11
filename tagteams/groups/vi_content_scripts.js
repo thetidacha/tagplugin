@@ -2446,16 +2446,16 @@ function loadInit() {
                     autoLoadCode('auto_loadcode_vanbo');
                 });
                 
-                var hashchange_oncevanbo = false;
-                if(hashchange_oncevanbo === false) {
-                    hashchange_oncevanbo = true;
-                    window.addEventListener('hashchange', () => { 
-                        // Load code van bo
-                        isReadyBasic(() => {
-                            autoLoadCode('auto_loadcode_vanbo');
-                        });
-                    }, false);
-                }
+                // var hashchange_oncevanbo = false;
+                // if(hashchange_oncevanbo === false) {
+                //     hashchange_oncevanbo = true;
+                //     window.addEventListener('hashchange', () => { 
+                //         // Load code van bo
+                //         isReadyBasic(() => {
+                //             autoLoadCode('auto_loadcode_vanbo');
+                //         });
+                //     }, false);
+                // }
             }
         }
     
